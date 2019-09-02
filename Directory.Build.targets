@@ -1,0 +1,9 @@
+<Project>
+
+  <Import Project="$(RepositoryEngineeringDir)CodeStyle.targets" />
+
+  <ItemGroup Condition="'$(EnableVisualStudioThreading)' != 'false'">
+    <PackageReference Include="Microsoft.VisualStudio.Threading" Version="16.3.13" />
+  </ItemGroup>
+
+</Project>
