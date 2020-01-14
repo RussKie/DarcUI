@@ -1,0 +1,2908 @@
+https://dev.azure.com/dnceng/internal/_git/aspnet-websdk (.NET Core SDK 3.0.1xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-toolset' ('internal/release/3.0.1xx')
+  - Id: 5b0dff86-0fdb-4ff1-c5c7-08d76fa9c820
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/aspnet-websdk (.NET Core SDK 3.1.1xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-toolset' ('internal/release/3.1.1xx')
+  - Id: b5e87ff7-7f99-48b7-e8d5-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/aspnet-websdk (.NET Core SDK 3.1.2xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-toolset' ('internal/release/3.1.2xx')
+  - Id: 62bd055f-8a1d-4ecb-e8d6-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/aspnet-websdk' ('internal/release/3.0.1xx')
+  - Id: 82098cfe-a77f-42a0-e8ce-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/aspnet-websdk' ('internal/release/3.1.1xx')
+  - Id: 77ebb8c3-d4b0-4928-575a-08d76e1d56cb
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/aspnet-websdk' ('internal/release/3.1.2xx')
+  - Id: 9b45d8a8-d897-4083-575b-08d76e1d56cb
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-cli' ('internal/release/3.0.1xx')
+  - Id: e66e09c8-ddd2-4ed0-9007-08d76d41c6c3
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-cli' ('internal/release/3.1.1xx')
+  - Id: a7f03436-8ebd-46f6-575c-08d76e1d56cb
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-cli' ('internal/release/3.1.2xx')
+  - Id: 66e82457-87d1-40ad-c5d4-08d76fa9c820
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-sdk' ('internal/release/3.0.1xx')
+  - Id: 49888773-757f-4ed8-5752-08d76e1d56cb
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-sdk' ('internal/release/3.1.1xx')
+  - Id: 96f13ebf-79b5-4343-d448-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-sdk' ('internal/release/3.1.2xx')
+  - Id: c04453d3-26df-467a-d449-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore-tooling (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore' ('internal/release/3.0')
+  - Id: 5679cbfe-3c50-4a49-42af-08d79559e63d
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore-tooling (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore' ('internal/release/3.1')
+  - Id: 7bf32a0c-3505-43af-42b0-08d79559e63d
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore-tooling (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-toolset' ('internal/release/3.0.1xx')
+  - Id: 7218e8e7-552b-4b8b-d436-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore-tooling (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-toolset' ('internal/release/3.1.1xx')
+  - Id: 633bcea9-e632-4fb9-9012-08d76d41c6c3
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore-tooling (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-toolset' ('internal/release/3.1.2xx')
+  - Id: 4d7eb284-8866-4c77-9013-08d76d41c6c3
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-blazor (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore' ('internal/release/3.0')
+  - Id: 609b5f81-58f0-4280-92fe-08d795576dcc
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-blazor (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore' ('internal/release/3.1')
+  - Id: 09f4785d-dc67-44f9-e1ea-08d79559e508
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-cli (.NET Core SDK 3.0.1xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-sdk' ('internal/release/3.0.1xx')
+  - Id: d605136a-2850-46de-e8d1-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-cli (.NET Core SDK 3.1.1xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-sdk' ('internal/release/3.1.1xx')
+  - Id: 9a5b4d57-a35a-415d-900c-08d76d41c6c3
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-cli (.NET Core SDK 3.1.2xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-sdk' ('internal/release/3.1.2xx')
+  - Id: 020dce9c-4ed8-4e01-c5cc-08d76fa9c820
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-cli (.NET Core SDK 3.0.1xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-toolset' ('internal/release/3.0.1xx')
+  - Id: d6ba9c55-d27c-4d2a-5754-08d76e1d56cb
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-cli (.NET Core SDK 3.1.1xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-toolset' ('internal/release/3.1.1xx')
+  - Id: ed5fb0e4-578a-4af9-d441-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-cli (.NET Core SDK 3.1.2xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-toolset' ('internal/release/3.1.2xx')
+  - Id: e37c60ad-0a8e-4648-c5ce-08d76fa9c820
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-coreclr (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-corefx' ('internal/release/3.0')
+  - Id: d580c271-e129-43b1-5755-08d76e1d56cb
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-coreclr (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-corefx' ('internal/release/3.1')
+  - Id: e602b4c3-5c4b-44ff-d44b-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-coreclr (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup' ('internal/release/3.0')
+  - Id: 9024654f-2ad7-434d-d437-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-coreclr (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup' ('internal/release/3.1')
+  - Id: 7e785e40-ad72-4e22-e8de-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-corefx (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup' ('internal/release/3.0')
+  - Id: 9f319894-ab22-4f24-900a-08d76d41c6c3
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-corefx (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup' ('internal/release/3.1')
+  - Id: d857f0c2-af97-43df-e8df-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-corefx (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-iot' ('internal/release/3.0')
+  - Id: 64f35ef0-5158-47d2-c5c8-08d76fa9c820
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-sdk (.NET Core SDK 3.0.1xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-source-build' ('internal/release/3.0')
+  - Id: b369c0be-dc8b-4ae0-c5cb-08d76fa9c820
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-sdk (.NET Core SDK 3.1.1xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-source-build' ('internal/release/3.1')
+  - Id: f5431407-0b34-4108-900b-08d76d41c6c3
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-cli' ('internal/release/3.0.1xx')
+  - Id: e4260472-f413-45ae-d439-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-cli' ('internal/release/3.1.1xx')
+  - Id: a352f030-615b-46c9-5763-08d76e1d56cb
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-cli' ('internal/release/3.1.2xx')
+  - Id: cb6a888e-2d79-4360-9014-08d76d41c6c3
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-sdk' ('internal/release/3.0.1xx')
+  - Id: fcba49b6-bb22-45d3-c5c9-08d76fa9c820
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-sdk' ('internal/release/3.1.1xx')
+  - Id: 7d21fd2b-8df7-49e7-e8e0-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-sdk' ('internal/release/3.1.2xx')
+  - Id: b57bb26e-7821-45c5-9015-08d76d41c6c3
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-ef6' ('internal/release/6.3')
+  - Id: 032874f4-b548-4f35-12fa-08d795579ebc
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-ef6' ('internal/release/6.4')
+  - Id: 1aa317de-e0d8-4c82-42b2-08d79559e63d
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-extensions' ('internal/release/3.0')
+  - Id: 1d789da1-e87c-44ff-b253-08d79557a113
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-extensions' ('internal/release/3.1')
+  - Id: d391dd3c-ce8a-46a9-42ad-08d79559e63d
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-sdk' ('internal/release/3.0.1xx')
+  - Id: dd3adfe0-be4f-4763-d43a-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-sdk' ('internal/release/3.1.1xx')
+  - Id: b6bb610a-6c9a-4687-d44c-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-sdk' ('internal/release/3.1.2xx')
+  - Id: 395d0c43-9657-4e5c-d44d-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-toolset' ('internal/release/3.0.1xx')
+  - Id: 7c4b78f6-6da2-4fa3-5756-08d76e1d56cb
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-toolset' ('internal/release/3.1.1xx')
+  - Id: b2e2b631-5277-4524-5764-08d76e1d56cb
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-toolset' ('internal/release/3.1.2xx')
+  - Id: 98befff5-788b-4734-c5d6-08d76fa9c820
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-efcore (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore' ('internal/release/3.0')
+  - Id: 69cce94b-8f2f-40c3-42ae-08d79559e63d
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-efcore (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore' ('internal/release/3.1')
+  - Id: e908e90a-0c22-4c54-b254-08d79557a113
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-extensions (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore-tooling' ('internal/release/3.0')
+  - Id: 62a657af-881d-47e2-42ab-08d79559e63d
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-extensions (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore-tooling' ('internal/release/3.1')
+  - Id: 69367bda-f465-40d4-e1e9-08d79559e508
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-extensions (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-efcore' ('internal/release/3.0')
+  - Id: 0f7942db-f484-41af-42ac-08d79559e63d
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-extensions (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-efcore' ('internal/release/3.1')
+  - Id: 866e0d8e-b549-4674-92fd-08d795576dcc
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-optimization (.NET Core 3 Release) ==> 'https://github.com/dotnet/coreclr' ('release/3.0')
+  - Id: 2b95475b-d147-4b39-6306-08d6bc51899c
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-optimization (.NET Core 3 Release) ==> 'https://github.com/dotnet/corefx' ('release/3.0')
+  - Id: fc000152-53a0-4a98-0b3e-08d6bc6f2d11
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-optimization (.NET Core 5 Dev) ==> 'https://github.com/dotnet/runtime' ('master')
+  - Id: 032d107a-6f5d-4df8-c8c4-08d75d523d5f
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-sdk (.NET Core SDK 3.0.1xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-cli' ('internal/release/3.0.1xx')
+  - Id: 1ddec027-52cf-4ca8-d43b-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-sdk (.NET Core SDK 3.1.1xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-cli' ('internal/release/3.1.1xx')
+  - Id: 5b43017f-6418-4f6d-e8d8-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-sdk (.NET Core SDK 3.1.2xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-cli' ('internal/release/3.1.2xx')
+  - Id: 894d370a-640e-42e6-c5cf-08d76fa9c820
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-sdk (.NET Core SDK 3.1.1xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-sdk' ('internal/release/3.1.1xx')
+  - Id: 9b990799-56b8-49c0-c5d0-08d76fa9c820
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-sdk (.NET Core SDK 3.1.2xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-sdk' ('internal/release/3.1.2xx')
+  - Id: 455daa33-1cec-44ba-900e-08d76d41c6c3
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-sdk (.NET Core SDK 3.0.1xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-toolset' ('internal/release/3.0.1xx')
+  - Id: d750e383-6fe9-4c32-c5ca-08d76fa9c820
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-sdk (.NET Core SDK 3.1.1xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-toolset' ('internal/release/3.1.1xx')
+  - Id: c2983c84-e510-4b85-5759-08d76e1d56cb
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-sdk (.NET Core SDK 3.1.2xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-toolset' ('internal/release/3.1.2xx')
+  - Id: 5157290f-a71c-48b9-e8da-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-toolset (.NET Core SDK 3.0.1xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-sdk' ('internal/release/3.0.1xx')
+  - Id: cd78ebdc-31f1-405c-e8d3-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-toolset (.NET Core SDK 3.1.1xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-sdk' ('internal/release/3.1.1xx')
+  - Id: ed80f9fd-b1a7-4893-c5d2-08d76fa9c820
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-toolset (.NET Core SDK 3.1.2xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-sdk' ('internal/release/3.1.2xx')
+  - Id: f42ec46a-9319-47b8-9011-08d76d41c6c3
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-winforms (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf' ('internal/release/3.0')
+  - Id: 67a4ee93-8593-4a6f-e8d4-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-winforms (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf' ('internal/release/3.1')
+  - Id: 8535fbac-a9bf-489f-c5d8-08d76fa9c820
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup' ('internal/release/3.0')
+  - Id: d4c8635d-7355-477c-9006-08d76d41c6c3
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-core-setup' ('internal/release/3.1')
+  - Id: fe1df267-1f14-435d-d447-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-test' ('internal/release/3.0')
+  - Id: 1414c065-5a8e-484a-5765-08d76e1d56cb
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int (.NET Core 5 Dev) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-test' ('master')
+  - Id: 2721ec62-017d-4cd2-b179-08d7476aaa58
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int (.NET Core 3 Release) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-test' ('release/3.0')
+  - Id: d289dc16-c0b2-44ba-d44f-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int (.NET Core 3.1 Release) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-test' ('release/3.1')
+  - Id: bffd8773-e616-4a87-5d2e-08d737b9e496
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int (.NET Core 3 Release) ==> 'https://github.com/dotnet/core-setup' ('release/3.0')
+  - Id: 43583a02-d9a2-457a-491b-08d6ded59286
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/core-setup' ('release/3.1')
+  - Id: 4ecd4263-b01a-45f5-9302-08d7368bfd12
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int (.NET Core 5 Dev) ==> 'https://github.com/dotnet/windowsdesktop' ('master')
+  - Id: 21656973-43f7-410f-9401-08d7476ad93a
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int (.NET Core 5 Dev) ==> 'https://github.com/dotnet/wpf' ('master')
+  - Id: 46a15fe4-6c2c-480d-9cdd-08d71053b252
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "wip",
+                         "license/cla"
+                       ]
+https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int (.NET Core 3 Release) ==> 'https://github.com/dotnet/wpf' ('release/3.0')
+  - Id: 32eb7cf4-5b39-4692-fce1-08d6e52544b8
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/wpf' ('release/3.1')
+  - Id: d27fedbc-a7bc-47ad-3e19-08d7368759ef
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-wpf (.NET Core 3.0 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int' ('internal/release/3.0')
+  - Id: a59f5ad3-3274-41f6-d43d-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-wpf (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int' ('internal/release/3.1')
+  - Id: 666a15ba-4bd9-4a49-d451-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-test (.NET Core 3 Release) ==> 'https://github.com/dotnet/wpf' ('release/3.0')
+  - Id: 7b525f3d-47a1-48d7-fde0-08d742134a26
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/aspnet/websdk (.NET Core 5 Dev) ==> 'https://github.com/dotnet/toolset' ('master')
+  - Id: 88436ca9-5197-4ca0-0731-08d675c684c9
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/aspnet/websdk (.NET Core SDK 3.0.1xx) ==> 'https://github.com/dotnet/toolset' ('release/3.0.1xx')
+  - Id: 6fb7b256-7950-4e0c-f8e8-08d6910be5f1
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/aspnet/websdk (.NET Core SDK 3.1.2xx) ==> 'https://github.com/dotnet/toolset' ('release/3.1.2xx')
+  - Id: 161c5d21-f7b9-4a38-e8f6-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/aspnet/xdt (.NET Core 5 Dev) ==> 'https://github.com/aspnet/websdk' ('master')
+  - Id: 4ad3df25-fbc4-4719-9243-08d6c732a216
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/aspnet/xdt (.NET Core 3 Release) ==> 'https://github.com/aspnet/websdk' ('release/3.0.1xx')
+  - Id: 28d0cfb5-71e0-4e27-8453-08d6c4e800ae
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-optimization' ('master')
+  - Id: 627814d6-3339-4752-0733-08d675c684c9
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = []
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-optimization' ('release/3.0')
+  - Id: 5426d3d1-f40c-4452-e5fe-08d6e52913c6
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies: []
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int' ('master')
+  - Id: d3d3b919-4d0e-4fd4-b31c-08d6bdffe024
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "Comment requirements",
+                         "Minimum number of reviewers",
+                         "Required reviewers"
+                       ]
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int' ('release/3.0')
+  - Id: d1ae3417-064a-487a-54c3-08d6c734018a
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int' ('release/3.1')
+  - Id: 59b19bed-2d89-4e05-c336-08d7315b870b
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-test' ('master')
+  - Id: 7eb9fc8c-d4a7-4b61-0a3f-08d7476b05e1
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-test' ('release/3.0')
+  - Id: e0b71464-5684-41be-5d29-08d737b9e496
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-test' ('release/3.1')
+  - Id: 5f5295bd-bb2a-4ed0-2bac-08d737b9a02c
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/aspnet/AspLabs' ('master')
+  - Id: 01a0a5b9-8c00-4277-70ed-08d6fb34e42e
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/aspnet/scaffolding' ('master')
+  - Id: 693dfcfa-6e8b-4074-c8c2-08d75d523d5f
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies: []
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/aspnet/scaffolding' ('release/3.1')
+  - Id: 69539d90-01e6-4134-97c3-08d75d54503a
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies: []
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/aspnet/websdk' ('master')
+  - Id: 034a3aa8-380d-41b0-94dd-08d683091c7c
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/aspnet/websdk' ('release/3.0.1xx')
+  - Id: f95d6be1-608b-44b7-b4e1-08d6910bdae0
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/aspnet/websdk' ('release/3.1.1xx')
+  - Id: 919c883c-46b2-4aec-a2f3-08d7476a7665
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/aspnet/websdk' ('release/3.1.2xx')
+  - Id: 0669359b-9aa9-4eff-5767-08d76e1d56cb
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/aspnet/xdt' ('master')
+  - Id: 210d9c3d-f1dd-4377-924b-08d6c732a216
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/arcade' ('master')
+  - Id: 695c68a2-7a2e-4639-195a-08d6175791f6
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/arcade-minimalci-sample' ('master')
+  - Id: d2d2e80d-8b31-4744-1959-08d6175791f6
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/arcade-pool-provider' ('master')
+  - Id: 59aa17e8-42df-4f74-3ad2-08d6b8bc087e
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/arcade-services' ('master')
+  - Id: 45c7fcea-e507-4524-25fa-08d65f910a8c
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET Eng - Validation) ==> 'https://github.com/dotnet/arcade-validation' ('master')
+  - Id: d38dee0b-123f-41ce-84f5-08d65ee3ff76
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng - Validation) ==> 'https://github.com/dotnet/arcade-validation' ('release/3.x')
+  - Id: 7890907d-4d41-4f8c-8117-08d737b9d2d1
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/aspnetcore' ('blazor-wasm')
+  - Id: 6311c0a9-d1c5-4d5b-5772-08d76e1d56cb
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/aspnetcore' ('master')
+  - Id: a6dbb97b-1d09-43d1-e8f9-08d76e1cf1e0
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/aspnetcore' ('release/3.0')
+  - Id: e54c297a-9a2c-4de7-e8f7-08d76e1cf1e0
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/aspnetcore' ('release/3.1')
+  - Id: 33b8c6ab-c1c9-41b0-e8f8-08d76e1cf1e0
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/aspnetcore-tooling' ('master')
+  - Id: 536fc7fa-caa6-4464-5774-08d76e1d56cb
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/aspnetcore-tooling' ('release/3.0')
+  - Id: 0cb08811-6684-4ce9-5773-08d76e1d56cb
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/aspnetcore-tooling' ('release/3.1')
+  - Id: ee1051da-3653-49da-ace4-08d7842ce357
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/Blazor' ('master')
+  - Id: 46dbaed2-da9c-49ba-d45f-08d76e1d3434
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/Blazor' ('release/3.0')
+  - Id: 575680fe-1cf7-4609-5776-08d76e1d56cb
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/Blazor' ('release/3.1')
+  - Id: e80d9468-aa19-430d-5777-08d76e1d56cb
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/cli' ('release/3.0.1xx')
+  - Id: 9b125d25-276f-4859-b4e2-08d6910bdae0
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/cli' ('release/3.1.1xx')
+  - Id: 15385bb3-00bd-44e3-5c73-08d72a4d3f20
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/cli' ('release/3.1.2xx')
+  - Id: 94c24b6f-4197-4be9-5768-08d76e1d56cb
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/coreclr' ('release/3.0')
+  - Id: 9d917c39-9eee-4aa5-f8e9-08d6910be5f1
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/coreclr' ('release/3.1')
+  - Id: 88e1281a-0536-412d-736c-08d72a4ce44a
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/corefx' ('release/3.0')
+  - Id: a5bda823-89f1-4ce6-0d43-08d6910cd73b
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/corefx' ('release/3.1')
+  - Id: 8e91fa34-ea12-4ebd-d4c2-08d7315d8bc7
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/core-sdk' ('master')
+  - Id: 0f29ecc5-4e28-4147-d5d6-08d670f9e862
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/core-sdk' ('release/3.0.1xx')
+  - Id: d37642af-c80f-4879-f8ea-08d6910be5f1
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/core-sdk' ('release/3.1.1xx')
+  - Id: ad83a235-b343-4ee9-0c84-08d7315b512a
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/core-sdk' ('release/3.1.2xx')
+  - Id: ec8eb908-d11e-4d70-5769-08d76e1d56cb
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/core-setup' ('release/3.0')
+  - Id: c96bd868-1a02-42f0-0d44-08d6910cd73b
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/core-setup' ('release/3.1')
+  - Id: 8452a98a-2cea-4524-9e44-08d731505c14
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/diagnostics' ('master')
+  - Id: a7031e12-6bb3-4314-d459-08d76e1d3434
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/ef6' ('master')
+  - Id: 4aa0500b-5e23-4057-d462-08d76e1d3434
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/ef6' ('release/6.3')
+  - Id: 7b6eb564-9c30-47c3-fb13-08d794a352c5
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/ef6' ('release/6.4')
+  - Id: a67f564b-e211-4f68-5779-08d76e1d56cb
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/efcore' ('master')
+  - Id: 4ebe67d7-d53d-4b27-d461-08d76e1d3434
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/efcore' ('release/3.0')
+  - Id: 5f9b5098-848a-4046-5778-08d76e1d56cb
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/efcore' ('release/3.1')
+  - Id: c6c7dfb4-2511-4239-d460-08d76e1d3434
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/extensions' ('master')
+  - Id: 455063ee-4723-4484-e1e7-08d79559e508
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/extensions' ('release/3.0')
+  - Id: 2a9c6679-37d1-4cee-b250-08d79557a113
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/extensions' ('release/3.1')
+  - Id: b9f2bd75-a1a5-4f20-b251-08d79557a113
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/format' ('master')
+  - Id: 33522aea-b551-4b5d-7585-08d6939d49b8
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/fsharp' ('master')
+  - Id: 36cc145b-078e-4a4c-d369-08d6f038a15f
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/fsharp' ('release/dev16.4')
+  - Id: 46b4fe2d-9886-43b9-e8e8-08d76e1cf1e0
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/fsharp' ('release/fsharp5')
+  - Id: abf80731-32f3-40c0-576f-08d76e1d56cb
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/HttpRepl' ('master')
+  - Id: e1d8dccd-a7ff-4891-a0f6-08d721cca946
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/interactive-window' ('master')
+  - Id: 89f67a87-84cd-45a3-0a45-08d7476b05e1
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/iot' ('master')
+  - Id: 036e62fc-ed8f-4b3d-7584-08d6939d49b8
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies: []
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/iot' ('release/3.0')
+  - Id: b0eaf0a5-61c2-418f-9301-08d7368bfd12
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies: []
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/llvm-project' ('release/6.x')
+  - Id: 81b038ff-40d7-4df3-5771-08d76e1d56cb
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies: []
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/msbuild-language-service' ('master')
+  - Id: a5e099cc-4496-4bb9-59ac-08d6a9740f6e
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/performance' ('master')
+  - Id: 633db287-2004-4b94-7fbc-08d65c65c46a
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/platform-compat' ('master')
+  - Id: f6be4e9d-09e3-49fd-3cf5-08d6bdfbbeef
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/project-system-tools' ('master')
+  - Id: 353c8147-8705-4811-3cf6-08d6bdfbbeef
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/roslyn' ('master')
+  - Id: 567feadf-e495-4ebb-cee4-08d67668456c
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla",
+                         "roslyn-integration-CI"
+                       ]
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/roslyn' ('release/dev16.3-vs-deps')
+  - Id: ef0a7d9c-37a9-4bca-b183-08d73687fe54
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/roslyn' ('release/dev16.4')
+  - Id: 1b67588c-88e7-4052-d456-08d76e1d3434
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/roslyn' ('release/dev16.5-preview1-vs-deps')
+  - Id: 56878e90-c41b-4dc5-e8ea-08d76e1cf1e0
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/roslyn-sdk' ('master')
+  - Id: 66bf0ed9-59cb-4fe0-6937-08d6a0d7585c
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/roslyn-tools' ('master')
+  - Id: 396645ec-cbe9-441d-d70e-08d7530b526c
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/runtime-assets' ('master')
+  - Id: 881d11bc-6afa-40b7-e8e9-08d76e1cf1e0
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies: []
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/runtime' ('master')
+  - Id: d5e65fc1-96f8-47a5-f02e-08d75d5208ed
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/sdk' ('master')
+  - Id: daa187e0-7e60-4c7a-c1ac-08d6354da8a8
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/sdk' ('release/3.0.1xx')
+  - Id: df8a2755-bec9-40dc-b710-08d7368af630
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/sdk' ('release/3.1.1xx')
+  - Id: e76888f5-e4f1-4c3d-d4c4-08d7315d8bc7
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/sdk' ('release/3.1.2xx')
+  - Id: fdee9669-2308-4505-9018-08d76d41c6c3
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/source-build' ('master')
+  - Id: 922a98d1-9d11-4615-50b4-08d6abed815d
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+    NoExtraCommits
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/source-build-reference-packages' ('master')
+  - Id: ed7fef7c-2281-4d1e-b182-08d73687fe54
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies: []
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/source-build' ('release/3.0')
+  - Id: a43d1ba0-ceb1-465e-3522-08d6abed9b1c
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies: []
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/sourcelink' ('master')
+  - Id: f5509007-c6a8-4401-3756-08d7114aa865
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/standard' ('master')
+  - Id: 13e4918d-b9bd-4474-29f1-08d6225f093d
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/standard' ('release/3.0')
+  - Id: 29f70c24-3711-40be-9246-08d6c732a216
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/symreader-converter' ('master')
+  - Id: 1009fff1-d6fe-4244-d8e6-08d7530af6cf
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/symreader' ('master')
+  - Id: c92d8328-be4d-401b-25f7-08d65f910a8c
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/symreader-portable' ('master')
+  - Id: ebd6b2a8-8cd8-401a-cbee-08d65ec777d3
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/symstore' ('master')
+  - Id: 6a74ace7-c9e1-48f2-a101-08d721cca946
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/templates' ('master')
+  - Id: d00dc570-f61f-44f6-b318-08d6bdffe024
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/templating' ('master')
+  - Id: a28c9164-ffce-4cc2-94de-08d683091c7c
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/templating' ('release/3.0')
+  - Id: 28b2a3f3-8c80-4e2b-f8eb-08d6910be5f1
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/templating' ('release/3.1')
+  - Id: 38512ae2-a9dd-4dda-7af0-08d741286489
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/test-templates' ('master')
+  - Id: fc440058-5bdb-42a7-6c42-08d67d9c3bc0
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/toolset' ('master')
+  - Id: e5ee2c63-3a2d-4805-8c41-08d66611bea4
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/toolset' ('release/3.0.1xx')
+  - Id: 014a4c88-d367-463b-280b-08d690bc5860
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/toolset' ('release/3.1.1xx')
+  - Id: 46668c81-bc5c-403e-d4c3-08d7315d8bc7
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/toolset' ('release/3.1.2xx')
+  - Id: 041310ad-a038-42bb-e8e1-08d76e1cf1e0
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/try-convert' ('master')
+  - Id: b613b110-60c1-473c-fde1-08d742134a26
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla",
+                         "<other check names>"
+                       ]
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/try' ('master')
+  - Id: c1554c97-dd27-4f09-7af1-08d741286489
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/wcf' ('master')
+  - Id: 16bfd690-8c1c-4bf9-c8f5-08d6f038d548
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/windowsdesktop' ('master')
+  - Id: cfd35b3a-4a1e-4a4f-5087-08d7530d0dd2
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/winforms-designer' ('master')
+  - Id: f7853298-72e9-4619-a257-08d68641480a
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/winforms' ('master')
+  - Id: 4d0c844d-0758-4fc5-c1ad-08d6354da8a8
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/winforms' ('release/3.0')
+  - Id: 2b67318b-e6c5-4abb-7861-08d72198640e
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/winforms' ('release/3.1')
+  - Id: a2a5ea62-d9bf-419c-0c86-08d7315b512a
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/wpf' ('master')
+  - Id: 3a1d3bb6-c64d-406d-e8f4-08d648cf64cb
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/wpf' ('release/3.0')
+  - Id: e226e5ed-6125-48cb-94d5-08d690bc143a
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/dotnet/wpf' ('release/3.1')
+  - Id: f6560d32-4c6b-4ed3-5c71-08d72a4d3f20
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/dotnet/xliff-tasks' ('master')
+  - Id: 19d66083-1ef0-4400-b319-08d6bdffe024
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/Microsoft/clrmd' ('master')
+  - Id: bdc83763-bad7-4f66-e2e6-08d6fa9fb6d9
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/microsoft/msbuild' ('master')
+  - Id: 6ff1327c-3d7f-4d3f-41a4-08d667929bd9
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/microsoft/msbuild' ('vs16.3')
+  - Id: 91f25c3a-5039-484a-a100-08d721cca946
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Core 3.1 Release) ==> 'https://github.com/microsoft/msbuild' ('vs16.4')
+  - Id: 4d2d7678-ea25-459a-453e-08d762ccfbc0
+  - Update Frequency: EveryDay
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET 3 Eng) ==> 'https://github.com/microsoft/msbuild' ('vs16.4')
+  - Id: 240aacd4-344f-4b6b-1ea4-08d762cd6e45
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/mono/linker' ('master')
+  - Id: 1e7883c0-a076-4718-e822-08d6be00caf8
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = []
+https://github.com/dotnet/arcade (.NET Eng - Latest) ==> 'https://github.com/mono/mono' ('master')
+  - Id: 981a91ef-e876-4f08-5657-08d7114adc5e
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies: []
+https://github.com/dotnet/aspnetcore (.NET Core 5 Dev) ==> 'https://github.com/aspnet/websdk' ('master')
+  - Id: 1abbb4c1-19d8-4912-fab8-08d6a19aff91
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore (.NET Core 3 Release) ==> 'https://github.com/aspnet/websdk' ('release/3.0.1xx')
+  - Id: 6123bc98-eea8-412d-4dda-08d6bc676830
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore (.NET Core 3.1 Release) ==> 'https://github.com/aspnet/websdk' ('release/3.1.1xx')
+  - Id: 925cac44-3b8e-4154-0a39-08d7476b05e1
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore (.NET Core 3.1 Release) ==> 'https://github.com/aspnet/websdk' ('release/3.1.2xx')
+  - Id: ad1d93a5-c5d2-41fe-576b-08d76e1d56cb
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore (.NET Core 3 Release) ==> 'https://github.com/dotnet/cli' ('release/3.0.1xx')
+  - Id: d54a5172-b4ce-4f86-d36b-08d6f038a15f
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/cli' ('release/3.1.1xx')
+  - Id: c7c33a9e-18af-4618-5026-08d727dabd66
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/cli' ('release/3.1.2xx')
+  - Id: 9f2ba0f1-e8d3-4958-c5dc-08d76fa9c820
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore (.NET Core 5 Dev) ==> 'https://github.com/dotnet/core-sdk' ('master')
+  - Id: 510286a9-8cd5-47bd-a259-08d68641480a
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore (.NET Core 3 Release) ==> 'https://github.com/dotnet/core-sdk' ('release/3.0.1xx')
+  - Id: 0a2d0ca4-5d87-4bfd-2808-08d690bc5860
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/core-sdk' ('release/3.1.1xx')
+  - Id: 7fc4cbba-590c-4071-5029-08d727dabd66
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/core-sdk' ('release/3.1.2xx')
+  - Id: 71fe42dc-a1c8-4a6a-e8e5-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore (.NET Core 5 Dev) ==> 'https://github.com/dotnet/diagnostics' ('master')
+  - Id: eeb304ca-3df9-4390-c5c4-08d76fa9c820
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore (.NET Core 5 Dev) ==> 'https://github.com/dotnet/toolset' ('master')
+  - Id: 4cd46332-d433-49d4-508f-08d7530d0dd2
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore-tooling (.NET Core 5 Dev) ==> 'https://github.com/dotnet/aspnetcore' ('master')
+  - Id: b4589d4d-ab29-4a8a-d45b-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore-tooling (.NET Core 3 Release) ==> 'https://github.com/dotnet/aspnetcore' ('release/3.0')
+  - Id: 3f5cbf6d-8a80-44fe-e8fa-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore-tooling (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/aspnetcore' ('release/3.1')
+  - Id: 5eda9ad6-6b49-4d8c-ace3-08d7842ce357
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore-tooling (.NET Core 5 Dev) ==> 'https://github.com/dotnet/toolset' ('master')
+  - Id: 4139e732-22bc-494f-bf17-08d671b3a99a
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/aspnetcore-tooling (.NET Core 3 Release) ==> 'https://github.com/dotnet/toolset' ('release/3.0.1xx')
+  - Id: ed5fd2e9-c1ca-4281-b4e0-08d6910bdae0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore-tooling (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/toolset' ('release/3.1.1xx')
+  - Id: 2404b594-e1f2-48ad-9ed1-08d727da83e4
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/aspnetcore-tooling (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/toolset' ('release/3.1.2xx')
+  - Id: 052010a9-4679-4165-9019-08d76d41c6c3
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/blazor (.NET Core 3.1 Blazor Features) ==> 'https://github.com/dotnet/aspnetcore' ('blazor-wasm')
+  - Id: 3fcb4f27-14a6-4d71-42b1-08d79559e63d
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/blazor (.NET Core 5 Dev) ==> 'https://github.com/dotnet/aspnetcore' ('master')
+  - Id: aa2cdb80-9688-4f34-fb0f-08d794a352c5
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/blazor (.NET Core 3 Release) ==> 'https://github.com/dotnet/aspnetcore' ('release/3.0')
+  - Id: b8174000-b7f2-4351-d45c-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/blazor (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/aspnetcore' ('release/3.1')
+  - Id: abbd0173-7136-40f3-fb0e-08d794a352c5
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/clicommandlineparser (.NET Core 3 Release) ==> 'https://github.com/dotnet/cli' ('release/3.0.1xx')
+  - Id: e3234796-704c-4264-280c-08d690bc5860
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/clicommandlineparser (.NET Core 5 Dev) ==> 'https://github.com/dotnet/toolset' ('master')
+  - Id: ce2ed76c-bc1d-42df-8164-08d7530ac2be
+  - Update Frequency: None
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies: []
+https://github.com/dotnet/cli (.NET Core SDK 3.0.1xx) ==> 'https://github.com/dotnet/core-sdk' ('release/3.0.1xx')
+  - Id: 4c6b98c8-40da-4b88-848f-08d6ba0dfea6
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/cli (.NET Core SDK 3.1.1xx) ==> 'https://github.com/dotnet/core-sdk' ('release/3.1.1xx')
+  - Id: 05d01aa9-b412-4301-5d28-08d737b9e496
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/cli (.NET Core SDK 3.1.2xx) ==> 'https://github.com/dotnet/core-sdk' ('release/3.1.2xx')
+  - Id: 0c1ab23e-1496-4160-9016-08d76d41c6c3
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/cli (.NET Core SDK 3.0.1xx) ==> 'https://github.com/dotnet/toolset' ('release/3.0.1xx')
+  - Id: af0e3c50-0905-4c44-b4e4-08d6910bdae0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/cli (.NET Core SDK 3.1.1xx) ==> 'https://github.com/dotnet/toolset' ('release/3.1.1xx')
+  - Id: 555dce0c-6a39-4899-b5a1-08d7219835fd
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/cli (.NET Core SDK 3.1.2xx) ==> 'https://github.com/dotnet/toolset' ('release/3.1.2xx')
+  - Id: a1d3dd10-2463-48e8-9017-08d76d41c6c3
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/coreclr (.NET Core 3 Release) ==> 'https://github.com/dotnet/corefx' ('release/3.0')
+  - Id: 66928e2e-bd95-4f7e-280f-08d690bc5860
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/coreclr (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/corefx' ('release/3.1')
+  - Id: dbb830b1-8f81-460f-dd40-08d72a4caef5
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/coreclr (.NET Core 3 Release) ==> 'https://github.com/dotnet/core-setup' ('release/3.0')
+  - Id: f8aed37a-41f5-45fb-f8ed-08d6910be5f1
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/coreclr (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/core-setup' ('release/3.1')
+  - Id: 52598839-3030-42a2-cd54-08d72a4d12e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/corefx (.NET Core 3 Release) ==> 'https://github.com/dotnet/coreclr' ('release/3.0')
+  - Id: d7eb9992-d759-446e-f8f0-08d6910be5f1
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/corefx (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/coreclr' ('release/3.1')
+  - Id: afd7026d-5288-4298-7366-08d72a4ce44a
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/corefx (.NET Core 3 Release) ==> 'https://github.com/dotnet/core-setup' ('release/3.0')
+  - Id: 41ea0be7-d000-4e29-0d45-08d6910cd73b
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/corefx (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/core-setup' ('release/3.1')
+  - Id: 16408795-caf1-4a32-cd55-08d72a4d12e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/corefx (.NET Core 3 Release) ==> 'https://github.com/dotnet/iot' ('release/3.0')
+  - Id: d1724e21-2b80-4ccf-7362-08d737b9d9d5
+  - Update Frequency: EveryDay
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies: []
+https://github.com/dotnet/corefx (.NET Core 3 Release) ==> 'https://github.com/dotnet/standard' ('release/3.0')
+  - Id: 8358c059-232d-4dac-c08d-08d6da235811
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/corefx (.NET Core 3 Release) ==> 'https://github.com/microsoft/msbuild' ('vs16.3')
+  - Id: 6d184d1c-5b2e-4d26-a60d-08d72585697b
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-sdk (.NET Core SDK 3.0.1xx) ==> 'https://github.com/dotnet/performance' ('master')
+  - Id: 92e531bb-f6db-495d-5d12-08d6d271dba7
+  - Update Frequency: TwiceDaily
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-sdk (.NET Core SDK 3.0.1xx) ==> 'https://github.com/dotnet/source-build' ('release/3.0')
+  - Id: e92ce35d-fa5b-4255-7cbd-08d6abeea7cd
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-sdk (.NET Core SDK 3.1.1xx) ==> 'https://github.com/dotnet/source-build' ('release/3.1')
+  - Id: 51fc597d-fca2-4642-0a3a-08d7476b05e1
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    NoExtraCommits
+    AllChecksSuccessful
+      ignoreChecks = []
+    NoRequestedChanges
+https://github.com/dotnet/core-setup (.NET Core 3 Release) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int' ('release/3.0')
+  - Id: 15a2995c-1b8e-41af-54c5-08d6c734018a
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "Comment requirements",
+                         "Minimum number of reviewers",
+                         "Required reviewers"
+                       ]
+https://github.com/dotnet/core-setup (.NET Core 3.1 Release) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int' ('release/3.1')
+  - Id: 1391fc13-48ed-43e9-dd46-08d72a4caef5
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "Comment requirements",
+                         "Minimum number of reviewers",
+                         "Required reviewers"
+                       ]
+https://github.com/dotnet/core-setup (.NET Core 3 Release) ==> 'https://github.com/dotnet/cli' ('release/3.0.1xx')
+  - Id: 1a2c0403-dbb9-4253-1c2d-08d6fb3704ce
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/cli' ('release/3.1.1xx')
+  - Id: caa76adf-c67f-4e61-5c6d-08d72a4d3f20
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3 Release) ==> 'https://github.com/dotnet/coreclr' ('release/3.0')
+  - Id: 9a4bff4b-85c2-4174-9247-08d6c732a216
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/coreclr' ('release/3.1')
+  - Id: b062bd78-6e50-43e6-cd59-08d72a4d12e0
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3 Release) ==> 'https://github.com/dotnet/corefx' ('release/3.0')
+  - Id: 79f1e123-800e-410f-94d7-08d690bc143a
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/corefx' ('release/3.1')
+  - Id: 98d11e43-fc37-4a09-cd5a-08d72a4d12e0
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3 Release) ==> 'https://github.com/dotnet/core-sdk' ('release/3.0.1xx')
+  - Id: bded86ed-dcdc-4d1e-2810-08d690bc5860
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/core-sdk' ('release/3.1.1xx')
+  - Id: 3eec1677-3506-4bcc-dd41-08d72a4caef5
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/core-sdk' ('release/3.1.2xx')
+  - Id: 57dfb204-9025-455c-d454-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3 Release) ==> 'https://github.com/dotnet/ef6' ('release/6.3')
+  - Id: 2cdbd9c8-c26d-4c02-fb14-08d794a352c5
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/ef6' ('release/6.4')
+  - Id: 4367def8-6508-45ca-d463-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3 Release) ==> 'https://github.com/dotnet/extensions' ('release/3.0')
+  - Id: 102686d2-7a16-4070-12f7-08d795579ebc
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/extensions' ('release/3.1')
+  - Id: 65fc350c-98f4-4674-92fc-08d795576dcc
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3 Release) ==> 'https://github.com/dotnet/sdk' ('release/3.0.1xx')
+  - Id: ee7760b1-2875-4869-d002-08d7114cdbad
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/sdk' ('release/3.1.1xx')
+  - Id: e0b7e874-2dc6-462b-dd42-08d72a4caef5
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/sdk' ('release/3.1.2xx')
+  - Id: 5a976d45-b90d-4c39-d453-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3 Release) ==> 'https://github.com/dotnet/toolset' ('release/3.0.1xx')
+  - Id: b890c706-5a2f-4f48-98e4-08d6e52cce5b
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/toolset' ('release/3.1.1xx')
+  - Id: bc1c52d6-02e7-4de6-79e4-08d727dab704
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/toolset' ('release/3.1.2xx')
+  - Id: 69fc087e-8c7c-4f1c-e8e3-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3 Release) ==> 'https://github.com/dotnet/winforms-datavisualization' ('release/3.0')
+  - Id: e5515acd-3d5e-4af4-98e5-08d6e52cce5b
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3 Release) ==> 'https://github.com/dotnet/winforms' ('release/3.0')
+  - Id: 29783264-f590-4461-a609-08d72585697b
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/winforms' ('release/3.1')
+  - Id: 4fa59404-cc5b-4313-dd47-08d72a4caef5
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3 Release) ==> 'https://github.com/dotnet/wpf' ('release/3.0')
+  - Id: acbc5f33-ff41-488a-1647-08d6c4e9a7a0
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/core-setup (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/wpf' ('release/3.1')
+  - Id: 7b6564c4-d590-4981-5c70-08d72a4d3f20
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "Comment requirements",
+                         "Minimum number of reviewers",
+                         "Required reviewers"
+                       ]
+https://github.com/dotnet/efcore (.NET Core 5 Dev) ==> 'https://github.com/dotnet/aspnetcore' ('master')
+  - Id: ccafa991-4408-48df-d45d-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/efcore (.NET Core 3 Release) ==> 'https://github.com/dotnet/aspnetcore' ('release/3.0')
+  - Id: b64a4edb-4748-41a6-fb10-08d794a352c5
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/efcore (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/aspnetcore' ('release/3.1')
+  - Id: 94910a9f-24ae-4376-fb11-08d794a352c5
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/extensions (.NET Core 5 Dev) ==> 'https://github.com/dotnet/aspnetcore-tooling' ('master')
+  - Id: 19ed8901-76aa-497e-fb12-08d794a352c5
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/extensions (.NET Core 3 Release) ==> 'https://github.com/dotnet/aspnetcore-tooling' ('release/3.0')
+  - Id: c7604e92-c84d-4ba9-d45e-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/extensions (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/aspnetcore-tooling' ('release/3.1')
+  - Id: 47f035f7-5046-4b5e-5775-08d76e1d56cb
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/extensions (.NET Core 5 Dev) ==> 'https://github.com/dotnet/efcore' ('master')
+  - Id: 67011f27-9c01-4a29-e8fd-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/extensions (.NET Core 3 Release) ==> 'https://github.com/dotnet/efcore' ('release/3.0')
+  - Id: 0161f718-948d-4316-e8fb-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/extensions (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/efcore' ('release/3.1')
+  - Id: 1a25ac6c-1416-416e-e8fc-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/fsharp (.NET Core 5 Dev) ==> 'https://github.com/dotnet/toolset' ('master')
+  - Id: 7b530cc0-dd32-439d-d87a-08d675c60325
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/fsharp (.NET Core SDK 3.0.1xx) ==> 'https://github.com/dotnet/toolset' ('release/3.0.1xx')
+  - Id: aa2b0d7d-fa5f-460f-0d49-08d6910cd73b
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/fsharp (.NET Core SDK 3.1.1xx) ==> 'https://github.com/dotnet/toolset' ('release/3.1.1xx')
+  - Id: a9b13310-7a4e-4bc0-b39d-08d727dac64c
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/fsharp (.NET Core SDK 3.1.2xx) ==> 'https://github.com/dotnet/toolset' ('release/3.1.2xx')
+  - Id: 76cbc3ef-212a-48a6-c5db-08d76fa9c820
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/roslyn (.NET Core SDK 3.1.2xx) ==> 'https://github.com/dotnet/arcade' ('master')
+  - Id: 66fc1064-4558-413c-5770-08d76e1d56cb
+  - Update Frequency: EveryWeek
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+https://github.com/dotnet/roslyn (.NET Core SDK 3.1.2xx) ==> 'https://github.com/dotnet/extensions' ('master')
+  - Id: d9874afa-852c-4c5b-12f8-08d795579ebc
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/roslyn (.NET Core 3 Release) ==> 'https://github.com/dotnet/extensions' ('release/3.0')
+  - Id: 2dffef52-2dbb-409e-b252-08d79557a113
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/roslyn (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/extensions' ('release/3.1')
+  - Id: cedc2496-8ed9-49ba-e1e8-08d79559e508
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/roslyn (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/format' ('master')
+  - Id: 75ef12aa-ae94-4b2b-50dd-08d6c516cc75
+  - Update Frequency: EveryDay
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/roslyn (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/roslyn-tools' ('master')
+  - Id: a3f8beb8-2088-4ed5-e5ca-08d7632257cc
+  - Update Frequency: EveryDay
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/roslyn (.NET Core SDK 3.1.2xx) ==> 'https://github.com/dotnet/toolset' ('master')
+  - Id: 69498adc-eb61-4d4a-8c42-08d66611bea4
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/roslyn (.NET Core SDK 3.0.1xx) ==> 'https://github.com/dotnet/toolset' ('release/3.0.1xx')
+  - Id: 2b5e9ea9-5b87-41f4-b4e6-08d6910bdae0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/roslyn (.NET Core SDK 3.1.1xx) ==> 'https://github.com/dotnet/toolset' ('release/3.1.1xx')
+  - Id: 6b279798-977c-4ac9-9ed2-08d727da83e4
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/roslyn (.NET Core SDK 3.1.2xx) ==> 'https://github.com/dotnet/toolset' ('release/3.1.2xx')
+  - Id: 90cf17e4-77f1-48ac-576a-08d76e1d56cb
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/roslyn (.NET Core 3 Release) ==> 'https://github.com/mono/mono' ('master')
+  - Id: e7ac0377-4e2a-4e11-2ba8-08d737b9a02c
+  - Update Frequency: EveryDay
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies: []
+https://github.com/dotnet/runtime-assets (.NET Core 5 Dev) ==> 'https://github.com/dotnet/runtime' ('master')
+  - Id: 667d63c7-a2fc-425c-9020-08d76d41c6c3
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/runtime (.NET Core 5 Dev) ==> 'https://github.com/dotnet/core-sdk' ('master')
+  - Id: e3d3a626-5ff8-4f4b-576d-08d76e1d56cb
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/runtime (.NET Core 5 Dev) ==> 'https://github.com/dotnet/diagnostics' ('master')
+  - Id: 644ad545-d4a4-4952-d433-08d76e1d3434
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/runtime (.NET Core 5 Dev) ==> 'https://github.com/dotnet/ef6' ('master')
+  - Id: 9e51514d-a37b-46b2-d464-08d76e1d3434
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/runtime (.NET Core 5 Dev) ==> 'https://github.com/dotnet/extensions' ('master')
+  - Id: 8542892c-8237-4ac0-12f9-08d795579ebc
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/runtime (.NET Core 5 Dev) ==> 'https://github.com/dotnet/sdk' ('master')
+  - Id: ea219f43-0754-4d2f-576e-08d76e1d56cb
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/runtime (.NET Core 5 Dev) ==> 'https://github.com/dotnet/toolset' ('master')
+  - Id: 3179675e-1a6b-4dcc-e8f2-08d76e1cf1e0
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/runtime (.NET Core 5 Dev) ==> 'https://github.com/dotnet/windowsdesktop' ('master')
+  - Id: c5bbb292-7ad2-47d7-c438-08d7842cb27f
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/runtime (.NET Core 5 Dev) ==> 'https://github.com/dotnet/winforms' ('master')
+  - Id: be4b0f38-c1d5-43ab-c5d9-08d76fa9c820
+  - Update Frequency: EveryDay
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/runtime (.NET Core 5 Dev) ==> 'https://github.com/dotnet/wpf' ('master')
+  - Id: 726dd57c-0df2-4e12-d45a-08d76e1d3434
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/sdk (.NET Core SDK 3.0.1xx) ==> 'https://github.com/dotnet/cli' ('release/3.0.1xx')
+  - Id: fa87930c-8514-45a1-0d47-08d6910cd73b
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/sdk (.NET Core SDK 3.1.1xx) ==> 'https://github.com/dotnet/cli' ('release/3.1.1xx')
+  - Id: 3731cb06-cbf9-46bf-a883-08d7219800a1
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/sdk (.NET Core SDK 3.1.2xx) ==> 'https://github.com/dotnet/cli' ('release/3.1.2xx')
+  - Id: bdd984ca-7112-4d1b-d452-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/sdk (.NET Core 5 Dev) ==> 'https://github.com/dotnet/core-sdk' ('master')
+  - Id: 159742c7-68eb-456f-1649-08d6c4e9a7a0
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/sdk (.NET Core SDK 3.0.1xx) ==> 'https://github.com/dotnet/core-sdk' ('release/3.0.1xx')
+  - Id: ab36c2ca-ef0c-41c0-924a-08d6c732a216
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/sdk (.NET Core 5 Dev) ==> 'https://github.com/dotnet/toolset' ('master')
+  - Id: 7cbe072c-f03f-44f1-929d-08d66611c98b
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/sdk (.NET Core SDK 3.0.1xx) ==> 'https://github.com/dotnet/toolset' ('release/3.0.1xx')
+  - Id: cc17d4db-fe8e-448d-b4e7-08d6910bdae0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/sdk (.NET Core SDK 3.1.1xx) ==> 'https://github.com/dotnet/toolset' ('release/3.1.1xx')
+  - Id: 7d563fe1-435e-46da-a60e-08d72585697b
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/sdk (.NET Core SDK 3.1.2xx) ==> 'https://github.com/dotnet/toolset' ('release/3.1.2xx')
+  - Id: 946214a5-c0cf-435a-901a-08d76d41c6c3
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/source-build-reference-packages (.NET Core 3 Release) ==> 'https://github.com/dotnet/source-build' ('release/3.0')
+  - Id: 9bb4e621-18e3-4ecf-6305-08d6bc51899c
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/source-build-reference-packages (.NET Core 3 Release) ==> 'https://github.com/dotnet/source-build' ('release/3.1')
+  - Id: ffed26db-8d20-4537-d43e-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/sourcelink (.NET Core Tooling Dev) ==> 'https://github.com/dotnet/arcade' ('master')
+  - Id: 823d4a51-6bca-4bd9-e8f3-08d76e1cf1e0
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/standard (.NET Core 3 Release) ==> 'https://github.com/dotnet/corefx' ('release/3.0')
+  - Id: c090f591-8433-4a8c-54c8-08d6c734018a
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/standard (.NET Core 3 Release) ==> 'https://github.com/dotnet/corefx' ('release/3.1')
+  - Id: 0098719e-62fd-45c8-cd5b-08d72a4d12e0
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/standard (.NET Core 3 Release) ==> 'https://github.com/dotnet/core-setup' ('release/3.0')
+  - Id: ab3e7877-80c8-433e-94d8-08d690bc143a
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/standard (.NET Core 3 Release) ==> 'https://github.com/dotnet/core-setup' ('release/3.1')
+  - Id: 7e705450-d301-4163-cd5c-08d72a4d12e0
+  - Update Frequency: None
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/standard (.NET Core 5 Dev) ==> 'https://github.com/dotnet/runtime' ('master')
+  - Id: f73e26ec-b945-409b-5f3e-08d76320ad3a
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/symreader-converter (.NET Eng - Latest) ==> 'https://github.com/dotnet/arcade' ('master')
+  - Id: 68bb8bfb-d15e-4fbc-e8f4-08d76e1cf1e0
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/templating (.NET Core 3 Release) ==> 'https://github.com/dotnet/cli' ('release/3.0.1xx')
+  - Id: d4b89351-e138-4a22-94d9-08d690bc143a
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/templating (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/cli' ('release/3.1.1xx')
+  - Id: 2f46839f-4f80-4d33-eeee-08d727dab80f
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/templating (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/cli' ('release/3.1.2xx')
+  - Id: 2edc82a1-19d9-431c-901b-08d76d41c6c3
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/templating (.NET Core 5 Dev) ==> 'https://github.com/dotnet/core-sdk' ('master')
+  - Id: 6ce8fa21-8cba-44fe-bf16-08d671b3a99a
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/templating (.NET Core 3 Release) ==> 'https://github.com/dotnet/core-sdk' ('release/3.0.1xx')
+  - Id: 33329146-0738-4fb8-2811-08d690bc5860
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/templating (.NET Core 5 Dev) ==> 'https://github.com/dotnet/toolset' ('master')
+  - Id: 58fd0ef4-3fbe-4e26-d8e7-08d7530af6cf
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/test-templates (.NET Core 5 Dev) ==> 'https://github.com/dotnet/core-sdk' ('master')
+  - Id: a658a40f-baf4-42e7-94dc-08d683091c7c
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/test-templates (.NET Core 3 Release) ==> 'https://github.com/dotnet/core-sdk' ('release/3.0.1xx')
+  - Id: 2fb6d4f8-61cf-4278-94da-08d690bc143a
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/test-templates (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/core-sdk' ('release/3.1.1xx')
+  - Id: 8453c12c-4861-4df6-eef1-08d727dab80f
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/test-templates (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/core-sdk' ('release/3.1.2xx')
+  - Id: 97288c59-01f5-4215-e8e6-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/toolset (.NET Core 5 Dev) ==> 'https://github.com/dotnet/core-sdk' ('master')
+  - Id: 7bfd2e5d-8f3f-48b5-3da6-08d6ba11e0be
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/toolset (.NET Core SDK 3.0.1xx) ==> 'https://github.com/dotnet/core-sdk' ('release/3.0.1xx')
+  - Id: 67669cc0-5152-4ecb-b4e8-08d6910bdae0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/toolset (.NET Core SDK 3.1.1xx) ==> 'https://github.com/dotnet/core-sdk' ('release/3.1.1xx')
+  - Id: 57a7c976-9ea1-4a21-a884-08d7219800a1
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/toolset (.NET Core SDK 3.1.2xx) ==> 'https://github.com/dotnet/core-sdk' ('release/3.1.2xx')
+  - Id: a6eec3b3-43c1-4069-d44e-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/toolset (.NET Core SDK 3.1.2xx) ==> 'https://github.com/mono/msbuild' ('mono-2019-10')
+  - Id: b5baa598-333e-4480-e8ef-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = []
+https://github.com/dotnet/toolset (.NET Core SDK 3.1.2xx) ==> 'https://github.com/mono/msbuild' ('xplat-master')
+  - Id: 68bffa34-7cc2-4ef2-e8f0-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = []
+https://github.com/dotnet/wcf (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/core-sdk' ('release/3.1.1xx')
+  - Id: 144c8f30-ea6f-4762-d709-08d7530b526c
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/windowsdesktop (.NET Core 5 Dev) ==> 'https://github.com/dotnet/core-sdk' ('master')
+  - Id: c861aaaa-6c45-411d-0f5f-08d7476aa929
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/windowsdesktop (.NET Core 5 Dev) ==> 'https://github.com/dotnet/toolset' ('master')
+  - Id: 3e3df076-f869-4364-5088-08d7530d0dd2
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/winforms (.NET Core 5 Dev) ==> 'https://github.com/dotnet/wpf' ('master')
+  - Id: 256c8be3-de58-46f5-d219-08d6ba11f126
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/dotnet/winforms (.NET Core 3 Release) ==> 'https://github.com/dotnet/wpf' ('release/3.0')
+  - Id: 07c1f64b-2232-48be-3da4-08d6ba11e0be
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/winforms (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/wpf' ('release/3.1')
+  - Id: fd5f4619-cca3-4e12-8f56-08d72a4ce301
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/wpf (.NET Core 5 Dev) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int' ('master')
+  - Id: 76124aca-dbee-4c08-4bb5-08d6ba1bb9b1
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "Comment requirements",
+                         "Minimum number of reviewers",
+                         "Required reviewers"
+                       ]
+https://github.com/dotnet/wpf (.NET Core 3 Release) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int' ('release/3.0')
+  - Id: e250ccb1-cd0e-4d3a-d21a-08d6ba11f126
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "Comment requirements",
+                         "Minimum number of reviewers",
+                         "Required reviewers"
+                       ]
+https://github.com/dotnet/wpf (.NET Core 3.1 Release) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-int' ('release/3.1')
+  - Id: 51c6eefc-0223-457a-b70f-08d7368af630
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "Comment requirements",
+                         "Minimum number of reviewers",
+                         "Required reviewers"
+                       ]
+https://github.com/dotnet/wpf (.NET Core 3 Release) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-wpf-test' ('release/3.0')
+  - Id: 68025061-e4a4-4de7-7361-08d737b9d9d5
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/dotnet/xliff-tasks (.NET Eng - Latest) ==> 'https://github.com/dotnet/arcade' ('master')
+  - Id: eefe7cb7-dbcd-49b1-e8f5-08d76e1cf1e0
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/Microsoft/msbuild (.NET Core 5 Dev) ==> 'https://github.com/dotnet/toolset' ('master')
+  - Id: 8964347d-0608-41ab-d879-08d675c60325
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/microsoft/msbuild (.NET Core SDK 3.0.1xx) ==> 'https://github.com/dotnet/toolset' ('release/3.0.1xx')
+  - Id: bfea4684-4acf-4fc1-f8ef-08d6910be5f1
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/microsoft/msbuild (.NET Core SDK 3.1.1xx) ==> 'https://github.com/dotnet/toolset' ('release/3.1.1xx')
+  - Id: 76b6e447-5963-40e9-b39e-08d727dac64c
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/Microsoft/msbuild (.NET Core SDK 3.1.2xx) ==> 'https://github.com/dotnet/toolset' ('release/3.1.2xx')
+  - Id: 36f18ca4-6da3-4ee4-e8e4-08d76e1cf1e0
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/Microsoft/vstest (.NET Core Tooling Dev) ==> 'https://github.com/dotnet/runtime' ('master')
+  - Id: 290ec264-66d2-456a-879f-08d75d523bc9
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/Microsoft/vstest (.NET Core 5 Dev) ==> 'https://github.com/dotnet/toolset' ('master')
+  - Id: 39885103-d51e-48ac-0730-08d675c684c9
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/microsoft/vstest (.NET Core 3 Release) ==> 'https://github.com/dotnet/toolset' ('release/3.0.1xx')
+  - Id: 4be36948-e631-40b6-b4ea-08d6910bdae0
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/microsoft/vstest (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/toolset' ('release/3.1.1xx')
+  - Id: 7f4ae8c0-90ce-42b2-b39f-08d727dac64c
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/mono/linker (.NET Core 5 Dev) ==> 'https://github.com/dotnet/runtime' ('master')
+  - Id: bcca1ed9-0939-490e-f02f-08d75d5208ed
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: True
+  - Merge Policies:
+    Standard
+https://github.com/mono/linker (.NET Core 5 Dev) ==> 'https://github.com/dotnet/toolset' ('master')
+  - Id: 7fc899d3-4abb-4e0d-b315-08d6bdffe024
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/mono/linker (.NET Core 3 Release) ==> 'https://github.com/dotnet/toolset' ('release/3.0.1xx')
+  - Id: 3013901c-3f64-4351-50e3-08d6c516cc75
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/mono/linker (.NET Core 3.1 Release) ==> 'https://github.com/dotnet/toolset' ('release/3.1.1xx')
+  - Id: 6d572f8e-fb21-4c22-eef0-08d727dab80f
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/nuget/nuget.client (.NET Core SDK 3.0.1xx) ==> 'https://github.com/dotnet/cli' ('release/3.0.1xx')
+  - Id: 7d6fa2f4-b9c4-4071-7865-08d72198640e
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/nuget/nuget.client (.NET Core SDK 3.1.1xx) ==> 'https://github.com/dotnet/cli' ('release/3.1.1xx')
+  - Id: 1b614b5a-9a27-47ab-b39c-08d727dac64c
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/nuget/nuget.client (.NET Core SDK 3.1.2xx) ==> 'https://github.com/dotnet/cli' ('release/3.1.2xx')
+  - Id: 3c9d65bb-d2bc-4c69-c5d7-08d76fa9c820
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/nuget/nuget.client (.NET Core 5 Dev) ==> 'https://github.com/dotnet/sdk' ('master')
+  - Id: be39118f-8347-4151-a885-08d7219800a1
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = []
+https://github.com/nuget/nuget.client (.NET Core SDK 3.0.1xx) ==> 'https://github.com/dotnet/sdk' ('release/3.0.1xx')
+  - Id: eafa42d7-9e65-4d0e-b5a3-08d7219835fd
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/nuget/nuget.client (.NET Core SDK 3.1.1xx) ==> 'https://github.com/dotnet/sdk' ('release/3.1.1xx')
+  - Id: a8f6ab0e-8160-45b8-5027-08d727dabd66
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/nuget/nuget.client (.NET Core SDK 3.1.2xx) ==> 'https://github.com/dotnet/sdk' ('release/3.1.2xx')
+  - Id: 84c11fd7-408f-4ada-5766-08d76e1d56cb
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/nuget/nuget.client (.NET Core 5 Dev) ==> 'https://github.com/dotnet/toolset' ('master')
+  - Id: 8e945da1-acb5-4775-8c43-08d66611bea4
+  - Update Frequency: EveryDay
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    AllChecksSuccessful
+      ignoreChecks = 
+                       [
+                         "WIP",
+                         "license/cla"
+                       ]
+https://github.com/nuget/nuget.client (.NET Core SDK 3.0.1xx) ==> 'https://github.com/dotnet/toolset' ('release/3.0.1xx')
+  - Id: 1ffcc88a-b02a-4b5a-2812-08d690bc5860
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/nuget/nuget.client (.NET Core SDK 3.1.1xx) ==> 'https://github.com/dotnet/toolset' ('release/3.1.1xx')
+  - Id: f4855845-f9f8-4b3e-9ed3-08d727da83e4
+  - Update Frequency: EveryBuild
+  - Enabled: False
+  - Batchable: False
+  - Merge Policies:
+    Standard
+https://github.com/nuget/nuget.client (.NET Core SDK 3.1.2xx) ==> 'https://github.com/dotnet/toolset' ('release/3.1.2xx')
+  - Id: 0dbe9f52-22e4-496c-d450-08d76e1d3434
+  - Update Frequency: EveryBuild
+  - Enabled: True
+  - Batchable: False
+  - Merge Policies:
+    Standard
