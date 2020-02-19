@@ -8,13 +8,30 @@ namespace DarcUI
 {
     public class SubscriptionRetriever
     {
-        public Task<string> GetSubscriptions()
+        public Task<string> GetSubscriptionsAsync(bool forceReload)
         {
             return Task.Run(() =>
             {
+                string output;
+
+                var path = Path.Combine(Path.GetFullPath("."), "darc-get-subscriptions.cache");
+                if (!forceReload && File.Exists(path))
+                {
+                    output = File.ReadAllText(path);
+                    if (!string.IsNullOrWhiteSpace(output))
+                    {
+                        return output;
+                    }
+                }
+
                 var executable = new Executable("darc");
-                //var output = executable.GetOutput("get-subscriptions");
-                var output = File.ReadAllText(@"C:\Development\DarcUI\examples\get-subscriptions.txt");
+                output = executable.GetOutput("get-subscriptions");
+                if (!string.IsNullOrWhiteSpace(output))
+                {
+                    File.WriteAllText(path, output);
+                }
+
+                //var output = File.ReadAllText(@"C:\Development\DarcUI\examples\get-subscriptions.txt");
 
                 //            var output = @"
                 //https://dev.azure.com/dnceng/internal/_git/aspnet-websdk (.NET Core SDK 3.0.1xx Internal) ==> 'https://dev.azure.com/dnceng/internal/_git/dotnet-toolset' ('internal/release/3.0.1xx')

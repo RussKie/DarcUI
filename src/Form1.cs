@@ -29,7 +29,7 @@ namespace DarcUI
 
             treeView1.ImageList = _imageList;
 
-            BindSubscriptions();
+            BindSubscriptions(forceReload: false);
         }
 
         private void ResetControls()
@@ -39,17 +39,17 @@ namespace DarcUI
 
         private void tsbtnRefresh_Click(object sender, EventArgs e)
         {
-            BindSubscriptions();
+            BindSubscriptions(forceReload: true);
         }
 
-        private void BindSubscriptions()
+        private void BindSubscriptions(bool forceReload)
         {
             try
             {
                 treeView1.BeginUpdate();
                 ResetControls();
 
-                var output = ThreadHelper.JoinableTaskFactory.Run(s_subscriptionsRetriever.GetSubscriptions);
+                var output = ThreadHelper.JoinableTaskFactory.Run(() => s_subscriptionsRetriever.GetSubscriptionsAsync(forceReload));
                 if (string.IsNullOrWhiteSpace(output))
                 {
                     return;
@@ -139,6 +139,7 @@ namespace DarcUI
                                 {
                                     targetBranchNode.ForeColor = SystemColors.GrayText;
                                 }
+
                                 targetBranchNode.ImageIndex = targetBranchNode.SelectedImageIndex = 3;
                                 targetBranchNode.Tag = subscription;
                             }
@@ -156,7 +157,7 @@ namespace DarcUI
             }
 
             _groupByOption = GroupByOption.ChannelSourceRepoBranch;
-            BindSubscriptions();
+            BindSubscriptions(forceReload: false);
 
             // TODO:
             groupByOption1.Checked = _groupByOption == GroupByOption.ChannelSourceRepoBranch;
@@ -170,8 +171,8 @@ namespace DarcUI
                 return;
             }
 
-            BindSubscriptions();
             _groupByOption = GroupByOption.RepoBranchChannelSource;
+            BindSubscriptions(forceReload: false);
 
             // TODO:
             groupByOption1.Checked = _groupByOption == GroupByOption.ChannelSourceRepoBranch;
