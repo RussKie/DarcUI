@@ -3,12 +3,14 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace DarcUI
 {
     public class SubscriptionsParser
     {
         private static readonly char[] s_TokenHttps = "https".ToCharArray();
+        private static readonly char[] s_TokenDotnet = "dotnet".ToCharArray();
         private static readonly char[] s_TokenArrow = " ==> ".ToCharArray();
         private static readonly char[] s_TokenId = "  - Id: ".ToCharArray();
         private static readonly char[] s_TokenUpdateFrequency = "  - Update Frequency: ".ToCharArray();
@@ -36,7 +38,15 @@ namespace DarcUI
 
                     //Debug.WriteLine(line.ToString());
 
-                    if (line.StartsWith(s_TokenHttps))
+                    if (subscription == null && !IsBlockMarker(line))
+                    {
+                        // ignore any changes we don't know how to parse, otherwise we'll render the app unusable
+                        Debug.WriteLine(line.ToString());
+                        start += offset;
+                        continue;
+                    }
+
+                    if (IsBlockMarker(line))
                     {
                         subscription = new Subscription();
                         list.Add(subscription);
@@ -69,11 +79,11 @@ namespace DarcUI
                     }
                     else if (line.StartsWith(s_TokenEnabled))
                     {
-                        subscription.Enabled = GetBool(subscription, line, s_TokenEnabled.Length);
+                        subscription.Enabled = GetBool(line, s_TokenEnabled.Length);
                     }
                     else if (line.StartsWith(s_TokenBatchable))
                     {
-                        subscription.Batchable = GetBool(subscription, line, s_TokenBatchable.Length);
+                        subscription.Batchable = GetBool(line, s_TokenBatchable.Length);
                     }
 
                     if (offset < 0)
@@ -116,15 +126,18 @@ namespace DarcUI
                 return globalSpan.Slice(startPosition, lineLength + 1);
             }
 
-            bool GetBool(Subscription currentSubscription, in ReadOnlySpan<char> globalSpan, int startPosition)
+            bool GetBool(in ReadOnlySpan<char> locallSpan, int startPosition)
             {
-                if (currentSubscription == null)
-                {
+                return bool.Parse(locallSpan.Slice(startPosition).ToString());
+            }
+            {
                     // TODO: provide a better exception
                     throw new NullReferenceException("Subscription is null");
-                }
+            }
 
-                return bool.Parse(globalSpan.Slice(startPosition).ToString());
+            bool IsBlockMarker(in ReadOnlySpan<char> locallSpan)
+            {
+                return locallSpan.StartsWith(s_TokenHttps) || locallSpan.StartsWith(s_TokenDotnet);
             }
         }
     }
