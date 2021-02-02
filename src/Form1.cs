@@ -53,27 +53,29 @@ namespace DarcUI
 
             ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
             {
-                await TaskScheduler.Default;
-
-                var output = await s_subscriptionsRetriever.GetSubscriptionsAsync(forceReload);
-                if (string.IsNullOrWhiteSpace(output))
-                {
-                    s_subscriptions = null;
-                }
-                else
-                {
-                    s_subscriptions = s_subscriptionsParser.Parse(output);
-                }
-
-                await this.SwitchToMainThreadAsync();
-
                 try
                 {
+                    await TaskScheduler.Default;
+
+                    var output = await s_subscriptionsRetriever.GetSubscriptionsAsync(forceReload);
+                    if (string.IsNullOrWhiteSpace(output))
+                    {
+                        s_subscriptions = null;
+                    }
+                    else
+                    {
+                        s_subscriptions = s_subscriptionsParser.Parse(output);
+                    }
+
+                    await this.SwitchToMainThreadAsync();
+
                     treeView1.BeginUpdate();
                     BindSubscriptions(treeView1, s_subscriptions, _groupByOption);
                 }
                 finally
                 {
+                    await this.SwitchToMainThreadAsync();
+
                     ShowSpinner(visible: false);
                     treeView1.EndUpdate();
                     tsbtnRefresh.Enabled = true;
