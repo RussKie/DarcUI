@@ -49,7 +49,8 @@ namespace DarcUI
         {
             tsbtnRefresh.Enabled = false;
             treeView1.Nodes.Clear();
-            ShowSpinner(visible: true);
+            propertyGrid1.SelectedObject = null;
+            ShowSpinner(visible: true, hostControl: treeView1);
 
             ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
             {
@@ -173,7 +174,7 @@ namespace DarcUI
             }
         }
 
-        private void ShowSpinner(bool visible)
+        private void ShowSpinner(bool visible, Control? hostControl = null)
         {
             if (!visible)
             {
@@ -181,7 +182,11 @@ namespace DarcUI
                 return;
             }
 
-            _waitSpinner.Location = new Point(treeView1.Left + (treeView1.Width - _waitSpinner.Width) / 2, treeView1.Top + (treeView1.Height - _waitSpinner.Height) / 2);
+            // If no specific control provided, show the spinner in the middle of the form
+            hostControl ??= this;
+
+            _waitSpinner.Location = new Point(hostControl.Left + (hostControl.Width - _waitSpinner.Width) / 2, 
+                                              hostControl.Top + (hostControl.Height - _waitSpinner.Height) / 2);
             Controls.Add(_waitSpinner);
             _waitSpinner.BringToFront();
         }
@@ -217,7 +222,33 @@ namespace DarcUI
 
         private void propertyGrid1_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
-            s_subscriptionUpdater.UpdateSubscriptionAsync(((PropertyGrid)s).SelectedObject as Subscription, e.ChangedItem.Label);
+            Subscription? subscription = propertyGrid1.SelectedObject as Subscription;
+            if (subscription is null)
+            {
+                return;
+            }
+
+            tsbtnRefresh.Enabled = false;
+            tabControl.Enabled = false;
+            ShowSpinner(visible: true, hostControl: propertyGrid1);
+
+            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            {
+                try
+                {
+                    await TaskScheduler.Default;
+
+                    await s_subscriptionUpdater.UpdateSubscriptionAsync(subscription, e.ChangedItem.Label);
+                }
+                finally
+                {
+                    await this.SwitchToMainThreadAsync();
+
+                    ShowSpinner(visible: false);
+                    tabControl.Enabled = true;
+                    tsbtnRefresh.Enabled = true;
+                }
+            }).FileAndForget();
         }
 
         private void tsbtnRefresh_Click(object sender, EventArgs e)

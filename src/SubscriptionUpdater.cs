@@ -8,11 +8,11 @@ namespace DarcUI
 {
     public class SubscriptionUpdater
     {
-        public Task<string?> UpdateSubscriptionAsync(Subscription? subscription, string propertyName)
+        public Task<string?> UpdateSubscriptionAsync(Subscription subscription, string propertyName)
         {
             return Task.Run(() =>
             {
-                if (subscription is not null && propertyName == nameof(Subscription.Enabled))
+                if (propertyName == nameof(Subscription.Enabled))
                 {
                     return ToggleSubscription(subscription);
                 }
@@ -28,7 +28,7 @@ namespace DarcUI
             string status = subscription.Enabled ? "--enable" : "--disable";
 
             var executable = new Executable("darc");
-            output = executable.GetOutput($"subscription-status --id {subscription.Id} {status}");
+            output = executable.GetOutput($"subscription-status --id {subscription.Id} {status} --quiet");
 
             return output;
         }
