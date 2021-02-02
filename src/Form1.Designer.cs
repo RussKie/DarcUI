@@ -121,7 +121,7 @@
             // 
             // tsbtnRefresh
             // 
-            this.tsbtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnRefresh.Image")));
+            this.tsbtnRefresh.Image = global::DarcUI.Properties.Resources.refresh;
             this.tsbtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnRefresh.Name = "tsbtnRefresh";
             this.tsbtnRefresh.Size = new System.Drawing.Size(66, 22);
