@@ -175,7 +175,7 @@
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(8, 0, 8, 8);
-            this.Text = "Form2";
+            this.Text = "Darc UI";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabPageSubscriptions.ResumeLayout(false);
