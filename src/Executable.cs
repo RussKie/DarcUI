@@ -28,7 +28,7 @@ namespace DarcUI
         }
 
         /// <inheritdoc />
-        public IProcess Start(string arguments = default, bool createWindow = false, bool redirectInput = false, bool redirectOutput = false)
+        public IProcess Start(string? arguments = default, bool createWindow = false, bool redirectInput = false, bool redirectOutput = false)
         {
             var fileName = _fileNameProvider();
 
@@ -67,7 +67,7 @@ namespace DarcUI
             string outputString = "";
             if (output != null && output.Length > 0)
             {
-                Stream ms = null;
+                Stream? ms = null;
                 try
                 {
                     ms = new MemoryStream(output);
@@ -90,10 +90,10 @@ namespace DarcUI
                 outputString = outputString + Environment.NewLine;
             }
 
-            string errorString = null;
+            string? errorString = null;
             if (error != null && error.Length > 0)
             {
-                Stream ms = null;
+                Stream? ms = null;
                 try
                 {
                     ms = new MemoryStream(error);
@@ -137,7 +137,7 @@ namespace DarcUI
 
             private bool _disposed;
 
-            public ProcessWrapper(string fileName, string arguments, string workDir, bool createWindow, bool redirectInput, bool redirectOutput)
+            public ProcessWrapper(string fileName, string? arguments, string workDir, bool createWindow, bool redirectInput, bool redirectOutput)
             {
                 _redirectInput = redirectInput;
                 _redirectOutput = redirectOutput;
@@ -154,7 +154,7 @@ namespace DarcUI
                         RedirectStandardOutput = redirectOutput,
                         RedirectStandardError = redirectOutput,
                         FileName = fileName,
-                        Arguments = arguments,
+                        Arguments = arguments ?? string.Empty,
                         WorkingDirectory = workDir
                     }
                 };
@@ -164,7 +164,7 @@ namespace DarcUI
                 _process.Start();
             }
 
-            private void OnProcessExit(object sender, EventArgs eventArgs)
+            private void OnProcessExit(object? sender, EventArgs eventArgs)
             {
                 lock (_syncRoot)
                 {

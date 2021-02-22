@@ -23,40 +23,40 @@ namespace DarcUI
         private const int RPC_E_WRONG_THREAD = unchecked((int)0x8001010E);
 #pragma warning restore SA1139 // Use literal suffix notation instead of casting
 
-        private static JoinableTaskContext _joinableTaskContext;
-        private static JoinableTaskCollection _joinableTaskCollection;
-        private static JoinableTaskFactory _joinableTaskFactory;
+        private static JoinableTaskContext s_joinableTaskContext = null!;
+        private static JoinableTaskCollection s_joinableTaskCollection = null!;
+        private static JoinableTaskFactory s_joinableTaskFactory = null!;
 
         public static JoinableTaskContext JoinableTaskContext
         {
             get
             {
-                return _joinableTaskContext;
+                return s_joinableTaskContext;
             }
 
             internal set
             {
-                if (value == _joinableTaskContext)
+                if (value == s_joinableTaskContext)
                 {
                     return;
                 }
 
-                if (value == null)
+                if (value is null)
                 {
-                    _joinableTaskContext = null;
-                    _joinableTaskCollection = null;
-                    _joinableTaskFactory = null;
+                    s_joinableTaskContext = null!;
+                    s_joinableTaskCollection = null!;
+                    s_joinableTaskFactory = null!;
                 }
                 else
                 {
-                    _joinableTaskContext = value;
-                    _joinableTaskCollection = value.CreateCollection();
-                    _joinableTaskFactory = value.CreateFactory(_joinableTaskCollection);
+                    s_joinableTaskContext = value;
+                    s_joinableTaskCollection = value.CreateCollection();
+                    s_joinableTaskFactory = value.CreateFactory(s_joinableTaskCollection);
                 }
             }
         }
 
-        public static JoinableTaskFactory JoinableTaskFactory => _joinableTaskFactory;
+        public static JoinableTaskFactory JoinableTaskFactory => s_joinableTaskFactory;
 
         public static void ThrowIfNotOnUIThread([CallerMemberName] string callerMemberName = "")
         {
@@ -93,12 +93,12 @@ namespace DarcUI
             }
         }
 
-        public static void FileAndForget(this JoinableTask joinableTask, Func<Exception, bool> fileOnlyIf = null)
+        public static void FileAndForget(this JoinableTask joinableTask, Func<Exception, bool>? fileOnlyIf = null)
         {
             joinableTask.Task.FileAndForget(fileOnlyIf);
         }
 
-        public static void FileAndForget(this Task task, Func<Exception, bool> fileOnlyIf = null)
+        public static void FileAndForget(this Task task, Func<Exception, bool>? fileOnlyIf = null)
         {
             JoinableTaskFactory.RunAsync(
                 async () =>
@@ -121,7 +121,7 @@ namespace DarcUI
 
         public static async Task JoinPendingOperationsAsync(CancellationToken cancellationToken)
         {
-            await _joinableTaskCollection.JoinTillEmptyAsync(cancellationToken);
+            await s_joinableTaskCollection.JoinTillEmptyAsync(cancellationToken);
         }
 
         public static T CompletedResult<T>(this Task<T> task)
@@ -136,7 +136,7 @@ namespace DarcUI
 #pragma warning restore VSTHRD002 // Avoid problematic synchronous waits
         }
 
-        public static T CompletedOrDefault<T>(this Task<T> task)
+        public static T? CompletedOrDefault<T>(this Task<T> task)
         {
             if (!task.IsCompleted)
             {

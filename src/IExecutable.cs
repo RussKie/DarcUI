@@ -23,7 +23,7 @@ namespace DarcUI
         /// <param name="redirectInput">Whether the standard input stream of the process will be written to.</param>
         /// <param name="redirectOutput">Whether the standard output stream of the process will be read from.</param>
         /// <returns>The started process.</returns>
-        IProcess Start(string arguments = default, bool createWindow = false, bool redirectInput = false, bool redirectOutput = false);
+        IProcess Start(string? arguments = default, bool createWindow = false, bool redirectInput = false, bool redirectOutput = false);
 
         /// <summary>
         /// Launches a process for the executable and returns its output.

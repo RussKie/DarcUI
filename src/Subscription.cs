@@ -5,6 +5,7 @@ using System.ComponentModel;
 
 namespace DarcUI
 {
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     public class Subscription
     {
         private const string CategoryDetails = "Details";
@@ -43,4 +44,5 @@ namespace DarcUI
         //[Category(CategoryStatus)]
         //public string[] MergePolicies { get; set; }
     }
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 }

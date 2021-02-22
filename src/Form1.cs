@@ -14,7 +14,7 @@ namespace DarcUI
         private static readonly SubscriptionsParser s_subscriptionsParser = new SubscriptionsParser();
         private static readonly SubscriptionRetriever s_subscriptionsRetriever = new SubscriptionRetriever();
         private static readonly SubscriptionUpdater s_subscriptionUpdater = new SubscriptionUpdater();
-        private static List<Subscription> s_subscriptions;
+        private static List<Subscription>? s_subscriptions;
         private GroupByOption _groupByOption = default;
         private readonly ImageList _imageList = new ImageList();
 
@@ -65,8 +65,13 @@ namespace DarcUI
             }
         }
 
-        private void BindSubscriptions(TreeView treeView, List<Subscription> subscriptions, GroupByOption option)
+        private void BindSubscriptions(TreeView treeView, List<Subscription>? subscriptions, GroupByOption option)
         {
+            if (subscriptions is null)
+            {
+                return;
+            }
+
             switch (option)
             {
                 case GroupByOption.RepoBranchChannelSource:

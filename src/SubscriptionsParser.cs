@@ -30,7 +30,7 @@ namespace DarcUI
             {
                 var span = new ReadOnlySpan<char>(pOutput, length);
                 int start = 0;
-                Subscription subscription = null;
+                Subscription? subscription = null;
                 while (start < length)
                 {
                     int offset = 0;
@@ -69,7 +69,7 @@ namespace DarcUI
                     }
                     else if (line.StartsWith(s_TokenId))
                     {
-                        if (subscription == null)
+                        if (subscription is null)
                         {
                             // TODO: provide a better exception
                             throw new NullReferenceException("Subscription is null");
@@ -79,15 +79,15 @@ namespace DarcUI
                     }
                     else if (line.StartsWith(s_TokenEnabled))
                     {
-                        subscription.Enabled = GetBool(line, s_TokenEnabled.Length);
+                        subscription!.Enabled = GetBool(line, s_TokenEnabled.Length);
                     }
                     else if (line.StartsWith(s_TokenBatchable))
                     {
-                        subscription.Batchable = GetBool(line, s_TokenBatchable.Length);
+                        subscription!.Batchable = GetBool(line, s_TokenBatchable.Length);
                     }
                     else if (line.StartsWith(s_TokenUpdateFrequency))
                     {
-                        subscription.UpdateFrequency = GetEnum<UpdateFrequency>(line, s_TokenUpdateFrequency.Length);
+                        subscription!.UpdateFrequency = GetEnum<UpdateFrequency>(line, s_TokenUpdateFrequency.Length);
                     }
 
                     if (offset < 0)
