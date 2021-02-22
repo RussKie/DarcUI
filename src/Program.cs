@@ -20,6 +20,9 @@ namespace DarcUI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            ThreadHelper.JoinableTaskContext = new JoinableTaskContext();
+
             Application.Run(new Form1());
         }
     }
