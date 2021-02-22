@@ -13,6 +13,7 @@ namespace DarcUI
     {
         private static readonly SubscriptionsParser s_subscriptionsParser = new SubscriptionsParser();
         private static readonly SubscriptionRetriever s_subscriptionsRetriever = new SubscriptionRetriever();
+        private static readonly SubscriptionUpdater s_subscriptionUpdater = new SubscriptionUpdater();
         private static List<Subscription> s_subscriptions;
         private GroupByOption _groupByOption = default;
         private readonly ImageList _imageList = new ImageList();
@@ -179,6 +180,11 @@ namespace DarcUI
             groupByOption2.Checked = _groupByOption == GroupByOption.RepoBranchChannelSource;
         }
 
+        private void propertyGrid1_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
+        {
+            s_subscriptionUpdater.UpdateSubscriptionAsync(((PropertyGrid)s).SelectedObject as Subscription, e.ChangedItem.Label);
+        }
+
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             if (e.Node?.Tag == null)
@@ -191,8 +197,8 @@ namespace DarcUI
 
         private enum GroupByOption
         {
+            RepoBranchChannelSource,
             ChannelSourceRepoBranch,
-            RepoBranchChannelSource
         }
     }
 }
