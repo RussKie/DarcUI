@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO.Packaging;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -15,9 +16,9 @@ namespace DarcUI
 {
     public partial class MainForm : Form
     {
-        private static readonly SubscriptionsParser s_subscriptionsParser = new SubscriptionsParser();
-        private static readonly SubscriptionRetriever s_subscriptionsRetriever = new SubscriptionRetriever();
-        private static readonly SubscriptionUpdater s_subscriptionUpdater = new SubscriptionUpdater();
+        private static readonly SubscriptionsParser s_subscriptionsParser = new();
+        private static readonly SubscriptionRetriever s_subscriptionsRetriever = new();
+        private static readonly SubscriptionManager s_subscriptionManager = new();
         private static List<Subscription>? s_subscriptions;
         private GroupByOption _groupByOption = default;
         private readonly ImageList _imageList = new ImageList();
@@ -111,29 +112,22 @@ namespace DarcUI
             {
                 foreach (IGrouping<string, Subscription> target in subscriptions.GroupBy(s => s.Target).OrderBy(s => s.Key))
                 {
-                    TreeNode targetNode = treeView.Nodes.Add(target.Key);
-                    targetNode.ImageIndex = targetNode.SelectedImageIndex = 1;
+                    TargetTreeNode targetNode = new(target.Key);
+                    treeView.Nodes.Add(targetNode);
 
                     foreach (IGrouping<string, Subscription> targetBranch in target.GroupBy(s => s.TargetBranch).OrderBy(s => s.Key))
                     {
-                        TreeNode targetBranchNode = targetNode.Nodes.Add(targetBranch.Key);
-                        targetBranchNode.ImageIndex = targetBranchNode.SelectedImageIndex = 3;
+                        TargetBranchNode targetBranchNode = new(targetBranch.Key);
+                        targetNode.Nodes.Add(targetBranchNode);
 
                         foreach (IGrouping<string, Subscription> channel in targetBranch.GroupBy(s => s.SourceChannel).OrderBy(s => s.Key))
                         {
-                            TreeNode channelNode = targetBranchNode.Nodes.Add(channel.Key);
-                            channelNode.ImageIndex = channelNode.SelectedImageIndex = 4;
+                            ChannelTreeNode channelNode = new(channel.Key);
+                            targetBranchNode.Nodes.Add(channelNode);
 
                             foreach (Subscription subscription in channel.OrderBy(s => s.Source))
                             {
-                                TreeNode sourceNode = channelNode.Nodes.Add(subscription.Source);
-                                if (!subscription.Enabled)
-                                {
-                                    sourceNode.ForeColor = SystemColors.GrayText;
-                                }
-
-                                sourceNode.ImageIndex = sourceNode.SelectedImageIndex = 2;
-                                sourceNode.Tag = subscription;
+                                channelNode.Nodes.Add(new SourceTreeNode(subscription));
                             }
                         }
                     }
@@ -144,29 +138,22 @@ namespace DarcUI
             {
                 foreach (IGrouping<string, Subscription> channel in subscriptions.GroupBy(s => s.SourceChannel).OrderBy(s => s.Key))
                 {
-                    TreeNode channelNode = treeView.Nodes.Add(channel.Key);
-                    channelNode.ImageIndex = channelNode.SelectedImageIndex = 4;
+                    ChannelTreeNode channelNode = new(channel.Key);
+                    treeView.Nodes.Add(channelNode);
 
                     foreach (IGrouping<string, Subscription> source in channel.GroupBy(s => s.Source).OrderBy(s => s.Key))
                     {
-                        TreeNode sourceNode = channelNode.Nodes.Add(source.Key);
-                        sourceNode.ImageIndex = sourceNode.SelectedImageIndex = 2;
+                        SourceTreeNode sourceNode = new(source.Key);
+                        channelNode.Nodes.Add(sourceNode);
 
                         foreach (IGrouping<string, Subscription> target in source.GroupBy(s => s.Target).OrderBy(s => s.Key))
                         {
-                            TreeNode targetNode = sourceNode.Nodes.Add(target.Key);
-                            targetNode.ImageIndex = targetNode.SelectedImageIndex = 1;
+                            TargetTreeNode targetNode = new(target.Key);
+                            sourceNode.Nodes.Add(targetNode);
 
                             foreach (Subscription subscription in target.OrderBy(s => s.TargetBranch))
                             {
-                                TreeNode targetBranchNode = targetNode.Nodes.Add(subscription.TargetBranch);
-                                if (!subscription.Enabled)
-                                {
-                                    targetBranchNode.ForeColor = SystemColors.GrayText;
-                                }
-
-                                targetBranchNode.ImageIndex = targetBranchNode.SelectedImageIndex = 3;
-                                targetBranchNode.Tag = subscription;
+                                targetNode.Nodes.Add(new TargetBranchNode(subscription));
                             }
                         }
                     }
@@ -237,7 +224,7 @@ namespace DarcUI
                 {
                     await TaskScheduler.Default;
 
-                    await s_subscriptionUpdater.UpdateSubscriptionAsync(subscription, e.ChangedItem.Label);
+                    await s_subscriptionManager.UpdateSubscriptionAsync(subscription, e.ChangedItem.Label);
                 }
                 finally
                 {
@@ -255,14 +242,72 @@ namespace DarcUI
             BindSubscriptions(forceReload: true);
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void propertyGrid1_DeleteClicked(object sender, EventArgs e)
         {
-            if (e.Node?.Tag == null)
+            if (propertyGrid1.SelectedObject is not Subscription subscription)
             {
+                Debug.Fail("How did we get here?");
                 return;
             }
 
-            propertyGrid1.SelectedObject = e.Node.Tag;
+            TaskDialogVerificationCheckBox verificationCheckBox = new("Yes, proceed!");
+
+            var buttonYes = TaskDialogButton.Yes;
+            buttonYes.Enabled = false;
+            verificationCheckBox.CheckedChanged += (s, e) => buttonYes.Enabled = verificationCheckBox.Checked;
+
+            TaskDialogPage page = new()
+            {
+                AllowCancel = false,
+                AllowMinimize = false,
+                Caption = "Are you sure?",
+                Icon = TaskDialogIcon.Warning,
+                SizeToContent = true,
+                Heading = "This subscription will be deleted. Proceed?",
+                Verification = verificationCheckBox,
+            };
+
+            page.Buttons.Add(buttonYes);
+            page.Buttons.Add(TaskDialogButton.No);
+
+            Form owner = Application.OpenForms[0];
+            if (TaskDialog.ShowDialog(owner, page) == TaskDialogButton.Yes)
+            {
+                // perform delete
+                // s_subscriptionManager.Delete(subscription);
+            }
+        }
+
+        private void propertyGrid1_NewClicked(object sender, EventArgs e)
+        {
+            if (treeView1.SelectedNode is ChannelTreeNode channelNode &&
+                channelNode.FirstNode is SourceTreeNode sourceNode &&
+                sourceNode.Tag is Subscription subscription)
+            {
+                // create a new subscription
+                // using form = new CreateSubscription();
+                // form.Context = subscription;
+                // form.ShowDialog(this);
+            }
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if (e.Node?.Tag is not null)
+            {
+                propertyGrid1.SelectedObject = e.Node.Tag;
+
+                propertyGrid1.AllowCreate =
+                    propertyGrid1.AllowDelete = true;
+
+                return;
+            }
+
+            propertyGrid1.SelectedObject = null;
+            propertyGrid1.AllowCreate =
+                propertyGrid1.AllowDelete = false;
+
+            propertyGrid1.AllowCreate = e.Node is ChannelTreeNode && _groupByOption == GroupByOption.RepoBranchChannelSource;
         }
 
         private enum GroupByOption

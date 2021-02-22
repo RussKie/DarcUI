@@ -29,27 +29,38 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.ToolStripMenuItem groupByToolStripMenuItem;
             System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
+            this.propertyGrid1 = new DarcUI.AddRemovePropertyGrid();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.groupByOption1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupByOption2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageSubscriptions = new System.Windows.Forms.TabPage();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbtnRefresh = new System.Windows.Forms.ToolStripButton();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.groupByOption1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupByOption2 = new System.Windows.Forms.ToolStripMenuItem();
             groupByToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.tableLayoutPanel1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageSubscriptions.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupByToolStripMenuItem
+            // 
+            groupByToolStripMenuItem.Enabled = false;
+            groupByToolStripMenuItem.Name = "groupByToolStripMenuItem";
+            groupByToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            groupByToolStripMenuItem.Text = "Group by";
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new System.Drawing.Size(257, 6);
             // 
             // tableLayoutPanel1
             // 
@@ -74,6 +85,8 @@
             this.propertyGrid1.Name = "propertyGrid1";
             this.propertyGrid1.Size = new System.Drawing.Size(363, 445);
             this.propertyGrid1.TabIndex = 2;
+            this.propertyGrid1.NewClicked += new System.EventHandler(this.propertyGrid1_NewClicked);
+            this.propertyGrid1.DeleteClicked += new System.EventHandler(this.propertyGrid1_DeleteClicked);
             this.propertyGrid1.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.propertyGrid1_PropertyValueChanged);
             // 
             // treeView1
@@ -86,6 +99,32 @@
             this.treeView1.Size = new System.Drawing.Size(362, 445);
             this.treeView1.TabIndex = 4;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            groupByToolStripMenuItem,
+            toolStripMenuItem1,
+            this.groupByOption1,
+            this.groupByOption2});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(261, 76);
+            // 
+            // groupByOption1
+            // 
+            this.groupByOption1.Checked = true;
+            this.groupByOption1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.groupByOption1.Name = "groupByOption1";
+            this.groupByOption1.Size = new System.Drawing.Size(260, 22);
+            this.groupByOption1.Text = "Channel > Source > Repo > Branch";
+            this.groupByOption1.Click += new System.EventHandler(this.groupByOption1_Click);
+            // 
+            // groupByOption2
+            // 
+            this.groupByOption2.Name = "groupByOption2";
+            this.groupByOption2.Size = new System.Drawing.Size(260, 22);
+            this.groupByOption2.Text = "Channel > Repo > Branch > Source";
+            this.groupByOption2.Click += new System.EventHandler(this.groupByOption2_Click);
             // 
             // tabControl
             // 
@@ -128,44 +167,7 @@
             this.tsbtnRefresh.Text = "&Refresh";
             this.tsbtnRefresh.Click += new System.EventHandler(this.tsbtnRefresh_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            groupByToolStripMenuItem,
-            toolStripMenuItem1,
-            this.groupByOption1,
-            this.groupByOption2});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(261, 54);
-            // 
-            // groupByToolStripMenuItem
-            // 
-            groupByToolStripMenuItem.Enabled = false;
-            groupByToolStripMenuItem.Name = "groupByToolStripMenuItem";
-            groupByToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
-            groupByToolStripMenuItem.Text = "Group by";
-            // 
-            // toolStripMenuItem1
-            // 
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new System.Drawing.Size(257, 6);
-            // 
-            // groupByOption1
-            // 
-            this.groupByOption1.Checked = true;
-            this.groupByOption1.Name = "groupByOption1";
-            this.groupByOption1.Size = new System.Drawing.Size(260, 22);
-            this.groupByOption1.Text = "Channel > Source > Repo > Branch";
-            this.groupByOption1.Click += new System.EventHandler(this.groupByOption1_Click);
-            // 
-            // groupByOption2
-            // 
-            this.groupByOption2.Name = "groupByOption2";
-            this.groupByOption2.Size = new System.Drawing.Size(260, 22);
-            this.groupByOption2.Text = "Channel > Repo > Branch > Source";
-            this.groupByOption2.Click += new System.EventHandler(this.groupByOption2_Click);
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -173,15 +175,15 @@
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.toolStrip1);
             this.DoubleBuffered = true;
-            this.Name = "MainForms";
+            this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(8, 0, 8, 8);
             this.Text = "Darc UI";
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabPageSubscriptions.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,7 +193,7 @@
 
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPageSubscriptions;
-        private System.Windows.Forms.PropertyGrid propertyGrid1;
+        private AddRemovePropertyGrid propertyGrid1;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ToolStrip toolStrip1;

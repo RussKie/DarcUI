@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DarcUI
 {
-    public class SubscriptionUpdater
+    public class SubscriptionManager
     {
         public Task<string?> UpdateSubscriptionAsync(Subscription subscription, string propertyName)
         {
