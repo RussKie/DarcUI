@@ -185,27 +185,13 @@ namespace DarcUI
             // If no specific control provided, show the spinner in the middle of the form
             hostControl ??= this;
 
-            _waitSpinner.Location = new Point(hostControl.Left + (hostControl.Width - _waitSpinner.Width) / 2, 
+            _waitSpinner.Location = new Point(hostControl.Left + (hostControl.Width - _waitSpinner.Width) / 2,
                                               hostControl.Top + (hostControl.Height - _waitSpinner.Height) / 2);
             Controls.Add(_waitSpinner);
             _waitSpinner.BringToFront();
         }
+
         private void groupByOption1_Click(object sender, EventArgs e)
-        {
-            if (_groupByOption == GroupByOption.ChannelSourceRepoBranch)
-            {
-                return;
-            }
-
-            _groupByOption = GroupByOption.ChannelSourceRepoBranch;
-            BindSubscriptions(forceReload: false);
-
-            // TODO:
-            groupByOption1.Checked = _groupByOption == GroupByOption.ChannelSourceRepoBranch;
-            groupByOption2.Checked = _groupByOption == GroupByOption.RepoBranchChannelSource;
-        }
-
-        private void groupByOption2_Click(object sender, EventArgs e)
         {
             if (_groupByOption == GroupByOption.RepoBranchChannelSource)
             {
@@ -215,9 +201,22 @@ namespace DarcUI
             _groupByOption = GroupByOption.RepoBranchChannelSource;
             BindSubscriptions(forceReload: false);
 
-            // TODO:
-            groupByOption1.Checked = _groupByOption == GroupByOption.ChannelSourceRepoBranch;
-            groupByOption2.Checked = _groupByOption == GroupByOption.RepoBranchChannelSource;
+            groupByOption1.Checked = _groupByOption == GroupByOption.RepoBranchChannelSource;
+            groupByOption2.Checked = _groupByOption == GroupByOption.ChannelSourceRepoBranch;
+        }
+
+        private void groupByOption2_Click(object sender, EventArgs e)
+        {
+            if (_groupByOption == GroupByOption.ChannelSourceRepoBranch)
+            {
+                return;
+            }
+
+            _groupByOption = GroupByOption.ChannelSourceRepoBranch;
+            BindSubscriptions(forceReload: false);
+
+            groupByOption1.Checked = _groupByOption == GroupByOption.RepoBranchChannelSource;
+            groupByOption2.Checked = _groupByOption == GroupByOption.ChannelSourceRepoBranch;
         }
 
         private void propertyGrid1_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
