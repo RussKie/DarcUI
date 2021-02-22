@@ -49,6 +49,12 @@ namespace DarcUI
 
         private void BindSubscriptions(bool forceReload)
         {
+            string? selectedNodePath = null;
+            if (treeView1.Nodes.Count > 0)
+            {
+                selectedNodePath = treeView1.SelectedNode?.FullPath;
+            }
+
             treeView1.Nodes.Clear();
 
             propertyGrid1.SelectedObject = null;
@@ -75,7 +81,40 @@ namespace DarcUI
                 onCompleteMethod: () =>
                 {
                     treeView1.EndUpdate();
+
+                    if (selectedNodePath is not null)
+                    {
+                        foreach (TreeNode node in treeView1.Nodes)
+                        {
+                            if (GetNodeFromPath(node, selectedNodePath) is TreeNode selectedNode)
+                            {
+                                treeView1.SelectedNode = selectedNode;
+                                treeView1.SelectedNode.Expand();
+                                treeView1.SelectedNode.EnsureVisible();
+                                break;
+                            }
+                        }
+                    }
                 });
+
+            TreeNode? GetNodeFromPath(TreeNode node, string fullPath)
+            {
+                TreeNode? foundNode = null;
+                foreach (TreeNode tn in node.Nodes)
+                {
+                    if (tn.FullPath == fullPath)
+                    {
+                        return tn;
+                    }
+                    else if (tn.Nodes.Count > 0)
+                    {
+                        foundNode = GetNodeFromPath(tn, fullPath);
+                    }
+                    if (foundNode is not null)
+                        return foundNode;
+                }
+                return null;
+            }
         }
 
         private void BindSubscriptions(TreeView treeView, List<Subscription>? subscriptions, GroupByOption option)
