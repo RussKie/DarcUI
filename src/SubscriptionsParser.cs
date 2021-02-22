@@ -85,6 +85,10 @@ namespace DarcUI
                     {
                         subscription.Batchable = GetBool(line, s_TokenBatchable.Length);
                     }
+                    else if (line.StartsWith(s_TokenUpdateFrequency))
+                    {
+                        subscription.UpdateFrequency = GetEnum<UpdateFrequency>(line, s_TokenUpdateFrequency.Length);
+                    }
 
                     if (offset < 0)
                     {
@@ -130,9 +134,10 @@ namespace DarcUI
             {
                 return bool.Parse(locallSpan.Slice(startPosition).ToString());
             }
+
+            T GetEnum<T>(in ReadOnlySpan<char> locallSpan, int startPosition)
             {
-                    // TODO: provide a better exception
-                    throw new NullReferenceException("Subscription is null");
+                return (T)Enum.Parse(typeof(T), locallSpan.Slice(startPosition).ToString());
             }
 
             bool IsBlockMarker(in ReadOnlySpan<char> locallSpan)

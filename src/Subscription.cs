@@ -31,7 +31,7 @@ namespace DarcUI
         public string Id { get; set; }
 
         [Category(CategoryStatus)]
-        public string UpdateFrequency { get; set; }
+        public UpdateFrequency UpdateFrequency { get; set; }
 
         [Category(CategoryStatus)]
         public bool Enabled { get; set; }
