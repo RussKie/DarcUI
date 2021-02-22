@@ -25,6 +25,7 @@ namespace DarcUI
 
         private bool _isAnimating;
         private PointF _centre;
+        private Control? _host;
         private int _progress;
 
         public bool IsAnimating
@@ -42,6 +43,39 @@ namespace DarcUI
                 {
                     _timer.Stop();
                 }
+            }
+        }
+
+        public Control? Host
+        {
+            get => _host;
+            set
+            {
+                if (_host == value)
+                {
+                    return;
+                }
+
+                if (_host is not null)
+                {
+                    _host.Resize -= host_Resize;
+                }
+
+                _host = value;
+
+                if (_host is not null)
+                {
+                    SetLocation(_host);
+                    _host.Resize += host_Resize;
+                }
+
+                void SetLocation(Control host)
+                {
+                    Location = new Point(host.Left + (host.Width - Width) / 2,
+                                         host.Top + (host.Height - Height) / 2);
+                }
+
+                void host_Resize(object? sender, EventArgs e) => SetLocation((Control)sender!);
             }
         }
 
@@ -64,7 +98,8 @@ namespace DarcUI
             };
             IsAnimating = true;
 
-            Resize += delegate { UpdateCentre(); };
+            Resize += delegate
+            { UpdateCentre(); };
 
             return;
 

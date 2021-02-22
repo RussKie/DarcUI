@@ -193,23 +193,20 @@ namespace DarcUI
                 tabControl.Enabled = true;
                 tsbtnRefresh.Enabled = true;
             }
-        }
 
-        private void ShowSpinner(bool visible, Control? hostControl = null)
-        {
-            if (!visible)
+            void ShowSpinner(bool visible, Control? hostControl = null)
             {
-                Controls.Remove(_waitSpinner);
-                return;
+                if (!visible)
+                {
+                    _waitSpinner.Host = null;
+                    Controls.Remove(_waitSpinner);
+                    return;
+                }
+
+                Controls.Add(_waitSpinner);
+                _waitSpinner.Host = hostControl ?? this;
+                _waitSpinner.BringToFront();
             }
-
-            // If no specific control provided, show the spinner in the middle of the form
-            hostControl ??= this;
-
-            _waitSpinner.Location = new Point(hostControl.Left + (hostControl.Width - _waitSpinner.Width) / 2,
-                                              hostControl.Top + (hostControl.Height - _waitSpinner.Height) / 2);
-            Controls.Add(_waitSpinner);
-            _waitSpinner.BringToFront();
         }
 
         private void groupByOption1_Click(object sender, EventArgs e)
@@ -250,11 +247,6 @@ namespace DarcUI
 
             InvokeAsync(hostControl: propertyGrid1,
                 asyncMethod: () => s_subscriptionManager.UpdateSubscriptionAsync(subscription, e.ChangedItem.Label));
-        }
-
-        private void tsbtnRefresh_Click(object sender, EventArgs e)
-        {
-            BindSubscriptions(forceReload: true);
         }
 
         private void propertyGrid1_DeleteClicked(object sender, EventArgs e)
@@ -324,6 +316,11 @@ namespace DarcUI
                 propertyGrid1.AllowDelete = false;
 
             propertyGrid1.AllowCreate = e.Node is ChannelTreeNode && _groupByOption == GroupByOption.RepoBranchChannelSource;
+        }
+
+        private void tsbtnRefresh_Click(object sender, EventArgs e)
+        {
+            BindSubscriptions(forceReload: true);
         }
 
         private enum GroupByOption
