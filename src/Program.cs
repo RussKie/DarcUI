@@ -35,7 +35,7 @@ namespace DarcUI
                 Application.ThreadException += (s, e) => Report(e.Exception, isTerminating: false);
             }
 
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
 
         private static void Report(Exception exception, bool isTerminating)

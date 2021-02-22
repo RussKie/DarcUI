@@ -13,7 +13,7 @@ using Microsoft.VisualStudio.Threading;
 
 namespace DarcUI
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private static readonly SubscriptionsParser s_subscriptionsParser = new SubscriptionsParser();
         private static readonly SubscriptionRetriever s_subscriptionsRetriever = new SubscriptionRetriever();
@@ -23,7 +23,7 @@ namespace DarcUI
         private readonly ImageList _imageList = new ImageList();
         private readonly WaitSpinner _waitSpinner;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
 

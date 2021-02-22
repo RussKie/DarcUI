@@ -1,6 +1,6 @@
 ﻿namespace DarcUI
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.ToolStripMenuItem groupByToolStripMenuItem;
             System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -173,7 +173,7 @@
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.toolStrip1);
             this.DoubleBuffered = true;
-            this.Name = "Form1";
+            this.Name = "MainForms";
             this.Padding = new System.Windows.Forms.Padding(8, 0, 8, 8);
             this.Text = "Darc UI";
             this.tableLayoutPanel1.ResumeLayout(false);
