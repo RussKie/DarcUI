@@ -23,6 +23,7 @@ namespace DarcUI
         private GroupByOption _groupByOption = default;
         private readonly ImageList _imageList = new ImageList();
         private readonly WaitSpinner _waitSpinner;
+        private bool _operationInProgress;
 
         public MainForm()
         {
@@ -48,17 +49,14 @@ namespace DarcUI
 
         private void BindSubscriptions(bool forceReload)
         {
-            tsbtnRefresh.Enabled = false;
             treeView1.Nodes.Clear();
+
             propertyGrid1.SelectedObject = null;
-            ShowSpinner(visible: true, hostControl: treeView1);
+            propertyGrid1.AllowCreate = propertyGrid1.AllowDelete = false;
 
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-            {
-                try
+            InvokeAsync(hostControl: treeView1,
+                asyncMethod: async () =>
                 {
-                    await TaskScheduler.Default;
-
                     var output = await s_subscriptionsRetriever.GetSubscriptionsAsync(forceReload);
                     if (string.IsNullOrWhiteSpace(output))
                     {
@@ -73,16 +71,11 @@ namespace DarcUI
 
                     treeView1.BeginUpdate();
                     BindSubscriptions(treeView1, s_subscriptions, _groupByOption);
-                }
-                finally
+                },
+                onCompleteMethod: () =>
                 {
-                    await this.SwitchToMainThreadAsync();
-
-                    ShowSpinner(visible: false);
                     treeView1.EndUpdate();
-                    tsbtnRefresh.Enabled = true;
-                }
-            }).FileAndForget();
+                });
         }
 
         private void BindSubscriptions(TreeView treeView, List<Subscription>? subscriptions, GroupByOption option)
@@ -161,6 +154,47 @@ namespace DarcUI
             }
         }
 
+        private void InvokeAsync(Control hostControl, Func<Task> asyncMethod, Action? onCompleteMethod = null)
+        {
+            if (!_operationInProgress)
+            {
+                Debug.Assert(!_operationInProgress);
+            }
+
+            BeginOperation();
+
+            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            {
+                try
+                {
+                    await asyncMethod();
+                }
+                finally
+                {
+                    await this.SwitchToMainThreadAsync();
+                    EndOperation();
+                }
+
+                onCompleteMethod?.Invoke();
+            }).FileAndForget();
+
+            void BeginOperation()
+            {
+                _operationInProgress = true;
+                tsbtnRefresh.Enabled = false;
+                tabControl.Enabled = false;
+                ShowSpinner(visible: true, hostControl);
+            }
+
+            void EndOperation()
+            {
+                _operationInProgress = false;
+                ShowSpinner(visible: false);
+                tabControl.Enabled = true;
+                tsbtnRefresh.Enabled = true;
+            }
+        }
+
         private void ShowSpinner(bool visible, Control? hostControl = null)
         {
             if (!visible)
@@ -214,27 +248,8 @@ namespace DarcUI
                 return;
             }
 
-            tsbtnRefresh.Enabled = false;
-            tabControl.Enabled = false;
-            ShowSpinner(visible: true, hostControl: propertyGrid1);
-
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-            {
-                try
-                {
-                    await TaskScheduler.Default;
-
-                    await s_subscriptionManager.UpdateSubscriptionAsync(subscription, e.ChangedItem.Label);
-                }
-                finally
-                {
-                    await this.SwitchToMainThreadAsync();
-
-                    ShowSpinner(visible: false);
-                    tabControl.Enabled = true;
-                    tsbtnRefresh.Enabled = true;
-                }
-            }).FileAndForget();
+            InvokeAsync(hostControl: propertyGrid1,
+                asyncMethod: () => s_subscriptionManager.UpdateSubscriptionAsync(subscription, e.ChangedItem.Label));
         }
 
         private void tsbtnRefresh_Click(object sender, EventArgs e)
@@ -273,8 +288,9 @@ namespace DarcUI
             Form owner = Application.OpenForms[0];
             if (TaskDialog.ShowDialog(owner, page) == TaskDialogButton.Yes)
             {
-                // perform delete
-                // s_subscriptionManager.Delete(subscription);
+                InvokeAsync(hostControl: propertyGrid1,
+                    asyncMethod: () => s_subscriptionManager.DeleteSubscriptionAsync(subscription.Id),
+                    onCompleteMethod: () => BindSubscriptions(forceReload: true));
             }
         }
 

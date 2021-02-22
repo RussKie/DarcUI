@@ -3,11 +3,23 @@
 
 using System.IO;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DarcUI
 {
     public class SubscriptionManager
     {
+        private static readonly Executable s_darc = new Executable("darc");
+
+        public Task<string> DeleteSubscriptionAsync(string subscriptionId)
+        {
+            return Task.Run(() =>
+            {
+                string output = s_darc.GetOutput($"delete-subscriptions --id {subscriptionId} --quiet");
+                return output;
+            });
+        }
+
         public Task<string?> UpdateSubscriptionAsync(Subscription subscription, string propertyName)
         {
             return Task.Run(() =>
@@ -23,13 +35,8 @@ namespace DarcUI
 
         private string ToggleSubscription(Subscription subscription)
         {
-            string output;
-
             string status = subscription.Enabled ? "--enable" : "--disable";
-
-            var executable = new Executable("darc");
-            output = executable.GetOutput($"subscription-status --id {subscription.Id} {status} --quiet");
-
+            string output = s_darc.GetOutput($"subscription-status --id {subscription.Id} {status} --quiet");
             return output;
         }
     }
