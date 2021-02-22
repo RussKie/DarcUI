@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Igor Velikorossov. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+// Copyright (c) Git Extensions. All rights reserved.
 // Borrowed from https://github.com/gitextensions/gitextensions
 
 namespace DarcUI
