@@ -3,9 +3,13 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualStudio.Threading;
 
 namespace DarcUI
 {
@@ -17,6 +21,7 @@ namespace DarcUI
         private static List<Subscription>? s_subscriptions;
         private GroupByOption _groupByOption = default;
         private readonly ImageList _imageList = new ImageList();
+        private readonly WaitSpinner _waitSpinner;
 
         public Form1()
         {
@@ -30,39 +35,50 @@ namespace DarcUI
 
             treeView1.ImageList = _imageList;
 
+            _waitSpinner = new WaitSpinner
+            {
+                BackColor = SystemColors.Window,
+                //Visible = false,
+                Size = new Size(50, 50) // DpiUtil.Scale(new Size(50, 50))
+            };
+
             BindSubscriptions(forceReload: false);
-        }
-
-        private void ResetControls()
-        {
-            treeView1.Nodes.Clear();
-        }
-
-        private void tsbtnRefresh_Click(object sender, EventArgs e)
-        {
-            BindSubscriptions(forceReload: true);
         }
 
         private void BindSubscriptions(bool forceReload)
         {
-            try
-            {
-                treeView1.BeginUpdate();
-                ResetControls();
+            tsbtnRefresh.Enabled = false;
+            treeView1.Nodes.Clear();
+            ShowSpinner(visible: true);
 
-                var output = ThreadHelper.JoinableTaskFactory.Run(() => s_subscriptionsRetriever.GetSubscriptionsAsync(forceReload));
+            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            {
+                await TaskScheduler.Default;
+
+                var output = await s_subscriptionsRetriever.GetSubscriptionsAsync(forceReload);
                 if (string.IsNullOrWhiteSpace(output))
                 {
-                    return;
+                    s_subscriptions = null;
+                }
+                else
+                {
+                    s_subscriptions = s_subscriptionsParser.Parse(output);
                 }
 
-                s_subscriptions = s_subscriptionsParser.Parse(output);
-                BindSubscriptions(treeView1, s_subscriptions, _groupByOption);
-            }
-            finally
-            {
-                treeView1.EndUpdate();
-            }
+                await this.SwitchToMainThreadAsync();
+
+                try
+                {
+                    treeView1.BeginUpdate();
+                    BindSubscriptions(treeView1, s_subscriptions, _groupByOption);
+                }
+                finally
+                {
+                    ShowSpinner(visible: false);
+                    treeView1.EndUpdate();
+                    tsbtnRefresh.Enabled = true;
+                }
+            }).FileAndForget();
         }
 
         private void BindSubscriptions(TreeView treeView, List<Subscription>? subscriptions, GroupByOption option)
@@ -155,6 +171,18 @@ namespace DarcUI
             }
         }
 
+        private void ShowSpinner(bool visible)
+        {
+            if (!visible)
+            {
+                Controls.Remove(_waitSpinner);
+                return;
+            }
+
+            _waitSpinner.Location = new Point(treeView1.Left + (treeView1.Width - _waitSpinner.Width) / 2, treeView1.Top + (treeView1.Height - _waitSpinner.Height) / 2);
+            Controls.Add(_waitSpinner);
+            _waitSpinner.BringToFront();
+        }
         private void groupByOption1_Click(object sender, EventArgs e)
         {
             if (_groupByOption == GroupByOption.ChannelSourceRepoBranch)
@@ -188,6 +216,11 @@ namespace DarcUI
         private void propertyGrid1_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
             s_subscriptionUpdater.UpdateSubscriptionAsync(((PropertyGrid)s).SelectedObject as Subscription, e.ChangedItem.Label);
+        }
+
+        private void tsbtnRefresh_Click(object sender, EventArgs e)
+        {
+            BindSubscriptions(forceReload: true);
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
