@@ -332,6 +332,10 @@ namespace DarcUI
                 sourceNode.Tag is Subscription subscription)
             {
                 // create a new subscription
+                //
+                // darc help add-subscription
+                // darc add-subscription --target-repo https://github.com/dotnet/winforms --target-branch main --source-repo https://github.com/dotnet/roslyn-analyzers  --channel ".NET Eng - Latest" --update-frequency everyDay --trigger --verbose --quiet
+                //
                 // using form = new CreateSubscription();
                 // form.Context = subscription;
                 // form.ShowDialog(this);
