@@ -22,13 +22,6 @@ namespace DarcUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // This form created to obtain UI synchronization context only
-            using (new Form())
-            {
-                // Store the shared JoinableTaskContext
-                ThreadHelper.JoinableTaskContext = new JoinableTaskContext();
-            }
-
             if (!Debugger.IsAttached)
             {
                 AppDomain.CurrentDomain.UnhandledException += (s, e) => Report((Exception)e.ExceptionObject, e.IsTerminating);

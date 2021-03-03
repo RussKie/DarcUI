@@ -10,7 +10,6 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.VisualStudio.Threading;
 
 namespace DarcUI
 {
@@ -44,10 +43,10 @@ namespace DarcUI
                 Size = new Size(50, 50) // DpiUtil.Scale(new Size(50, 50))
             };
 
-            BindSubscriptions(forceReload: false);
+            _ = BindSubscriptionsAsync(forceReload: false);
         }
 
-        private void BindSubscriptions(bool forceReload)
+        private async Task BindSubscriptionsAsync(bool forceReload)
         {
             string? selectedNodePath = null;
             if (treeView1.Nodes.Count > 0)
@@ -60,7 +59,7 @@ namespace DarcUI
             propertyGrid1.SelectedObject = null;
             propertyGrid1.AllowCreate = propertyGrid1.AllowDelete = false;
 
-            InvokeAsync(hostControl: treeView1,
+            await InvokeAsync(hostControl: treeView1,
                 asyncMethod: async () =>
                 {
                     var output = await s_subscriptionsRetriever.GetSubscriptionsAsync(forceReload);
@@ -72,14 +71,26 @@ namespace DarcUI
                     {
                         s_subscriptions = s_subscriptionsParser.Parse(output);
                     }
-
-                    await this.SwitchToMainThreadAsync();
-
-                    treeView1.BeginUpdate();
-                    BindSubscriptions(treeView1, s_subscriptions, _groupByOption);
                 },
                 onCompleteMethod: () =>
                 {
+                    treeView1.BeginUpdate();
+                    BindSubscriptions(treeView1, s_subscriptions, _groupByOption);
+                    treeView1.EndUpdate();
+
+                    if (selectedNodePath is not null)
+                    {
+                        foreach (TreeNode node in treeView1.Nodes)
+                        {
+                            if (GetNodeFromPath(node, selectedNodePath) is TreeNode selectedNode)
+                            {
+                                treeView1.SelectedNode = selectedNode;
+                                treeView1.SelectedNode.Expand();
+                                treeView1.SelectedNode.EnsureVisible();
+                                break;
+                            }
+                        }
+                    }
                     treeView1.EndUpdate();
 
                     if (selectedNodePath is not null)
@@ -97,7 +108,7 @@ namespace DarcUI
                     }
                 });
 
-            TreeNode? GetNodeFromPath(TreeNode node, string fullPath)
+            static TreeNode? GetNodeFromPath(TreeNode node, string fullPath)
             {
                 TreeNode? foundNode = null;
                 foreach (TreeNode tn in node.Nodes)
@@ -117,7 +128,7 @@ namespace DarcUI
             }
         }
 
-        private void BindSubscriptions(TreeView treeView, List<Subscription>? subscriptions, GroupByOption option)
+        private static void BindSubscriptions(TreeView treeView, List<Subscription>? subscriptions, GroupByOption option)
         {
             if (subscriptions is null)
             {
@@ -193,16 +204,30 @@ namespace DarcUI
             }
         }
 
-        private void InvokeAsync(Control hostControl, Func<Task> asyncMethod, Action? onCompleteMethod = null)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hostControl">The control to have the "loading" overlay for.</param>
+        /// <param name="asyncMethod">
+        ///  A method that does heavy-lifting work.
+        ///  This method is run on a background thread.
+        /// </param>
+        /// <param name="onCompleteMethod">
+        ///  A method to execute once the <paramref name="asyncMethod"/> has completed.
+        ///  This method is run on the UI thread.
+        /// </param>
+        /// <returns>An awaitable.</returns>
+        private async Task InvokeAsync(Control hostControl, Func<Task> asyncMethod, Action? onCompleteMethod = null)
         {
             if (!_operationInProgress)
             {
                 Debug.Assert(!_operationInProgress);
             }
 
-            BeginOperation();
+            Debug.Assert(!hostControl.InvokeRequired);
+            BeginUIOperation();
 
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            await Task.Run(async () =>
             {
                 try
                 {
@@ -210,14 +235,15 @@ namespace DarcUI
                 }
                 finally
                 {
-                    await this.SwitchToMainThreadAsync();
-                    EndOperation();
+                    hostControl.Invoke((Action)(() =>
+                    {
+                        onCompleteMethod?.Invoke();
+                        EndUIOperation();
+                    }));
                 }
+            });
 
-                onCompleteMethod?.Invoke();
-            }).FileAndForget();
-
-            void BeginOperation()
+            void BeginUIOperation()
             {
                 _operationInProgress = true;
                 tsbtnRefresh.Enabled = false;
@@ -225,7 +251,7 @@ namespace DarcUI
                 ShowSpinner(visible: true, hostControl);
             }
 
-            void EndOperation()
+            void EndUIOperation()
             {
                 _operationInProgress = false;
                 ShowSpinner(visible: false);
@@ -248,7 +274,7 @@ namespace DarcUI
             }
         }
 
-        private void groupByOption1_Click(object sender, EventArgs e)
+        private async void groupByOption1_Click(object sender, EventArgs e)
         {
             if (_groupByOption == GroupByOption.RepoBranchChannelSource)
             {
@@ -256,13 +282,13 @@ namespace DarcUI
             }
 
             _groupByOption = GroupByOption.RepoBranchChannelSource;
-            BindSubscriptions(forceReload: false);
+            await BindSubscriptionsAsync(forceReload: false);
 
             groupByOption1.Checked = _groupByOption == GroupByOption.RepoBranchChannelSource;
             groupByOption2.Checked = _groupByOption == GroupByOption.ChannelSourceRepoBranch;
         }
 
-        private void groupByOption2_Click(object sender, EventArgs e)
+        private async void groupByOption2_Click(object sender, EventArgs e)
         {
             if (_groupByOption == GroupByOption.ChannelSourceRepoBranch)
             {
@@ -270,13 +296,13 @@ namespace DarcUI
             }
 
             _groupByOption = GroupByOption.ChannelSourceRepoBranch;
-            BindSubscriptions(forceReload: false);
+            await BindSubscriptionsAsync(forceReload: false);
 
             groupByOption1.Checked = _groupByOption == GroupByOption.RepoBranchChannelSource;
             groupByOption2.Checked = _groupByOption == GroupByOption.ChannelSourceRepoBranch;
         }
 
-        private void propertyGrid1_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
+        private async void propertyGrid1_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
             Subscription? subscription = propertyGrid1.SelectedObject as Subscription;
             if (subscription is null)
@@ -284,11 +310,11 @@ namespace DarcUI
                 return;
             }
 
-            InvokeAsync(hostControl: propertyGrid1,
+            await InvokeAsync(hostControl: propertyGrid1,
                 asyncMethod: () => s_subscriptionManager.UpdateSubscriptionAsync(subscription, e.ChangedItem.Label));
         }
 
-        private void propertyGrid1_DeleteClicked(object sender, EventArgs e)
+        private async void propertyGrid1_DeleteClicked(object sender, EventArgs e)
         {
             if (propertyGrid1.SelectedObject is not Subscription subscription)
             {
@@ -319,9 +345,9 @@ namespace DarcUI
             Form owner = Application.OpenForms[0];
             if (TaskDialog.ShowDialog(owner, page) == TaskDialogButton.Yes)
             {
-                InvokeAsync(hostControl: propertyGrid1,
-                    asyncMethod: () => s_subscriptionManager.DeleteSubscriptionAsync(subscription.Id),
-                    onCompleteMethod: () => BindSubscriptions(forceReload: true));
+                await InvokeAsync(hostControl: propertyGrid1,
+                    asyncMethod: () => s_subscriptionManager.DeleteSubscriptionAsync(subscription.Id));
+                await BindSubscriptionsAsync(forceReload: true);
             }
         }
 
@@ -361,9 +387,9 @@ namespace DarcUI
             propertyGrid1.AllowCreate = e.Node is ChannelTreeNode && _groupByOption == GroupByOption.RepoBranchChannelSource;
         }
 
-        private void tsbtnRefresh_Click(object sender, EventArgs e)
+        private async void tsbtnRefresh_Click(object sender, EventArgs e)
         {
-            BindSubscriptions(forceReload: true);
+            await BindSubscriptionsAsync(forceReload: true);
         }
 
         private enum GroupByOption

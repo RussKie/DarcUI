@@ -9,10 +9,9 @@
     <LangVersion>latest</LangVersion>
     <nullable>enable</nullable>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <PackageReference Include="Ben.Demystifier" Version="0.1.4" />
-    <PackageReference Include="Microsoft.VisualStudio.Threading" Version="16.4.33" />
   </ItemGroup>
   
   <ItemGroup>
