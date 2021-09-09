@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DarcUI.CustomControls;
 
 namespace DarcUI
 {
@@ -353,18 +354,35 @@ namespace DarcUI
 
         private void propertyGrid1_NewClicked(object sender, EventArgs e)
         {
-            if (treeView1.SelectedNode is ChannelTreeNode channelNode &&
-                channelNode.FirstNode is SourceTreeNode sourceNode &&
-                sourceNode.Tag is Subscription subscription)
+            if (GetSourceTreeNode(treeView1.SelectedNode)?.Tag is Subscription subscription)
             {
                 // create a new subscription
                 //
                 // darc help add-subscription
                 // darc add-subscription --target-repo https://github.com/dotnet/winforms --target-branch main --source-repo https://github.com/dotnet/roslyn-analyzers  --channel ".NET Eng - Latest" --update-frequency everyDay --trigger --verbose --quiet
                 //
-                // using form = new CreateSubscription();
-                // form.Context = subscription;
-                // form.ShowDialog(this);
+
+                Subscription newSubscription = new()
+                {
+                    Target = subscription.Target,
+                    TargetBranch = subscription.TargetBranch,
+                    SourceChannel = subscription.SourceChannel
+                };
+
+                using CreateSubscription form = new();
+                form.SetContext(newSubscription);
+                form.ShowDialog(this);
+            }
+
+            static SourceTreeNode? GetSourceTreeNode(TreeNode selectedNode)
+            {
+                if (selectedNode is ChannelTreeNode channelNode &&
+                    channelNode.FirstNode is SourceTreeNode sourceNode)
+                {
+                    return sourceNode;
+                }
+
+                return selectedNode as SourceTreeNode;
             }
         }
 
