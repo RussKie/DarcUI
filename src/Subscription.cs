@@ -2,6 +2,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System.ComponentModel;
+using DarcUI.CustomControls;
+using System.Drawing.Design;
 
 namespace DarcUI
 {
@@ -9,6 +11,7 @@ namespace DarcUI
     public class Subscription
     {
         private const string CategoryDetails = "Details";
+        private const string CategoryNotifications = "Notifications";
         private const string CategoryStatus = "Status";
 
         [Category(CategoryDetails)]
@@ -30,6 +33,11 @@ namespace DarcUI
         [Category(CategoryDetails)]
         [ReadOnly(true)]
         public string Id { get; set; }
+
+        [Category(CategoryNotifications)]
+        [Editor(typeof(NotificationTagEditor), typeof(UITypeEditor))]
+        //[ReadOnly(true)]
+        public string TokenFailureNotificationTags { get; set; }
 
         [Category(CategoryStatus)]
         public UpdateFrequency UpdateFrequency { get; set; }

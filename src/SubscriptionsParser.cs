@@ -16,6 +16,7 @@ namespace DarcUI
         private static readonly char[] s_TokenUpdateFrequency = "  - Update Frequency: ".ToCharArray();
         private static readonly char[] s_TokenEnabled = "  - Enabled: ".ToCharArray();
         private static readonly char[] s_TokenBatchable = "  - Batchable: ".ToCharArray();
+        private static readonly char[] s_TokenFailureNotificationTags = "  - PR Failure Notification tags: ".ToCharArray();
 
         public unsafe List<Subscription> Parse(string darcOutput)
         {
@@ -84,6 +85,10 @@ namespace DarcUI
                     else if (line.StartsWith(s_TokenBatchable))
                     {
                         subscription!.Batchable = GetBool(line, s_TokenBatchable.Length);
+                    }
+                    else if (line.StartsWith(s_TokenFailureNotificationTags))
+                    {
+                        subscription!.TokenFailureNotificationTags = line.Slice(s_TokenFailureNotificationTags.Length).ToString();
                     }
                     else if (line.StartsWith(s_TokenUpdateFrequency))
                     {

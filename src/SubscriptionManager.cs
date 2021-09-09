@@ -1,9 +1,7 @@
 ﻿// Copyright (c) Igor Velikorossov. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using System.IO;
 using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DarcUI
 {
@@ -24,12 +22,12 @@ namespace DarcUI
         {
             return Task.Run(() =>
             {
-                if (propertyName == nameof(Subscription.Enabled))
+                return propertyName switch
                 {
-                    return ToggleSubscription(subscription);
-                }
-
-                return null;
+                    nameof(Subscription.Enabled) => ToggleSubscription(subscription),
+                    nameof(Subscription.TokenFailureNotificationTags) => UpdateFailureNotificationTags(subscription),
+                    _ => null,
+                };
             });
         }
 
@@ -37,6 +35,12 @@ namespace DarcUI
         {
             string status = subscription.Enabled ? "--enable" : "--disable";
             string output = s_darc.GetOutput($"subscription-status --id {subscription.Id} {status} --quiet");
+            return output;
+        }
+
+        private string UpdateFailureNotificationTags(Subscription subscription)
+        {
+            string output = s_darc.GetOutput($"update-subscription --id {subscription.Id} --failure-notification-tags '{subscription.TokenFailureNotificationTags}'");
             return output;
         }
     }
