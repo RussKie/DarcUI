@@ -175,6 +175,7 @@
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.toolStrip1);
             this.DoubleBuffered = true;
+            this.Icon = global::DarcUI.Properties.Resources.dotnet;
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(8, 0, 8, 8);
             this.Text = "Darc UI";

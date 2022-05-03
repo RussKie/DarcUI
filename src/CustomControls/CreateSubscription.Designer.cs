@@ -88,6 +88,7 @@ namespace DarcUI.CustomControls
             this.ClientSize = new System.Drawing.Size(486, 243);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlControls);
+            this.Icon = global::DarcUI.Properties.Resources.dotnet;
             this.Name = "CreateSubscription";
             this.Text = "Create subscription";
             this.pnlMain.ResumeLayout(false);

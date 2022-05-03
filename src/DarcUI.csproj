@@ -8,11 +8,16 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <nullable>enable</nullable>
+    <ApplicationIcon>icons\dotnet.ico</ApplicationIcon>
 
     <!--<RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <PublishSingleFile>true</PublishSingleFile>
     <PublishTrimmed>true</PublishTrimmed>-->
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="icons\dotnet.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Ben.Demystifier" Version="0.1.4" />

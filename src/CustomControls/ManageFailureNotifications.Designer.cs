@@ -87,6 +87,7 @@ namespace DarcUI.CustomControls
             this.ClientSize = new System.Drawing.Size(430, 77);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlControls);
+            this.Icon = global::DarcUI.Properties.Resources.dotnet;
             this.Name = "ManageFailureNotifications";
             this.Text = "Manage failure notification tags";
             this.pnlMain.ResumeLayout(false);
