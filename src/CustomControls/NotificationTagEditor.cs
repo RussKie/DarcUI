@@ -1,11 +1,10 @@
 ﻿// Copyright (c) Igor Velikorossov. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+using System;
 using System.ComponentModel;
 using System.Drawing.Design;
-using System.Drawing;
 using System.Runtime.InteropServices;
-using System;
 using System.Windows.Forms;
 
 namespace DarcUI.CustomControls
@@ -31,9 +30,9 @@ namespace DarcUI.CustomControls
             IntPtr hwndFocus = GetFocus();
             try
             {
-                if (dialog.ShowDialog() == DialogResult.OK)
+                if (dialog.ShowDialog(new Win32WindowWrapper(hwndFocus)) == DialogResult.OK)
                 {
-                    subscription.TokenFailureNotificationTags = dialog.TokenFailureNotificationTags;
+                    subscription.TokenFailureNotificationTags = dialog.TokenFailureNotificationTags.Trim().Trim('\'');
                     value = dialog.TokenFailureNotificationTags;
                 }
             }
@@ -49,5 +48,15 @@ namespace DarcUI.CustomControls
         }
 
         public override UITypeEditorEditStyle GetEditStyle(ITypeDescriptorContext context) => UITypeEditorEditStyle.Modal;
+
+        private struct Win32WindowWrapper : IWin32Window
+        {
+            public Win32WindowWrapper(IntPtr hwnd)
+            {
+                Handle = hwnd;
+            }
+
+            public IntPtr Handle { get; }
+        }
     }
 }
