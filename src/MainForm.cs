@@ -312,7 +312,7 @@ namespace DarcUI
             }
 
             await InvokeAsync(hostControl: propertyGrid1,
-                asyncMethod: () => s_subscriptionManager.UpdateSubscriptionAsync(subscription, e.ChangedItem.Label));
+                asyncMethod: () => s_subscriptionManager.UpdateSubscriptionAsync(subscription, e.ChangedItem?.Label));
         }
 
         private async void propertyGrid1_DeleteClicked(object sender, EventArgs e)

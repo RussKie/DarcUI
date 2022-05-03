@@ -18,7 +18,7 @@ namespace DarcUI
             });
         }
 
-        public Task<string?> UpdateSubscriptionAsync(Subscription subscription, string propertyName)
+        public Task<string?> UpdateSubscriptionAsync(Subscription subscription, string? propertyName)
         {
             return Task.Run(() =>
             {
