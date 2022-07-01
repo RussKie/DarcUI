@@ -11,7 +11,7 @@ namespace DarcUI
         public SourceTreeNode(Subscription subscription)
             : this(subscription.Source)
         {
-            Tag = subscription;
+            Tag = (SubscriptionProxy?)subscription;
 
             if (!subscription.Enabled)
             {
@@ -19,7 +19,7 @@ namespace DarcUI
             }
         }
 
-        public SourceTreeNode(string text) : base(text)
+        public SourceTreeNode(string? text) : base(text)
         {
             ImageIndex =
                 SelectedImageIndex = 2;

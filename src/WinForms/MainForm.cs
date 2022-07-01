@@ -154,19 +154,19 @@ namespace DarcUI
 
             void GroupByRepoBranchChannelSource()
             {
-                foreach (IGrouping<string, Subscription> target in subscriptions.GroupBy(s => s.Target).OrderBy(s => s.Key))
+                foreach (IGrouping<string?, Subscription> target in subscriptions.GroupBy(s => s.Target).OrderBy(s => s.Key))
                 {
-                    TargetTreeNode targetNode = new(target.Key);
+                    TargetTreeNode targetNode = new(target.Key!);
                     treeView.Nodes.Add(targetNode);
 
-                    foreach (IGrouping<string, Subscription> targetBranch in target.GroupBy(s => s.TargetBranch).OrderBy(s => s.Key))
+                    foreach (IGrouping<string?, Subscription> targetBranch in target.GroupBy(s => s.TargetBranch).OrderBy(s => s.Key))
                     {
-                        TargetBranchNode targetBranchNode = new(targetBranch.Key);
+                        TargetBranchNode targetBranchNode = new(targetBranch.Key!);
                         targetNode.Nodes.Add(targetBranchNode);
 
-                        foreach (IGrouping<string, Subscription> channel in targetBranch.GroupBy(s => s.SourceChannel).OrderBy(s => s.Key))
+                        foreach (IGrouping<string?, Subscription> channel in targetBranch.GroupBy(s => s.SourceChannel).OrderBy(s => s.Key))
                         {
-                            ChannelTreeNode channelNode = new(channel.Key);
+                            ChannelTreeNode channelNode = new(channel.Key!);
                             targetBranchNode.Nodes.Add(channelNode);
 
                             foreach (Subscription subscription in channel.OrderBy(s => s.Source))
@@ -180,19 +180,19 @@ namespace DarcUI
 
             void GroupByChannelSourceRepoBranch()
             {
-                foreach (IGrouping<string, Subscription> channel in subscriptions.GroupBy(s => s.SourceChannel).OrderBy(s => s.Key))
+                foreach (IGrouping<string?, Subscription> channel in subscriptions.GroupBy(s => s.SourceChannel).OrderBy(s => s.Key))
                 {
-                    ChannelTreeNode channelNode = new(channel.Key);
+                    ChannelTreeNode channelNode = new(channel.Key!);
                     treeView.Nodes.Add(channelNode);
 
-                    foreach (IGrouping<string, Subscription> source in channel.GroupBy(s => s.Source).OrderBy(s => s.Key))
+                    foreach (IGrouping<string?, Subscription> source in channel.GroupBy(s => s.Source).OrderBy(s => s.Key))
                     {
-                        SourceTreeNode sourceNode = new(source.Key);
+                        SourceTreeNode sourceNode = new(source.Key!);
                         channelNode.Nodes.Add(sourceNode);
 
-                        foreach (IGrouping<string, Subscription> target in source.GroupBy(s => s.Target).OrderBy(s => s.Key))
+                        foreach (IGrouping<string?, Subscription> target in source.GroupBy(s => s.Target).OrderBy(s => s.Key))
                         {
-                            TargetTreeNode targetNode = new(target.Key);
+                            TargetTreeNode targetNode = new(target.Key!);
                             sourceNode.Nodes.Add(targetNode);
 
                             foreach (Subscription subscription in target.OrderBy(s => s.TargetBranch))
@@ -347,7 +347,7 @@ namespace DarcUI
             if (TaskDialog.ShowDialog(owner, page) == TaskDialogButton.Yes)
             {
                 await InvokeAsync(hostControl: propertyGrid1,
-                    asyncMethod: () => s_subscriptionManager.DeleteSubscriptionAsync(subscription.Id));
+                    asyncMethod: () => s_subscriptionManager.DeleteSubscriptionAsync(subscription.Id!));
                 await BindSubscriptionsAsync(forceReload: true);
             }
         }

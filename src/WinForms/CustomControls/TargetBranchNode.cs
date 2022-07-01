@@ -11,7 +11,7 @@ namespace DarcUI
         public TargetBranchNode(Subscription subscription)
           : this(subscription.Source)
         {
-            Tag = subscription;
+            Tag = (SubscriptionProxy?)subscription;
 
             if (!subscription.Enabled)
             {
@@ -19,7 +19,7 @@ namespace DarcUI
             }
         }
 
-        public TargetBranchNode(string text) : base(text)
+        public TargetBranchNode(string? text) : base(text)
         {
             ImageIndex = 
                 SelectedImageIndex = 3;

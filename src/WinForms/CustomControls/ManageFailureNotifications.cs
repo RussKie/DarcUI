@@ -14,7 +14,7 @@ namespace DarcUI.CustomControls
 
         public string TokenFailureNotificationTags => txtTags.Text;
 
-        public void SetContext(Subscription subscription)
+        public void SetContext(SubscriptionProxy subscription)
         {
             txtTags.Text = subscription.TokenFailureNotificationTags;
         }

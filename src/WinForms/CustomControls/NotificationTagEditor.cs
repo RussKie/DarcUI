@@ -19,13 +19,14 @@ namespace DarcUI.CustomControls
 
         public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
         {
-            if (context.Instance is not Subscription subscription)
+            if (context.Instance is not SubscriptionProxy subscription)
             {
                 return value;
             }
 
             using ManageFailureNotifications dialog = new();
             dialog.SetContext(subscription);
+            dialog.StartPosition = FormStartPosition.CenterParent;
 
             IntPtr hwndFocus = GetFocus();
             try
