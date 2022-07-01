@@ -4,10 +4,7 @@
 // Copyright (c) Git Extensions. All rights reserved.
 // Borrowed from https://github.com/gitextensions/gitextensions
 
-using System;
 using System.Diagnostics;
-using System.IO;
-using System.Threading.Tasks;
 
 namespace DarcUI
 {
@@ -49,11 +46,11 @@ namespace DarcUI
         /// when calling <see cref="IExecutable.Start"/>.</exception>
         StreamReader StandardError { get; }
 
-        /// <summary>
-        /// Blocks the calling thread until the process exits, or when this object is disposed.
-        /// </summary>
-        /// <returns>The process's exit code, or <c>null</c> if this object was disposed before the process exited.</returns>
-        int WaitForExit();
+        ///// <summary>
+        ///// Blocks the calling thread until the process exits, or when this object is disposed.
+        ///// </summary>
+        ///// <returns>The process's exit code, or <c>null</c> if this object was disposed before the process exited.</returns>
+        //int WaitForExit();
 
         /// <summary>
         /// Returns a task that completes when the process exits, or when this object is disposed.

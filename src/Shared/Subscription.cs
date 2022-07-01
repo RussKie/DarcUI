@@ -2,8 +2,6 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System.ComponentModel;
-using DarcUI.CustomControls;
-using System.Drawing.Design;
 
 namespace DarcUI
 {
@@ -35,7 +33,7 @@ namespace DarcUI
         public string Id { get; set; }
 
         [Category(CategoryNotifications)]
-        [Editor(typeof(NotificationTagEditor), typeof(UITypeEditor))]
+        //[Editor(typeof(NotificationTagEditor), typeof(UITypeEditor))]
         //[ReadOnly(true)]
         public string TokenFailureNotificationTags { get; set; }
 

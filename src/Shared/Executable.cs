@@ -4,10 +4,7 @@
 // Copyright (c) Git Extensions. All rights reserved.
 // Borrowed from https://github.com/gitextensions/gitextensions
 
-using System;
 using System.Diagnostics;
-using System.IO;
-using System.Threading.Tasks;
 
 namespace DarcUI
 {
@@ -35,9 +32,9 @@ namespace DarcUI
             return new ProcessWrapper(fileName, arguments, _workingDir, createWindow, redirectInput, redirectOutput);
         }
 
-        public string GetOutput(string arguments)
+        public Task<string> GetOutputAsync(string arguments)
         {
-            return Program.JoinableTaskFactory.Run(
+            return Task.Run(
                 async () =>
                 {
                     using (var process = Start(
@@ -226,11 +223,11 @@ namespace DarcUI
             /// <inheritdoc />
             public Task<int> WaitForExitAsync() => _exitTaskCompletionSource.Task;
 
-            /// <inheritdoc />
-            public int WaitForExit()
-            {
-                return Program.JoinableTaskFactory.Run(() => WaitForExitAsync());
-            }
+            ///// <inheritdoc />
+            //public int WaitForExit()
+            //{
+            //    return Program.JoinableTaskFactory.Run(() => WaitForExitAsync());
+            //}
 
             /// <inheritdoc />
             public void Dispose()
