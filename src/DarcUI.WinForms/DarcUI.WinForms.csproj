@@ -8,29 +8,25 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <nullable>enable</nullable>
-    <ApplicationIcon>icons\dotnet.ico</ApplicationIcon>
+    <ApplicationIcon>..\icons\dotnet.ico</ApplicationIcon>
 
     <!--<RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <PublishSingleFile>true</PublishSingleFile>
     <PublishTrimmed>true</PublishTrimmed>-->
-  </PropertyGroup>
 
-  <ItemGroup>
-    <Content Include="icons\dotnet.ico" />
-  </ItemGroup>
+    <AssemblyName>DarcUI</AssemblyName>
+    <RootNamespace>DarcUI</RootNamespace>
+  </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Ben.Demystifier" Version="0.1.4" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Shared\Shared.csproj" />
+    <ProjectReference Include="..\DarcUI.Shared\DarcUI.Shared.csproj" />
   </ItemGroup>
   
   <ItemGroup>
-    <Compile Update="CustomControls\ManageFailureNotifications.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

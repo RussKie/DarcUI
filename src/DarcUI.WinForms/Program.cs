@@ -18,9 +18,7 @@ namespace DarcUI
         [STAThread]
         public static void Main()
         {
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            ApplicationConfiguration.Initialize();
 
             if (!Debugger.IsAttached)
             {

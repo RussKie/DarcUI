@@ -15,9 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		stylecop.json = stylecop.json
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarcUI", "src\WinForms\DarcUI.csproj", "{2AB73567-2983-477B-9226-5D5DE7EA556D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarcUI.WinForms", "src\DarcUI.WinForms\DarcUI.WinForms.csproj", "{BCFFAB41-B83A-4B28-B5FD-E20911895DB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "src\Shared\Shared.csproj", "{88871BE2-B484-4B7C-9458-4523D2353A3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarcUI.Shared", "src\DarcUI.Shared\DarcUI.Shared.csproj", "{1CD86DA6-40AD-4839-A591-D6D45C492CDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2AB73567-2983-477B-9226-5D5DE7EA556D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2AB73567-2983-477B-9226-5D5DE7EA556D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2AB73567-2983-477B-9226-5D5DE7EA556D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2AB73567-2983-477B-9226-5D5DE7EA556D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{88871BE2-B484-4B7C-9458-4523D2353A3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{88871BE2-B484-4B7C-9458-4523D2353A3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{88871BE2-B484-4B7C-9458-4523D2353A3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{88871BE2-B484-4B7C-9458-4523D2353A3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCFFAB41-B83A-4B28-B5FD-E20911895DB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCFFAB41-B83A-4B28-B5FD-E20911895DB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCFFAB41-B83A-4B28-B5FD-E20911895DB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCFFAB41-B83A-4B28-B5FD-E20911895DB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CD86DA6-40AD-4839-A591-D6D45C492CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CD86DA6-40AD-4839-A591-D6D45C492CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CD86DA6-40AD-4839-A591-D6D45C492CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CD86DA6-40AD-4839-A591-D6D45C492CDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
