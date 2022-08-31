@@ -5,9 +5,6 @@
     <!--<TargetFrameworks>net472;netcoreapp3.0</TargetFrameworks>-->
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <LangVersion>latest</LangVersion>
-    <nullable>enable</nullable>
     <ApplicationIcon>..\icons\dotnet.ico</ApplicationIcon>
 
     <!--<RuntimeIdentifier>win-x64</RuntimeIdentifier>
@@ -16,6 +13,7 @@
 
     <AssemblyName>DarcUI</AssemblyName>
     <RootNamespace>DarcUI</RootNamespace>
+    <AssemblyTitle>Darc UI desktop</AssemblyTitle>
   </PropertyGroup>
 
   <ItemGroup>

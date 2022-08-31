@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarcUI.WinForms", "src\Darc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarcUI.Shared", "src\DarcUI.Shared\DarcUI.Shared.csproj", "{1CD86DA6-40AD-4839-A591-D6D45C492CDF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarcUI.Blazor", "src\DarcUI.Blazor\DarcUI.Blazor.csproj", "{0B421537-3A80-49A3-BCB9-C44B37FC4943}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1CD86DA6-40AD-4839-A591-D6D45C492CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CD86DA6-40AD-4839-A591-D6D45C492CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CD86DA6-40AD-4839-A591-D6D45C492CDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B421537-3A80-49A3-BCB9-C44B37FC4943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B421537-3A80-49A3-BCB9-C44B37FC4943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B421537-3A80-49A3-BCB9-C44B37FC4943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B421537-3A80-49A3-BCB9-C44B37FC4943}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

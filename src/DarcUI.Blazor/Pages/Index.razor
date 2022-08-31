@@ -1,0 +1,26 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+@if (s_subscriptions is null)
+{
+  <p><em>Loading...</em></p>
+}
+else
+{
+  <table>
+    <thead></thead>
+    <tbody>
+      @foreach (IGrouping<string?, Subscription> target in s_subscriptions.GroupBy(s => s.Target).OrderBy(s => s.Key))
+      {
+      <tr>
+        <td>@target.Key</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+}

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>..\icons\dotnet.ico</ApplicationIcon>
+
+    <AssemblyName>DarcUI</AssemblyName>
+    <RootNamespace>DarcUI</RootNamespace>
+    <AssemblyTitle>Darc UI Blazor</AssemblyTitle>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ben.Demystifier" Version="0.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.WindowsForms" Version="6.0.400" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DarcUI.Shared\DarcUI.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

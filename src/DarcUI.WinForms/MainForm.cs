@@ -45,6 +45,8 @@ namespace DarcUI
             };
 
             _ = BindSubscriptionsAsync(forceReload: false);
+
+            Text = Application.ProductName;
         }
 
         private async Task BindSubscriptionsAsync(bool forceReload)
