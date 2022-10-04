@@ -307,7 +307,7 @@ namespace DarcUI
 
         private async void propertyGrid1_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
-            Subscription? subscription = propertyGrid1.SelectedObject as Subscription;
+            Subscription? subscription = propertyGrid1.SelectedObject as SubscriptionProxy;
             if (subscription is null)
             {
                 return;

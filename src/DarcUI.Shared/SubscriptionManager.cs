@@ -19,6 +19,7 @@ namespace DarcUI
             return propertyName switch
             {
                 nameof(Subscription.Enabled) => ToggleSubscriptionAsync(subscription),
+                nameof(Subscription.UpdateFrequency) => UpdateUpdateFrequency(subscription),
                 nameof(Subscription.TokenFailureNotificationTags) => UpdateFailureNotificationTagsAsync(subscription),
                 _ => Task.FromResult((string?)null),
             };
@@ -34,6 +35,12 @@ namespace DarcUI
         private async Task<string?> UpdateFailureNotificationTagsAsync(Subscription subscription)
         {
             string output = await s_darc.GetOutputAsync($"update-subscription --id {subscription.Id} --failure-notification-tags '{subscription.TokenFailureNotificationTags}'");
+            return output;
+        }
+
+        private async Task<string?> UpdateUpdateFrequency(Subscription subscription)
+        {
+            string output = await s_darc.GetOutputAsync($"update-subscription --id {subscription.Id} --update-frequency {subscription.UpdateFrequency}");
             return output;
         }
     }

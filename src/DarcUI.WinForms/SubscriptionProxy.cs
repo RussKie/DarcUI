@@ -73,6 +73,27 @@ namespace DarcUI
                 Batchable = subscription.Batchable,
             };
         }
+
+        public static implicit operator Subscription?(SubscriptionProxy? subscriptionProxy)
+        {
+            if (subscriptionProxy is null)
+            {
+                return null;
+            }
+
+            return new()
+            {
+                Source = subscriptionProxy.Source,
+                SourceChannel = subscriptionProxy.SourceChannel,
+                Target = subscriptionProxy.Target,
+                TargetBranch = subscriptionProxy.TargetBranch,
+                Id = subscriptionProxy.Id,
+                TokenFailureNotificationTags = subscriptionProxy.TokenFailureNotificationTags,
+                UpdateFrequency = subscriptionProxy.UpdateFrequency,
+                Enabled = subscriptionProxy.Enabled,
+                Batchable = subscriptionProxy.Batchable,
+            };
+        }
     }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 #pragma warning restore CS8601 // Possible null reference assignment.
