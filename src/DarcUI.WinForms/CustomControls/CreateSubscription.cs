@@ -23,7 +23,7 @@ namespace DarcUI.CustomControls
         public void SetContext(Subscription? subscription)
         {
             propertyGrid1.SelectedObject = subscription;
-            btnOk.Enabled = subscription is null;
+            btnOk.Enabled = subscription is not null;
         }
     }
 }

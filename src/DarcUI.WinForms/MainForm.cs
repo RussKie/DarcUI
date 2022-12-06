@@ -376,9 +376,9 @@ namespace DarcUI
             }
         }
 
-        private void propertyGrid1_NewClicked(object sender, EventArgs e)
+        private async void propertyGrid1_NewClicked(object sender, EventArgs e)
         {
-            if (GetSourceTreeNode(treeView1.SelectedNode)?.Tag is Subscription subscription)
+            if (GetSourceTreeNode(treeView1.SelectedNode)?.Tag is SubscriptionProxy subscription)
             {
                 // create a new subscription
                 //
@@ -394,8 +394,21 @@ namespace DarcUI
                 };
 
                 using CreateSubscription form = new();
+                form.StartPosition = FormStartPosition.CenterParent;
                 form.SetContext(newSubscription);
-                form.ShowDialog(this);
+
+                if (form.ShowDialog(this) == DialogResult.OK)
+                {
+                    ExecutionResult? result = null;
+                    await InvokeAsync(hostControl: propertyGrid1,
+                        asyncMethod: async () => result = await s_subscriptionManager.CreateSubscriptionAsync(newSubscription),
+                        onCompleteMethod: () => rtbCommandLog.AppendText($"[CreateSubscriptionAsync]\r\n{result}\r\n\r\n"));
+
+                    if (result is not null && result.ExitCode == 0)
+                    {
+                        await BindSubscriptionsAsync(forceReload: true);
+                    }
+                }
             }
 
             static SourceTreeNode? GetSourceTreeNode(TreeNode selectedNode)

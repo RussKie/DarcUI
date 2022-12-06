@@ -9,6 +9,21 @@ namespace DarcUI
     {
         private static readonly Executable s_darc = new Executable("darc");
 
+        public Task<ExecutionResult> CreateSubscriptionAsync(Subscription subscription)
+        {
+            string? notifications = null;
+            if (!string.IsNullOrWhiteSpace(subscription.TokenFailureNotificationTags))
+            {
+                notifications = $"--failure-notification-tags '{subscription.TokenFailureNotificationTags.Trim()}'";
+            }
+
+            string batchable = subscription.Batchable ? "--batchable" : string.Empty;
+            string trigger = subscription.UpdateFrequency != UpdateFrequency.None ? "--trigger" : string.Empty;
+            string command = $"add-subscription --channel '{subscription.SourceChannel}' --source-repo '{subscription.Source}' --target-repo '{subscription.Target}' --target-branch '{subscription.TargetBranch}' --update-frequency {subscription.UpdateFrequency} {notifications} {batchable} {trigger} --verbose --quiet";
+
+            return s_darc.GetOutputAsync(command);
+        }
+
         public Task<ExecutionResult> DeleteSubscriptionAsync(string subscriptionId)
         {
             return s_darc.GetOutputAsync($"delete-subscriptions --id {subscriptionId} --quiet");
