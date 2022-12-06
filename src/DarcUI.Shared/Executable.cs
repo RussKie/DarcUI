@@ -32,7 +32,7 @@ namespace DarcUI
             return new ProcessWrapper(fileName, arguments, _workingDir, createWindow, redirectInput, redirectOutput);
         }
 
-        public Task<string> GetOutputAsync(string arguments)
+        public Task<ExecutionResult> GetOutputAsync(string arguments)
         {
             return Task.Run(
                 async () =>
@@ -54,65 +54,34 @@ namespace DarcUI
                         var output = outputBuffer.ToArray();
                         var error = errorBuffer.ToArray();
 
-                        return DecodeString(output, error);
+                        return new ExecutionResult(await exitTask, arguments, DecodeString(output), DecodeString(error));
                     }
                 });
         }
 
-        private static string DecodeString(byte[] output, byte[] error)
+        private static string DecodeString(byte[] raw)
         {
-            string outputString = "";
-            if (output != null && output.Length > 0)
+            if (raw == null || raw.Length == 0)
             {
-                Stream? ms = null;
-                try
-                {
-                    ms = new MemoryStream(output);
-                    using (var reader = new StreamReader(ms))
-                    {
-                        ms = null;
-                        reader.Peek();
-                        outputString = reader.ReadToEnd();
-                        if (error == null || error.Length == 0)
-                        {
-                            return outputString;
-                        }
-                    }
-                }
-                finally
-                {
-                    ms?.Dispose();
-                }
-
-                outputString = outputString + Environment.NewLine;
+                return string.Empty;
             }
 
-            string? errorString = null;
-            if (error != null && error.Length > 0)
+            Stream? ms = null;
+            try
             {
-                Stream? ms = null;
-                try
+                ms = new MemoryStream(raw);
+                using (var reader = new StreamReader(ms))
                 {
-                    ms = new MemoryStream(error);
-                    using (var reader = new StreamReader(ms))
-                    {
-                        ms = null;
-                        reader.Peek();
-
-                        errorString = reader.ReadToEnd();
-                        if (output == null || output.Length == 0)
-                        {
-                            return errorString;
-                        }
-                    }
-                }
-                finally
-                {
-                    ms?.Dispose();
+                    ms = null;
+                    reader.Peek();
+                    string outputString = reader.ReadToEnd();
+                    return outputString;
                 }
             }
-
-            return outputString + errorString;
+            finally
+            {
+                ms?.Dispose();
+            }
         }
 
         #region ProcessWrapper

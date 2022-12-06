@@ -5,7 +5,7 @@ namespace DarcUI
 {
     public class SubscriptionRetriever
     {
-        public async Task<string> GetSubscriptionsAsync(bool forceReload)
+        public async Task<ExecutionResult> GetSubscriptionsAsync(bool forceReload)
         {
             string output;
 
@@ -15,15 +15,15 @@ namespace DarcUI
                 output = File.ReadAllText(path);
                 if (!string.IsNullOrWhiteSpace(output))
                 {
-                    return output;
+                    return new(0, input: string.Empty, output, error: string.Empty);
                 }
             }
 
             var executable = new Executable("darc");
-            output = await executable.GetOutputAsync("get-subscriptions");
-            if (!string.IsNullOrWhiteSpace(output))
+            var result = await executable.GetOutputAsync("get-subscriptions");
+            if (!string.IsNullOrWhiteSpace(result.Output))
             {
-                File.WriteAllText(path, output);
+                File.WriteAllText(path, result.Output);
             }
 
             //var output = File.ReadAllText(@"C:\Development\DarcUI\examples\get-subscriptions.txt");
@@ -60,7 +60,7 @@ namespace DarcUI
             //https://dev.azure.com/dnceng/internal/_git/dotnet-aspnetcore (.NET Core 3.1 Internal Servicing) ==> 'https://dev.azure.com/dnceng/internal/_git/aspnet-websdk' ('internal/release/3.1.1xx')
             //  - Id: 77ebb8c3-d4b0-4928-575a-08d76e1d56cb";
 
-            return output;
+            return result;
         }
     }
 }

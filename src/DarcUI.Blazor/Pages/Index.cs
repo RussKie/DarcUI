@@ -25,14 +25,14 @@ namespace DarcUI.Pages
 
         private async Task BindSubscriptionsAsync(bool forceReload)
         {
-            var output = await s_subscriptionsRetriever.GetSubscriptionsAsync(forceReload);
-            if (string.IsNullOrWhiteSpace(output))
+            ExecutionResult result = await s_subscriptionsRetriever.GetSubscriptionsAsync(forceReload);
+            if (string.IsNullOrWhiteSpace(result.Output))
             {
                 s_subscriptions = null;
             }
             else
             {
-                s_subscriptions = s_subscriptionsParser.Parse(output);
+                s_subscriptions = s_subscriptionsParser.Parse(result.Output);
             }
         }
     }

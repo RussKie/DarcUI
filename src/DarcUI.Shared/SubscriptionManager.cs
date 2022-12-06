@@ -9,38 +9,38 @@ namespace DarcUI
     {
         private static readonly Executable s_darc = new Executable("darc");
 
-        public Task<string> DeleteSubscriptionAsync(string subscriptionId)
+        public Task<ExecutionResult> DeleteSubscriptionAsync(string subscriptionId)
         {
             return s_darc.GetOutputAsync($"delete-subscriptions --id {subscriptionId} --quiet");
         }
 
-        public Task<string?> UpdateSubscriptionAsync(Subscription subscription, string? propertyName)
+        public Task<ExecutionResult?> UpdateSubscriptionAsync(Subscription subscription, string? propertyName)
         {
             return propertyName switch
             {
                 nameof(Subscription.Enabled) => ToggleSubscriptionAsync(subscription),
                 nameof(Subscription.UpdateFrequency) => UpdateUpdateFrequency(subscription),
                 nameof(Subscription.TokenFailureNotificationTags) => UpdateFailureNotificationTagsAsync(subscription),
-                _ => Task.FromResult((string?)null),
+                _ => Task.FromResult((ExecutionResult?)null),
             };
         }
 
-        private async Task<string?> ToggleSubscriptionAsync(Subscription subscription)
+        private async Task<ExecutionResult?> ToggleSubscriptionAsync(Subscription subscription)
         {
             string status = subscription.Enabled ? "--enable" : "--disable";
-            string output = await s_darc.GetOutputAsync($"subscription-status --id {subscription.Id} {status} --quiet");
+            ExecutionResult output = await s_darc.GetOutputAsync($"subscription-status --id {subscription.Id} {status} --quiet");
             return output;
         }
 
-        private async Task<string?> UpdateFailureNotificationTagsAsync(Subscription subscription)
+        private async Task<ExecutionResult?> UpdateFailureNotificationTagsAsync(Subscription subscription)
         {
-            string output = await s_darc.GetOutputAsync($"update-subscription --id {subscription.Id} --failure-notification-tags '{subscription.TokenFailureNotificationTags}'");
+            ExecutionResult output = await s_darc.GetOutputAsync($"update-subscription --id {subscription.Id} --failure-notification-tags '{subscription.TokenFailureNotificationTags}'");
             return output;
         }
 
-        private async Task<string?> UpdateUpdateFrequency(Subscription subscription)
+        private async Task<ExecutionResult?> UpdateUpdateFrequency(Subscription subscription)
         {
-            string output = await s_darc.GetOutputAsync($"update-subscription --id {subscription.Id} --update-frequency {subscription.UpdateFrequency}");
+            ExecutionResult output = await s_darc.GetOutputAsync($"update-subscription --id {subscription.Id} --update-frequency {subscription.UpdateFrequency}");
             return output;
         }
     }

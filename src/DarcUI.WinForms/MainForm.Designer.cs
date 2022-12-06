@@ -41,6 +41,8 @@
             this.tabPageSubscriptions = new System.Windows.Forms.TabPage();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbtnRefresh = new System.Windows.Forms.ToolStripButton();
+            this.tabPageLog = new System.Windows.Forms.TabPage();
+            this.rtbCommandLog = new System.Windows.Forms.RichTextBox();
             groupByToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.tableLayoutPanel1.SuspendLayout();
@@ -48,6 +50,7 @@
             this.tabControl.SuspendLayout();
             this.tabPageSubscriptions.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.tabPageLog.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupByToolStripMenuItem
@@ -75,15 +78,15 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 451F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(737, 451);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1062, 560);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // propertyGrid1
             // 
             this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propertyGrid1.Location = new System.Drawing.Point(371, 3);
+            this.propertyGrid1.Location = new System.Drawing.Point(534, 3);
             this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(363, 445);
+            this.propertyGrid1.Size = new System.Drawing.Size(525, 554);
             this.propertyGrid1.TabIndex = 2;
             this.propertyGrid1.NewClicked += new System.EventHandler(this.propertyGrid1_NewClicked);
             this.propertyGrid1.DeleteClicked += new System.EventHandler(this.propertyGrid1_DeleteClicked);
@@ -96,7 +99,7 @@
             this.treeView1.HideSelection = false;
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(362, 445);
+            this.treeView1.Size = new System.Drawing.Size(525, 554);
             this.treeView1.TabIndex = 4;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -129,12 +132,13 @@
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabPageSubscriptions);
+            this.tabControl.Controls.Add(this.tabPageLog);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.ItemSize = new System.Drawing.Size(58, 32);
             this.tabControl.Location = new System.Drawing.Point(8, 25);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(761, 507);
+            this.tabControl.Size = new System.Drawing.Size(1086, 616);
             this.tabControl.TabIndex = 0;
             // 
             // tabPageSubscriptions
@@ -143,7 +147,7 @@
             this.tabPageSubscriptions.Location = new System.Drawing.Point(4, 36);
             this.tabPageSubscriptions.Name = "tabPageSubscriptions";
             this.tabPageSubscriptions.Padding = new System.Windows.Forms.Padding(8);
-            this.tabPageSubscriptions.Size = new System.Drawing.Size(753, 467);
+            this.tabPageSubscriptions.Size = new System.Drawing.Size(1078, 576);
             this.tabPageSubscriptions.TabIndex = 0;
             this.tabPageSubscriptions.Text = "Subscriptions";
             this.tabPageSubscriptions.UseVisualStyleBackColor = true;
@@ -154,7 +158,7 @@
             this.tsbtnRefresh});
             this.toolStrip1.Location = new System.Drawing.Point(8, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(761, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1086, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -167,11 +171,33 @@
             this.tsbtnRefresh.Text = "&Refresh";
             this.tsbtnRefresh.Click += new System.EventHandler(this.tsbtnRefresh_Click);
             // 
+            // tabPageLog
+            // 
+            this.tabPageLog.Controls.Add(this.rtbCommandLog);
+            this.tabPageLog.Location = new System.Drawing.Point(4, 36);
+            this.tabPageLog.Name = "tabPageLog";
+            this.tabPageLog.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageLog.Size = new System.Drawing.Size(1078, 576);
+            this.tabPageLog.TabIndex = 1;
+            this.tabPageLog.Text = "Command Log";
+            this.tabPageLog.UseVisualStyleBackColor = true;
+            // 
+            // rtbCommandLog
+            // 
+            this.rtbCommandLog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbCommandLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbCommandLog.Location = new System.Drawing.Point(3, 3);
+            this.rtbCommandLog.Name = "rtbCommandLog";
+            this.rtbCommandLog.ReadOnly = true;
+            this.rtbCommandLog.Size = new System.Drawing.Size(1072, 570);
+            this.rtbCommandLog.TabIndex = 0;
+            this.rtbCommandLog.Text = "";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(777, 540);
+            this.ClientSize = new System.Drawing.Size(1102, 649);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.toolStrip1);
             this.DoubleBuffered = true;
@@ -185,6 +211,7 @@
             this.tabPageSubscriptions.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.tabPageLog.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,6 +229,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem groupByOption1;
         private System.Windows.Forms.ToolStripMenuItem groupByOption2;
+        private TabPage tabPageLog;
+        private RichTextBox rtbCommandLog;
     }
 }
 

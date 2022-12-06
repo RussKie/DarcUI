@@ -62,21 +62,28 @@ namespace DarcUI
             propertyGrid1.SelectedObject = null;
             propertyGrid1.AllowCreate = propertyGrid1.AllowDelete = false;
 
+            ExecutionResult? result = null;
             await InvokeAsync(hostControl: treeView1,
                 asyncMethod: async () =>
                 {
-                    var output = await s_subscriptionsRetriever.GetSubscriptionsAsync(forceReload);
-                    if (string.IsNullOrWhiteSpace(output))
+                    result = await s_subscriptionsRetriever.GetSubscriptionsAsync(forceReload);
+                    if (result.ExitCode != 0 || string.IsNullOrWhiteSpace(result.Output))
                     {
                         s_subscriptions = null;
                     }
                     else
                     {
-                        s_subscriptions = s_subscriptionsParser.Parse(output);
+                        s_subscriptions = s_subscriptionsParser.Parse(result.Output);
                     }
                 },
                 onCompleteMethod: () =>
                 {
+                    rtbCommandLog.AppendText($@"[GetSubscriptionsAsync]
+    Read {(result?.Output?.Length ?? 0):#,##0} chars.
+    Parsed {(s_subscriptions?.Count ?? 0):#,##0} subscriptions.
+
+");
+
                     treeView1.BeginUpdate();
                     BindSubscriptions(treeView1, s_subscriptions, _groupByOption);
                     treeView1.EndUpdate();
@@ -219,7 +226,7 @@ namespace DarcUI
         ///  A method to execute once the <paramref name="asyncMethod"/> has completed.
         ///  This method is run on the UI thread.
         /// </param>
-        /// <returns>An awaitable.</returns>
+        /// <returns><see langword="true"/> of the operation was successful; otherwise, <see langword="false"/>.</returns>
         private async Task InvokeAsync(Control hostControl, Func<Task> asyncMethod, Action? onCompleteMethod = null)
         {
             if (!_operationInProgress)
@@ -235,6 +242,13 @@ namespace DarcUI
                 try
                 {
                     await asyncMethod();
+                }
+                catch (Exception ex)
+                {
+                    hostControl.Invoke((Action)(() =>
+                    {
+                        rtbCommandLog.AppendText(ex.ToString());
+                    }));
                 }
                 finally
                 {
@@ -313,8 +327,10 @@ namespace DarcUI
                 return;
             }
 
+            ExecutionResult? result = null;
             await InvokeAsync(hostControl: propertyGrid1,
-                asyncMethod: () => s_subscriptionManager.UpdateSubscriptionAsync(subscription, e.ChangedItem?.Label));
+                asyncMethod: async () => result = await s_subscriptionManager.UpdateSubscriptionAsync(subscription, e.ChangedItem?.Label),
+                onCompleteMethod: () => rtbCommandLog.AppendText($"[UpdateSubscriptionAsync]\r\n{result}\r\n\r\n"));
         }
 
         private async void propertyGrid1_DeleteClicked(object sender, EventArgs e)
@@ -348,9 +364,15 @@ namespace DarcUI
             Form owner = Application.OpenForms[0];
             if (TaskDialog.ShowDialog(owner, page) == TaskDialogButton.Yes)
             {
+                ExecutionResult? result = null;
                 await InvokeAsync(hostControl: propertyGrid1,
-                    asyncMethod: () => s_subscriptionManager.DeleteSubscriptionAsync(subscription.Id!));
-                await BindSubscriptionsAsync(forceReload: true);
+                    asyncMethod: async () => result = await s_subscriptionManager.DeleteSubscriptionAsync(subscription.Id!),
+                    onCompleteMethod: () => rtbCommandLog.AppendText($"[DeleteSubscriptionAsync]\r\n{result}\r\n\r\n"));
+
+                if (result is not null && result.ExitCode == 0)
+                {
+                    await BindSubscriptionsAsync(forceReload: true);
+                }
             }
         }
 
