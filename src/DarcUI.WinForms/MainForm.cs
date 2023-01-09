@@ -335,7 +335,7 @@ namespace DarcUI
 
         private async void propertyGrid1_DeleteClicked(object sender, EventArgs e)
         {
-            if (propertyGrid1.SelectedObject is not Subscription subscription)
+            if (propertyGrid1.SelectedObject is not SubscriptionProxy subscription)
             {
                 Debug.Fail("How did we get here?");
                 return;
@@ -366,7 +366,7 @@ namespace DarcUI
             {
                 ExecutionResult? result = null;
                 await InvokeAsync(hostControl: propertyGrid1,
-                    asyncMethod: async () => result = await s_subscriptionManager.DeleteSubscriptionAsync(subscription.Id!),
+                    asyncMethod: async () => result = await s_subscriptionManager.DeleteSubscriptionAsync(subscription.Id),
                     onCompleteMethod: () => rtbCommandLog.AppendText($"[DeleteSubscriptionAsync]\r\n{result}\r\n\r\n"));
 
                 if (result is not null && result.ExitCode == 0)
