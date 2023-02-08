@@ -7,16 +7,19 @@ using System.Windows.Forms;
 
 namespace DarcUI
 {
-    public class AddRemovePropertyGrid : PropertyGrid
+    public class ExtendedPropertyGrid : PropertyGrid
     {
-        private readonly ToolStripSeparator _separator;
+        private readonly ToolStripSeparator _separator1;
+        private readonly ToolStripSeparator _separator2;
         private readonly ToolStripButton _btnNew;
         private readonly ToolStripButton _btnDelete;
+        private readonly ToolStripButton _btnTrigger;
 
         public event EventHandler? NewClicked;
         public event EventHandler? DeleteClicked;
+        public event EventHandler? TriggerClicked;
 
-        public AddRemovePropertyGrid()
+        public ExtendedPropertyGrid()
         {
             _btnNew = new("New subscription")
             {
@@ -28,13 +31,21 @@ namespace DarcUI
                 Image = global::DarcUI.Properties.Resources.delete,
                 Visible = false
             };
+            _btnTrigger = new("Trigger subscription")
+            {
+                Image = global::DarcUI.Properties.Resources.trigger,
+                Visible = false
+            };
 
             _btnNew.Click += (s, e) => NewClicked?.Invoke(this, e);
             _btnDelete.Click += (s, e) => DeleteClicked?.Invoke(this, e);
+            _btnTrigger.Click += (s, e) => TriggerClicked?.Invoke(this, e);
 
             ToolStrip toolbar = GetToolbar();
-            toolbar.Items.Add(_separator = new ToolStripSeparator { Visible = false });
+            toolbar.Items.Add(_separator1 = new ToolStripSeparator { Visible = false });
             toolbar.Items.Add(_btnNew);
+            toolbar.Items.Add(_separator2 = new ToolStripSeparator { Visible = false });
+            toolbar.Items.Add(_btnTrigger);
             toolbar.Items.Add(_btnDelete);
         }
 
@@ -50,7 +61,7 @@ namespace DarcUI
                 }
 
                 _btnNew.Visible = value;
-                _separator.Visible = _btnNew.Visible && _btnDelete.Visible;
+                _separator1.Visible = _btnNew.Visible;
             }
         }
 
@@ -66,7 +77,23 @@ namespace DarcUI
                 }
 
                 _btnDelete.Visible = value;
-                _separator.Visible = _btnNew.Visible && _btnDelete.Visible;
+                _separator2.Visible = _btnTrigger.Visible || _btnDelete.Visible;
+            }
+        }
+
+        [DefaultValue(false)]
+        public bool AllowTrigger
+        {
+            get => _btnTrigger.Visible;
+            set
+            {
+                if (_btnTrigger.Visible == value)
+                {
+                    return;
+                }
+
+                _btnTrigger.Visible = value;
+                _separator2.Visible = _btnTrigger.Visible || _btnDelete.Visible;
             }
         }
 

@@ -28,200 +28,196 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ToolStripMenuItem groupByToolStripMenuItem;
-            System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.propertyGrid1 = new DarcUI.AddRemovePropertyGrid();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.groupByOption1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupByOption2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPageSubscriptions = new System.Windows.Forms.TabPage();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbtnRefresh = new System.Windows.Forms.ToolStripButton();
-            this.tabPageLog = new System.Windows.Forms.TabPage();
-            this.rtbCommandLog = new System.Windows.Forms.RichTextBox();
-            groupByToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
-            this.tabControl.SuspendLayout();
-            this.tabPageSubscriptions.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
-            this.tabPageLog.SuspendLayout();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            ToolStripMenuItem groupByToolStripMenuItem;
+            ToolStripSeparator toolStripMenuItem1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            tableLayoutPanel1 = new TableLayoutPanel();
+            propertyGrid1 = new ExtendedPropertyGrid();
+            treeView1 = new TreeView();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            groupByOption1 = new ToolStripMenuItem();
+            groupByOption2 = new ToolStripMenuItem();
+            tabControl = new TabControl();
+            tabPageSubscriptions = new TabPage();
+            tabPageLog = new TabPage();
+            rtbCommandLog = new RichTextBox();
+            toolStrip1 = new ToolStrip();
+            tsbtnRefresh = new ToolStripButton();
+            groupByToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripSeparator();
+            tableLayoutPanel1.SuspendLayout();
+            contextMenuStrip1.SuspendLayout();
+            tabControl.SuspendLayout();
+            tabPageSubscriptions.SuspendLayout();
+            tabPageLog.SuspendLayout();
+            toolStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // groupByToolStripMenuItem
             // 
             groupByToolStripMenuItem.Enabled = false;
             groupByToolStripMenuItem.Name = "groupByToolStripMenuItem";
-            groupByToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            groupByToolStripMenuItem.Size = new Size(260, 22);
             groupByToolStripMenuItem.Text = "Group by";
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new System.Drawing.Size(257, 6);
+            toolStripMenuItem1.Size = new Size(257, 6);
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.propertyGrid1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.treeView1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 8);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 451F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1062, 560);
-            this.tableLayoutPanel1.TabIndex = 0;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(propertyGrid1, 1, 0);
+            tableLayoutPanel1.Controls.Add(treeView1, 0, 0);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(8, 8);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 451F));
+            tableLayoutPanel1.Size = new Size(1062, 560);
+            tableLayoutPanel1.TabIndex = 0;
             // 
             // propertyGrid1
             // 
-            this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propertyGrid1.Location = new System.Drawing.Point(534, 3);
-            this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(525, 554);
-            this.propertyGrid1.TabIndex = 2;
-            this.propertyGrid1.NewClicked += new System.EventHandler(this.propertyGrid1_NewClicked);
-            this.propertyGrid1.DeleteClicked += new System.EventHandler(this.propertyGrid1_DeleteClicked);
-            this.propertyGrid1.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.propertyGrid1_PropertyValueChanged);
+            propertyGrid1.Dock = DockStyle.Fill;
+            propertyGrid1.Location = new Point(534, 3);
+            propertyGrid1.Name = "propertyGrid1";
+            propertyGrid1.Size = new Size(525, 554);
+            propertyGrid1.TabIndex = 2;
+            propertyGrid1.NewClicked += propertyGrid1_NewClicked;
+            propertyGrid1.DeleteClicked += propertyGrid1_DeleteClicked;
+            propertyGrid1.TriggerClicked += propertyGrid1_TriggerClicked;
+            propertyGrid1.PropertyValueChanged += propertyGrid1_PropertyValueChanged;
             // 
             // treeView1
             // 
-            this.treeView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.HideSelection = false;
-            this.treeView1.Location = new System.Drawing.Point(3, 3);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(525, 554);
-            this.treeView1.TabIndex = 4;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            treeView1.ContextMenuStrip = contextMenuStrip1;
+            treeView1.Dock = DockStyle.Fill;
+            treeView1.HideSelection = false;
+            treeView1.Location = new Point(3, 3);
+            treeView1.Name = "treeView1";
+            treeView1.Size = new Size(525, 554);
+            treeView1.TabIndex = 4;
+            treeView1.AfterSelect += treeView1_AfterSelect;
             // 
             // contextMenuStrip1
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            groupByToolStripMenuItem,
-            toolStripMenuItem1,
-            this.groupByOption1,
-            this.groupByOption2});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(261, 76);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { groupByToolStripMenuItem, toolStripMenuItem1, groupByOption1, groupByOption2 });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(261, 76);
             // 
             // groupByOption1
             // 
-            this.groupByOption1.Checked = true;
-            this.groupByOption1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.groupByOption1.Name = "groupByOption1";
-            this.groupByOption1.Size = new System.Drawing.Size(260, 22);
-            this.groupByOption1.Text = "Channel > Source > Repo > Branch";
-            this.groupByOption1.Click += new System.EventHandler(this.groupByOption1_Click);
+            groupByOption1.Checked = true;
+            groupByOption1.CheckState = CheckState.Checked;
+            groupByOption1.Name = "groupByOption1";
+            groupByOption1.Size = new Size(260, 22);
+            groupByOption1.Text = "Channel > Source > Repo > Branch";
+            groupByOption1.Click += groupByOption1_Click;
             // 
             // groupByOption2
             // 
-            this.groupByOption2.Name = "groupByOption2";
-            this.groupByOption2.Size = new System.Drawing.Size(260, 22);
-            this.groupByOption2.Text = "Channel > Repo > Branch > Source";
-            this.groupByOption2.Click += new System.EventHandler(this.groupByOption2_Click);
+            groupByOption2.Name = "groupByOption2";
+            groupByOption2.Size = new Size(260, 22);
+            groupByOption2.Text = "Channel > Repo > Branch > Source";
+            groupByOption2.Click += groupByOption2_Click;
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.tabPageSubscriptions);
-            this.tabControl.Controls.Add(this.tabPageLog);
-            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.ItemSize = new System.Drawing.Size(58, 32);
-            this.tabControl.Location = new System.Drawing.Point(8, 25);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1086, 616);
-            this.tabControl.TabIndex = 0;
+            tabControl.Controls.Add(tabPageSubscriptions);
+            tabControl.Controls.Add(tabPageLog);
+            tabControl.Dock = DockStyle.Fill;
+            tabControl.ItemSize = new Size(58, 32);
+            tabControl.Location = new Point(8, 25);
+            tabControl.Name = "tabControl";
+            tabControl.SelectedIndex = 0;
+            tabControl.Size = new Size(1086, 616);
+            tabControl.TabIndex = 0;
             // 
             // tabPageSubscriptions
             // 
-            this.tabPageSubscriptions.Controls.Add(this.tableLayoutPanel1);
-            this.tabPageSubscriptions.Location = new System.Drawing.Point(4, 36);
-            this.tabPageSubscriptions.Name = "tabPageSubscriptions";
-            this.tabPageSubscriptions.Padding = new System.Windows.Forms.Padding(8);
-            this.tabPageSubscriptions.Size = new System.Drawing.Size(1078, 576);
-            this.tabPageSubscriptions.TabIndex = 0;
-            this.tabPageSubscriptions.Text = "Subscriptions";
-            this.tabPageSubscriptions.UseVisualStyleBackColor = true;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbtnRefresh});
-            this.toolStrip1.Location = new System.Drawing.Point(8, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1086, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsbtnRefresh
-            // 
-            this.tsbtnRefresh.Image = global::DarcUI.Properties.Resources.refresh;
-            this.tsbtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnRefresh.Name = "tsbtnRefresh";
-            this.tsbtnRefresh.Size = new System.Drawing.Size(66, 22);
-            this.tsbtnRefresh.Text = "&Refresh";
-            this.tsbtnRefresh.Click += new System.EventHandler(this.tsbtnRefresh_Click);
+            tabPageSubscriptions.Controls.Add(tableLayoutPanel1);
+            tabPageSubscriptions.Location = new Point(4, 36);
+            tabPageSubscriptions.Name = "tabPageSubscriptions";
+            tabPageSubscriptions.Padding = new Padding(8);
+            tabPageSubscriptions.Size = new Size(1078, 576);
+            tabPageSubscriptions.TabIndex = 0;
+            tabPageSubscriptions.Text = "Subscriptions";
+            tabPageSubscriptions.UseVisualStyleBackColor = true;
             // 
             // tabPageLog
             // 
-            this.tabPageLog.Controls.Add(this.rtbCommandLog);
-            this.tabPageLog.Location = new System.Drawing.Point(4, 36);
-            this.tabPageLog.Name = "tabPageLog";
-            this.tabPageLog.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageLog.Size = new System.Drawing.Size(1078, 576);
-            this.tabPageLog.TabIndex = 1;
-            this.tabPageLog.Text = "Command Log";
-            this.tabPageLog.UseVisualStyleBackColor = true;
+            tabPageLog.Controls.Add(rtbCommandLog);
+            tabPageLog.Location = new Point(4, 36);
+            tabPageLog.Name = "tabPageLog";
+            tabPageLog.Padding = new Padding(3);
+            tabPageLog.Size = new Size(1078, 576);
+            tabPageLog.TabIndex = 1;
+            tabPageLog.Text = "Command Log";
+            tabPageLog.UseVisualStyleBackColor = true;
             // 
             // rtbCommandLog
             // 
-            this.rtbCommandLog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtbCommandLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbCommandLog.Location = new System.Drawing.Point(3, 3);
-            this.rtbCommandLog.Name = "rtbCommandLog";
-            this.rtbCommandLog.ReadOnly = true;
-            this.rtbCommandLog.Size = new System.Drawing.Size(1072, 570);
-            this.rtbCommandLog.TabIndex = 0;
-            this.rtbCommandLog.Text = "";
+            rtbCommandLog.BorderStyle = BorderStyle.FixedSingle;
+            rtbCommandLog.Dock = DockStyle.Fill;
+            rtbCommandLog.Location = new Point(3, 3);
+            rtbCommandLog.Name = "rtbCommandLog";
+            rtbCommandLog.ReadOnly = true;
+            rtbCommandLog.Size = new Size(1072, 570);
+            rtbCommandLog.TabIndex = 0;
+            rtbCommandLog.Text = "";
+            // 
+            // toolStrip1
+            // 
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbtnRefresh });
+            toolStrip1.Location = new Point(8, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(1086, 25);
+            toolStrip1.TabIndex = 1;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbtnRefresh
+            // 
+            tsbtnRefresh.Image = (Image)resources.GetObject("tsbtnRefresh.Image");
+            tsbtnRefresh.ImageTransparentColor = Color.Magenta;
+            tsbtnRefresh.Name = "tsbtnRefresh";
+            tsbtnRefresh.Size = new Size(66, 22);
+            tsbtnRefresh.Text = "&Refresh";
+            tsbtnRefresh.Click += tsbtnRefresh_Click;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1102, 649);
-            this.Controls.Add(this.tabControl);
-            this.Controls.Add(this.toolStrip1);
-            this.DoubleBuffered = true;
-            this.Icon = global::DarcUI.Properties.Resources.dotnet;
-            this.Name = "MainForm";
-            this.Padding = new System.Windows.Forms.Padding(8, 0, 8, 8);
-            this.Text = "Darc UI";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
-            this.tabControl.ResumeLayout(false);
-            this.tabPageSubscriptions.ResumeLayout(false);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            this.tabPageLog.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            ClientSize = new Size(1102, 649);
+            Controls.Add(tabControl);
+            Controls.Add(toolStrip1);
+            DoubleBuffered = true;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "MainForm";
+            Padding = new Padding(8, 0, 8, 8);
+            Text = "Darc UI";
+            tableLayoutPanel1.ResumeLayout(false);
+            contextMenuStrip1.ResumeLayout(false);
+            tabControl.ResumeLayout(false);
+            tabPageSubscriptions.ResumeLayout(false);
+            tabPageLog.ResumeLayout(false);
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPageSubscriptions;
-        private AddRemovePropertyGrid propertyGrid1;
+        private ExtendedPropertyGrid propertyGrid1;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ToolStrip toolStrip1;

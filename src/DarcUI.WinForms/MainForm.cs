@@ -423,6 +423,46 @@ namespace DarcUI
             }
         }
 
+        private async void propertyGrid1_TriggerClicked(object sender, EventArgs e)
+        {
+            if (propertyGrid1.SelectedObject is not SubscriptionProxy subscription)
+            {
+                Debug.Fail("How did we get here?");
+                return;
+            }
+
+            ExecutionResult? result = null;
+            await InvokeAsync(hostControl: propertyGrid1,
+                asyncMethod: async () => result = await s_subscriptionManager.TriggerSubscriptionAsync(subscription.Id),
+                onCompleteMethod: () => rtbCommandLog.AppendText($"[TriggerSubscriptionAsync]\r\n{result}\r\n\r\n"));
+
+            TaskDialogPage page;
+            if (result is not null && result.ExitCode == 0)
+            {
+                page = new()
+                {
+                    Icon = TaskDialogIcon.Information,
+                    SizeToContent = true,
+                    Heading = "The subscription was triggered",
+                    Text = "It may take a little while for changes to flow in.",
+                    Buttons = { TaskDialogButton.OK }
+                };
+            }
+            else
+            {
+                page = new()
+                {
+                    Icon = TaskDialogIcon.Error,
+                    SizeToContent = true,
+                    Heading = "Failed to trigger the subscription",
+                    Text = "Check the log for more information.",
+                    Buttons = { TaskDialogButton.OK }
+                };
+            }
+
+            TaskDialog.ShowDialog(this, page);
+        }
+
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             if (e.Node?.Tag is not null)
@@ -430,14 +470,16 @@ namespace DarcUI
                 propertyGrid1.SelectedObject = e.Node.Tag;
 
                 propertyGrid1.AllowCreate =
-                    propertyGrid1.AllowDelete = true;
+                    propertyGrid1.AllowDelete =
+                    propertyGrid1.AllowTrigger = true;
 
                 return;
             }
 
             propertyGrid1.SelectedObject = null;
             propertyGrid1.AllowCreate =
-                propertyGrid1.AllowDelete = false;
+                propertyGrid1.AllowDelete =
+                propertyGrid1.AllowTrigger = false;
 
             propertyGrid1.AllowCreate = e.Node is ChannelTreeNode && _groupByOption == GroupByOption.RepoBranchChannelSource;
         }

@@ -4,6 +4,7 @@
     <LangVersion>latest</LangVersion>
     <NoWarn>$(NoWarn);1573;1591;1712</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
 
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>

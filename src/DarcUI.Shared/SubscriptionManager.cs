@@ -26,7 +26,12 @@ namespace DarcUI
 
         public Task<ExecutionResult> DeleteSubscriptionAsync(string subscriptionId)
         {
-            return s_darc.GetOutputAsync($"delete-subscriptions --id {subscriptionId} --quiet");
+            return s_darc.GetOutputAsync($"delete-subscriptions --id {subscriptionId} --quiet --verbose --debug");
+        }
+
+        public Task<ExecutionResult> TriggerSubscriptionAsync(string subscriptionId)
+        {
+            return s_darc.GetOutputAsync($"trigger-subscriptions --id {subscriptionId} --quiet --verbose --debug");
         }
 
         public Task<ExecutionResult?> UpdateSubscriptionAsync(Subscription subscription, string? propertyName)
@@ -43,19 +48,19 @@ namespace DarcUI
         private async Task<ExecutionResult?> ToggleSubscriptionAsync(Subscription subscription)
         {
             string status = subscription.Enabled ? "--enable" : "--disable";
-            ExecutionResult output = await s_darc.GetOutputAsync($"subscription-status --id {subscription.Id} {status} --quiet");
+            ExecutionResult output = await s_darc.GetOutputAsync($"subscription-status --id {subscription.Id} {status} --quiet --verbose --debug");
             return output;
         }
 
         private async Task<ExecutionResult?> UpdateFailureNotificationTagsAsync(Subscription subscription)
         {
-            ExecutionResult output = await s_darc.GetOutputAsync($"update-subscription --id {subscription.Id} --failure-notification-tags '{subscription.TokenFailureNotificationTags}'");
+            ExecutionResult output = await s_darc.GetOutputAsync($"update-subscription --id {subscription.Id} --failure-notification-tags '{subscription.TokenFailureNotificationTags}' --verbose --debug");
             return output;
         }
 
         private async Task<ExecutionResult?> UpdateUpdateFrequency(Subscription subscription)
         {
-            ExecutionResult output = await s_darc.GetOutputAsync($"update-subscription --id {subscription.Id} --update-frequency {subscription.UpdateFrequency}");
+            ExecutionResult output = await s_darc.GetOutputAsync($"update-subscription --id {subscription.Id} --update-frequency {subscription.UpdateFrequency} --verbose --debug");
             return output;
         }
     }
