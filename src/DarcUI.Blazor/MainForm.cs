@@ -4,25 +4,24 @@
 using Microsoft.AspNetCore.Components.WebView.WindowsForms;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DarcUI
+namespace DarcUI;
+
+public partial class MainForm : Form
 {
-    public partial class MainForm : Form
+    public MainForm()
     {
-        public MainForm()
-        {
-            InitializeComponent();
+        InitializeComponent();
 
-            var services = new ServiceCollection();
-            services.AddWindowsFormsBlazorWebView();
+        var services = new ServiceCollection();
+        services.AddWindowsFormsBlazorWebView();
 
-            blazorWebView1.HostPage = "wwwroot\\index.html";
-            blazorWebView1.Services = services.BuildServiceProvider();
-            blazorWebView1.RootComponents.Add<Main>("#app");
+        blazorWebView1.HostPage = "wwwroot\\index.html";
+        blazorWebView1.Services = services.BuildServiceProvider();
+        blazorWebView1.RootComponents.Add<Main>("#app");
 
-            //blazorWebView1.WebView.CoreWebView2InitializationCompleted += (s, e) =>
-            //{
-            //    blazorWebView1.WebView.CoreWebView2.OpenDevToolsWindow();
-            //};
-        }
+        //blazorWebView1.WebView.CoreWebView2InitializationCompleted += (s, e) =>
+        //{
+        //    blazorWebView1.WebView.CoreWebView2.OpenDevToolsWindow();
+        //};
     }
 }

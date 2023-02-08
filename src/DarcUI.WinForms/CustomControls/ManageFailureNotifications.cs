@@ -1,22 +1,19 @@
 ﻿// Copyright (c) Igor Velikorossov. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using System.Windows.Forms;
+namespace DarcUI.CustomControls;
 
-namespace DarcUI.CustomControls
+public partial class ManageFailureNotifications : Form
 {
-    public partial class ManageFailureNotifications : Form
+    public ManageFailureNotifications()
     {
-        public ManageFailureNotifications()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
 
-        public string TokenFailureNotificationTags => txtTags.Text;
+    public string TokenFailureNotificationTags => txtTags.Text;
 
-        public void SetContext(SubscriptionProxy subscription)
-        {
-            txtTags.Text = subscription.TokenFailureNotificationTags;
-        }
+    public void SetContext(SubscriptionProxy subscription)
+    {
+        txtTags.Text = subscription.TokenFailureNotificationTags;
     }
 }

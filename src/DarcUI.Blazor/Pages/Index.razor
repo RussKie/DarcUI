@@ -16,11 +16,11 @@ else
     <thead></thead>
     <tbody>
       @foreach (IGrouping<string?, Subscription> target in s_subscriptions.GroupBy(s => s.Target).OrderBy(s => s.Key))
-      {
-      <tr>
+  {
+  <tr>
         <td>@target.Key</td>
       </tr>
-      }
+  }
     </tbody>
   </table>
 }

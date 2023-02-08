@@ -3,39 +3,38 @@
 
 using System.Text;
 
-namespace DarcUI
+namespace DarcUI;
+
+public sealed class ExecutionResult
 {
-    public sealed class ExecutionResult
+    public ExecutionResult(int exitCode, string input, string output, string error)
     {
-        public ExecutionResult(int exitCode, string input, string output, string error)
+        ExitCode = exitCode;
+        Input = input;
+        Output = output;
+        Error = error;
+    }
+
+    public int ExitCode { get; }
+    public string Input { get; }
+    public string Output { get; }
+    public string Error { get; }
+
+    public override string ToString()
+    {
+        StringBuilder sb = new();
+        sb.AppendLine($"[Input] {Input}");
+
+        if (string.IsNullOrEmpty(Output))
         {
-            ExitCode = exitCode;
-            Input = input;
-            Output = output;
-            Error = error;
+            sb.AppendLine($"[Output] {Output}");
         }
 
-        public int ExitCode { get; }
-        public string Input { get; }
-        public string Output { get; }
-        public string Error { get; }
-
-        public override string ToString()
+        if (string.IsNullOrEmpty(Error))
         {
-            StringBuilder sb = new();
-            sb.AppendLine($"[Input] {Input}");
-
-            if (string.IsNullOrEmpty(Output))
-            {
-                sb.AppendLine($"[Output] {Output}");
-            }
-
-            if (string.IsNullOrEmpty(Error))
-            {
-                sb.AppendLine($"[Error] {Error}");
-            }
-
-            return sb.ToString();
+            sb.AppendLine($"[Error] {Error}");
         }
+
+        return sb.ToString();
     }
 }

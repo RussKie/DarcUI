@@ -1,17 +1,14 @@
 ﻿// Copyright (c) Igor Velikorossov. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using System.Windows.Forms;
+namespace DarcUI;
 
-namespace DarcUI
+internal class ChannelTreeNode : TreeNode
 {
-    internal class ChannelTreeNode : TreeNode
+    public ChannelTreeNode(string channel) :
+        base(channel)
     {
-        public ChannelTreeNode(string channel) :
-            base(channel)
-        {
-            ImageIndex =
-                SelectedImageIndex = 4;
-        }
+        ImageIndex =
+            SelectedImageIndex = 4;
     }
 }

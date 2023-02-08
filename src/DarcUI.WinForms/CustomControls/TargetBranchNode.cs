@@ -1,28 +1,24 @@
 ﻿// Copyright (c) Igor Velikorossov. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using System.Drawing;
-using System.Windows.Forms;
+namespace DarcUI;
 
-namespace DarcUI
+internal class TargetBranchNode : TreeNode
 {
-    internal class TargetBranchNode : TreeNode
+    public TargetBranchNode(Subscription subscription)
+      : this(subscription.Source)
     {
-        public TargetBranchNode(Subscription subscription)
-          : this(subscription.Source)
-        {
-            Tag = (SubscriptionProxy?)subscription;
+        Tag = (SubscriptionProxy?)subscription;
 
-            if (!subscription.Enabled)
-            {
-                ForeColor = SystemColors.GrayText;
-            }
-        }
-
-        public TargetBranchNode(string? text) : base(text)
+        if (!subscription.Enabled)
         {
-            ImageIndex = 
-                SelectedImageIndex = 3;
+            ForeColor = SystemColors.GrayText;
         }
+    }
+
+    public TargetBranchNode(string? text) : base(text)
+    {
+        ImageIndex = 
+            SelectedImageIndex = 3;
     }
 }
