@@ -25,12 +25,12 @@ public sealed class ExecutionResult
         StringBuilder sb = new();
         sb.AppendLine($"[Input] {Input}");
 
-        if (string.IsNullOrEmpty(Output))
+        if (!string.IsNullOrEmpty(Output))
         {
             sb.AppendLine($"[Output] {Output}");
         }
 
-        if (string.IsNullOrEmpty(Error))
+        if (!string.IsNullOrEmpty(Error))
         {
             sb.AppendLine($"[Error] {Error}");
         }
