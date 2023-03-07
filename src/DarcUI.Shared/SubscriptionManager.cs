@@ -43,6 +43,13 @@ public class SubscriptionManager
         };
     }
 
+    public Task<ExecutionResult> ViewDefaultChannelsAsync(Subscription subscription)
+    {
+        string command = $"get-default-channels --channel '{subscription.SourceChannel}' --source-repo '{subscription.Target}' --branch '{subscription.TargetBranch}' --verbose";
+
+        return s_darc.GetOutputAsync(command);
+    }
+
     private async Task<ExecutionResult?> ToggleSubscriptionAsync(Subscription subscription)
     {
         string status = subscription.Enabled ? "--enable" : "--disable";

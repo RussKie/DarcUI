@@ -283,6 +283,17 @@ public partial class MainForm : Form
         }
     }
 
+    private static SourceTreeNode? GetSourceTreeNode(TreeNode selectedNode)
+    {
+        if (selectedNode is ChannelTreeNode channelNode &&
+            channelNode.FirstNode is SourceTreeNode sourceNode)
+        {
+            return sourceNode;
+        }
+
+        return selectedNode as SourceTreeNode;
+    }
+
     private async void groupByOption1_Click(object sender, EventArgs e)
     {
         if (_groupByOption == GroupByOption.RepoBranchChannelSource)
@@ -402,17 +413,6 @@ public partial class MainForm : Form
                 }
             }
         }
-
-        static SourceTreeNode? GetSourceTreeNode(TreeNode selectedNode)
-        {
-            if (selectedNode is ChannelTreeNode channelNode &&
-                channelNode.FirstNode is SourceTreeNode sourceNode)
-            {
-                return sourceNode;
-            }
-
-            return selectedNode as SourceTreeNode;
-        }
     }
 
     private async void propertyGrid1_TriggerClicked(object sender, EventArgs e)
@@ -455,6 +455,20 @@ public partial class MainForm : Form
         TaskDialog.ShowDialog(this, page);
     }
 
+    private async void propertyGrid1_ViewChannelsClicked(object sender, EventArgs e)
+    {
+        if (GetSourceTreeNode(treeView1.SelectedNode)?.Tag is not SubscriptionProxy subscription)
+        {
+            Debug.Fail("How did we get here?");
+            return;
+        }
+
+        ExecutionResult? result = null;
+        await InvokeAsync(hostControl: propertyGrid1,
+            asyncMethod: async () => result = await s_subscriptionManager.ViewDefaultChannelsAsync((Subscription)subscription),
+            onCompleteMethod: () => rtbCommandLog.AppendText($"[ViewDefaultChannelsAsync]\r\n{result}\r\n\r\n"));
+    }
+
     private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
     {
         if (e.Node?.Tag is not null)
@@ -464,6 +478,7 @@ public partial class MainForm : Form
             propertyGrid1.AllowCreate =
                 propertyGrid1.AllowDelete =
                 propertyGrid1.AllowTrigger = true;
+            propertyGrid1.AllowViewChannels = false;
 
             return;
         }
@@ -471,9 +486,11 @@ public partial class MainForm : Form
         propertyGrid1.SelectedObject = null;
         propertyGrid1.AllowCreate =
             propertyGrid1.AllowDelete =
-            propertyGrid1.AllowTrigger = false;
+            propertyGrid1.AllowTrigger =
+            propertyGrid1.AllowViewChannels = false;
 
         propertyGrid1.AllowCreate = e.Node is ChannelTreeNode && _groupByOption == GroupByOption.RepoBranchChannelSource;
+        propertyGrid1.AllowViewChannels = e.Node is ChannelTreeNode && _groupByOption == GroupByOption.RepoBranchChannelSource;
     }
 
     private async void tsbtnRefresh_Click(object sender, EventArgs e)

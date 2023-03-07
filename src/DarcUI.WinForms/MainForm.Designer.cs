@@ -91,8 +91,9 @@ partial class MainForm
         propertyGrid1.TabIndex = 2;
         propertyGrid1.NewClicked += propertyGrid1_NewClicked;
         propertyGrid1.DeleteClicked += propertyGrid1_DeleteClicked;
+        propertyGrid1.PropertyValueChanged += propertyGrid1_PropertyValueChanged;        
         propertyGrid1.TriggerClicked += propertyGrid1_TriggerClicked;
-        propertyGrid1.PropertyValueChanged += propertyGrid1_PropertyValueChanged;
+        propertyGrid1.ViewChannelsClicked += propertyGrid1_ViewChannelsClicked;
         // 
         // treeView1
         // 

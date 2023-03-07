@@ -9,13 +9,16 @@ public class ExtendedPropertyGrid : PropertyGrid
 {
     private readonly ToolStripSeparator _separator1;
     private readonly ToolStripSeparator _separator2;
+    private readonly ToolStripSeparator _separator3;
     private readonly ToolStripButton _btnNew;
     private readonly ToolStripButton _btnDelete;
     private readonly ToolStripButton _btnTrigger;
+    private readonly ToolStripButton _btnViewChannels;
 
     public event EventHandler? NewClicked;
     public event EventHandler? DeleteClicked;
     public event EventHandler? TriggerClicked;
+    public event EventHandler? ViewChannelsClicked;
 
     public ExtendedPropertyGrid()
     {
@@ -34,10 +37,16 @@ public class ExtendedPropertyGrid : PropertyGrid
             Image = global::DarcUI.Properties.Resources.trigger,
             Visible = false
         };
+        _btnViewChannels = new("View channels")
+        {
+            Image = global::DarcUI.Properties.Resources.channels,
+            Visible = false
+        };
 
         _btnNew.Click += (s, e) => NewClicked?.Invoke(this, e);
         _btnDelete.Click += (s, e) => DeleteClicked?.Invoke(this, e);
         _btnTrigger.Click += (s, e) => TriggerClicked?.Invoke(this, e);
+        _btnViewChannels.Click += (s, e) => ViewChannelsClicked?.Invoke(this, e);
 
         ToolStrip toolbar = GetToolbar();
         toolbar.Items.Add(_separator1 = new ToolStripSeparator { Visible = false });
@@ -45,6 +54,8 @@ public class ExtendedPropertyGrid : PropertyGrid
         toolbar.Items.Add(_separator2 = new ToolStripSeparator { Visible = false });
         toolbar.Items.Add(_btnTrigger);
         toolbar.Items.Add(_btnDelete);
+        toolbar.Items.Add(_separator3 = new ToolStripSeparator { Visible = false });
+        toolbar.Items.Add(_btnViewChannels);
     }
 
     [DefaultValue(false)]
@@ -92,6 +103,22 @@ public class ExtendedPropertyGrid : PropertyGrid
 
             _btnTrigger.Visible = value;
             _separator2.Visible = _btnTrigger.Visible || _btnDelete.Visible;
+        }
+    }
+
+    [DefaultValue(false)]
+    public bool AllowViewChannels
+    {
+        get => _btnViewChannels.Visible;
+        set
+        {
+            if (_btnViewChannels.Visible == value)
+            {
+                return;
+            }
+
+            _btnViewChannels.Visible = value;
+            _separator3.Visible = _btnViewChannels.Visible;
         }
     }
 

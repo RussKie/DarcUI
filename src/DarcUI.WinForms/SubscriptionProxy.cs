@@ -2,6 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing.Design;
 using DarcUI.CustomControls;
 
@@ -53,6 +54,7 @@ public class SubscriptionProxy
     //[Category(CategoryStatus)]
     //public string[] MergePolicies { get; set; }
 
+    [return: NotNullIfNotNull(nameof(subscription))]
     public static implicit operator SubscriptionProxy?(Subscription? subscription)
     {
         if (subscription is null)
@@ -74,6 +76,7 @@ public class SubscriptionProxy
         };
     }
 
+    [return: NotNullIfNotNull(nameof(subscriptionProxy))]
     public static implicit operator Subscription?(SubscriptionProxy? subscriptionProxy)
     {
         if (subscriptionProxy is null)
