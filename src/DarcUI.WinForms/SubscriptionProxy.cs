@@ -65,14 +65,14 @@ public class SubscriptionProxy
         return new()
         {
             Source = subscription.Source,
-            SourceChannel = subscription.SourceChannel,
+            SourceChannel = subscription.SourceChannel.Name,
             Target = subscription.Target,
             TargetBranch = subscription.TargetBranch,
             Id = subscription.Id,
             TokenFailureNotificationTags = subscription.TokenFailureNotificationTags,
-            UpdateFrequency = subscription.UpdateFrequency,
+            UpdateFrequency = subscription.MergePolicy.UpdateFrequency,
             Enabled = subscription.Enabled,
-            Batchable = subscription.Batchable,
+            Batchable = subscription.MergePolicy.Batchable,
         };
     }
 
@@ -87,14 +87,20 @@ public class SubscriptionProxy
         return new()
         {
             Source = subscriptionProxy.Source,
-            SourceChannel = subscriptionProxy.SourceChannel,
+            SourceChannel = new()
+            {
+                Name = subscriptionProxy.SourceChannel
+            },
             Target = subscriptionProxy.Target,
             TargetBranch = subscriptionProxy.TargetBranch,
             Id = subscriptionProxy.Id,
             TokenFailureNotificationTags = subscriptionProxy.TokenFailureNotificationTags,
-            UpdateFrequency = subscriptionProxy.UpdateFrequency,
             Enabled = subscriptionProxy.Enabled,
-            Batchable = subscriptionProxy.Batchable,
+            MergePolicy = new()
+            {
+                UpdateFrequency = subscriptionProxy.UpdateFrequency,
+                Batchable = subscriptionProxy.Batchable,
+            }
         };
     }
 }

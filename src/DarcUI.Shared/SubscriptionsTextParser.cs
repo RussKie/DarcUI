@@ -37,7 +37,7 @@ public class SubscriptionsTextParser : ISubscriptionsParser
 
                 //Debug.WriteLine(line.ToString());
 
-                if (subscription == null && !IsBlockMarker(line))
+                if (subscription is null && !IsBlockMarker(line))
                 {
                     // ignore any changes we don't know how to parse, otherwise we'll render the app unusable
                     Debug.WriteLine(line.ToString());
@@ -56,7 +56,7 @@ public class SubscriptionsTextParser : ISubscriptionsParser
 
                     start1 = end1 + 2;                          // ' ('
                     end1 = line.IndexOf(')');
-                    subscription.SourceChannel = line.Slice(start1, end1 - start1).ToString();
+                    subscription.SourceChannel = new() { Name = line.Slice(start1, end1 - start1).ToString() };
 
                     start1 = end1 + s_TokenArrow.Length + 2;    // ') ==> ''
                     end1 = line.LastIndexOf(' ');               // ' '
@@ -82,7 +82,12 @@ public class SubscriptionsTextParser : ISubscriptionsParser
                 }
                 else if (line.StartsWith(s_TokenBatchable))
                 {
-                    subscription!.Batchable = GetBool(line, s_TokenBatchable.Length);
+                    if (subscription!.MergePolicy is null)
+                    {
+                        subscription.MergePolicy = new();
+                    }
+
+                    subscription.MergePolicy.Batchable = GetBool(line, s_TokenBatchable.Length);
                 }
                 else if (line.StartsWith(s_TokenFailureNotificationTags))
                 {
@@ -90,7 +95,12 @@ public class SubscriptionsTextParser : ISubscriptionsParser
                 }
                 else if (line.StartsWith(s_TokenUpdateFrequency))
                 {
-                    subscription!.UpdateFrequency = GetEnum<UpdateFrequency>(line, s_TokenUpdateFrequency.Length);
+                    if (subscription!.MergePolicy is null)
+                    {
+                        subscription.MergePolicy = new();
+                    }
+
+                    subscription.MergePolicy.UpdateFrequency = GetEnum<UpdateFrequency>(line, s_TokenUpdateFrequency.Length);
                 }
 
                 if (offset < 0)

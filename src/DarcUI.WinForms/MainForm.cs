@@ -8,7 +8,7 @@ namespace DarcUI;
 
 public partial class MainForm : Form
 {
-    private static readonly ISubscriptionsParser s_subscriptionsParser = new SubscriptionsTextParser();
+    private static readonly ISubscriptionsParser s_subscriptionsParser = new SubscriptionsJsonParser();
     private static readonly SubscriptionRetriever s_subscriptionsRetriever = new();
     private static readonly SubscriptionManager s_subscriptionManager = new();
     private static List<Subscription>? s_subscriptions;
@@ -165,7 +165,7 @@ public partial class MainForm : Form
                     TargetBranchNode targetBranchNode = new(targetBranch.Key!);
                     targetNode.Nodes.Add(targetBranchNode);
 
-                    foreach (IGrouping<string?, Subscription> channel in targetBranch.GroupBy(s => s.SourceChannel).OrderBy(s => s.Key))
+                    foreach (IGrouping<string?, Subscription> channel in targetBranch.GroupBy(s => s.SourceChannel.Name).OrderBy(s => s.Key))
                     {
                         ChannelTreeNode channelNode = new(channel.Key!);
                         targetBranchNode.Nodes.Add(channelNode);
@@ -181,7 +181,7 @@ public partial class MainForm : Form
 
         void GroupByChannelSourceRepoBranch()
         {
-            foreach (IGrouping<string?, Subscription> channel in subscriptions.GroupBy(s => s.SourceChannel).OrderBy(s => s.Key))
+            foreach (IGrouping<string?, Subscription> channel in subscriptions.GroupBy(s => s.SourceChannel.Name).OrderBy(s => s.Key))
             {
                 ChannelTreeNode channelNode = new(channel.Key!);
                 treeView.Nodes.Add(channelNode);
@@ -393,7 +393,10 @@ public partial class MainForm : Form
             {
                 Target = subscription.Target,
                 TargetBranch = subscription.TargetBranch,
-                SourceChannel = subscription.SourceChannel
+                SourceChannel = new()
+                {
+                    Name = subscription.SourceChannel
+                }
             };
 
             using CreateSubscription form = new();

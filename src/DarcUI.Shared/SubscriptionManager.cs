@@ -15,9 +15,9 @@ public class SubscriptionManager
             notifications = $"--failure-notification-tags '{subscription.TokenFailureNotificationTags.Trim()}'";
         }
 
-        string batchable = subscription.Batchable ? "--batchable" : string.Empty;
-        string trigger = subscription.UpdateFrequency != UpdateFrequency.None ? "--trigger" : string.Empty;
-        string command = $"add-subscription --channel '{subscription.SourceChannel}' --source-repo '{subscription.Source}' --target-repo '{subscription.Target}' --target-branch '{subscription.TargetBranch}' --update-frequency {subscription.UpdateFrequency} {notifications} {batchable} {trigger} --verbose --quiet";
+        string batchable = subscription.MergePolicy.Batchable ? "--batchable" : string.Empty;
+        string trigger = subscription.MergePolicy.UpdateFrequency != UpdateFrequency.None ? "--trigger" : string.Empty;
+        string command = $"add-subscription --channel '{subscription.SourceChannel.Name}' --source-repo '{subscription.Source}' --target-repo '{subscription.Target}' --target-branch '{subscription.TargetBranch}' --update-frequency {subscription.MergePolicy.UpdateFrequency} {notifications} {batchable} {trigger} --verbose --quiet";
 
         return s_darc.GetOutputAsync(command);
     }
@@ -37,7 +37,7 @@ public class SubscriptionManager
         return propertyName switch
         {
             nameof(Subscription.Enabled) => ToggleSubscriptionAsync(subscription),
-            nameof(Subscription.UpdateFrequency) => UpdateUpdateFrequency(subscription),
+            nameof(Policy.UpdateFrequency) => UpdateUpdateFrequency(subscription),
             nameof(Subscription.TokenFailureNotificationTags) => UpdateFailureNotificationTagsAsync(subscription),
             _ => Task.FromResult((ExecutionResult?)null),
         };
@@ -45,7 +45,7 @@ public class SubscriptionManager
 
     public Task<ExecutionResult> ViewDefaultChannelsAsync(Subscription subscription)
     {
-        string command = $"get-default-channels --channel '{subscription.SourceChannel}' --source-repo '{subscription.Target}' --branch '{subscription.TargetBranch}' --verbose";
+        string command = $"get-default-channels --channel '{subscription.SourceChannel.Name}' --source-repo '{subscription.Target}' --branch '{subscription.TargetBranch}' --verbose";
 
         return s_darc.GetOutputAsync(command);
     }
@@ -65,7 +65,7 @@ public class SubscriptionManager
 
     private async Task<ExecutionResult?> UpdateUpdateFrequency(Subscription subscription)
     {
-        ExecutionResult output = await s_darc.GetOutputAsync($"update-subscription --id {subscription.Id} --update-frequency {subscription.UpdateFrequency} --verbose --debug");
+        ExecutionResult output = await s_darc.GetOutputAsync($"update-subscription --id {subscription.Id} --update-frequency {subscription.MergePolicy.UpdateFrequency} --verbose --debug");
         return output;
     }
 }
