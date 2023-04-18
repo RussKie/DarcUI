@@ -8,7 +8,7 @@ namespace DarcUI;
 
 public partial class MainForm : Form
 {
-    private static readonly SubscriptionsParser s_subscriptionsParser = new();
+    private static readonly ISubscriptionsParser s_subscriptionsParser = new SubscriptionsTextParser();
     private static readonly SubscriptionRetriever s_subscriptionsRetriever = new();
     private static readonly SubscriptionManager s_subscriptionManager = new();
     private static List<Subscription>? s_subscriptions;

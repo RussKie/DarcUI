@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace DarcUI;
 
-public class SubscriptionsParser
+public class SubscriptionsTextParser : ISubscriptionsParser
 {
     private static readonly char[] s_TokenHttps = "https".ToCharArray();
     private static readonly char[] s_TokenDotnet = "dotnet".ToCharArray();
