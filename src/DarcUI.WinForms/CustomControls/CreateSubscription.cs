@@ -10,7 +10,7 @@ public partial class CreateSubscription : Form
         InitializeComponent();
     }
 
-    public void SetContext(Subscription? subscription)
+    public void SetContext(SubscriptionProxy? subscription)
     {
         propertyGrid1.SelectedObject = subscription;
         btnOk.Enabled = subscription is not null;

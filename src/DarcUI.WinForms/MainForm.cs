@@ -389,14 +389,11 @@ public partial class MainForm : Form
             // darc add-subscription --target-repo https://github.com/dotnet/winforms --target-branch main --source-repo https://github.com/dotnet/roslyn-analyzers  --channel ".NET Eng - Latest" --update-frequency everyDay --trigger --verbose --quiet
             //
 
-            Subscription newSubscription = new()
+            SubscriptionProxy newSubscription = new()
             {
                 Target = subscription.Target,
                 TargetBranch = subscription.TargetBranch,
-                SourceChannel = new()
-                {
-                    Name = subscription.SourceChannel
-                }
+                SourceChannel = subscription.SourceChannel
             };
 
             using CreateSubscription form = new();
@@ -476,7 +473,14 @@ public partial class MainForm : Form
     {
         if (e.Node?.Tag is not null)
         {
-            propertyGrid1.SelectedObject = e.Node.Tag;
+            if (e.Node.Tag is (Subscription or SubscriptionProxy))
+            {
+                propertyGrid1.SelectedObject = new ReadOnlySubscriptionProxy(e.Node.Tag);
+            }
+            else
+            {
+                propertyGrid1.SelectedObject = e.Node.Tag;
+            }
 
             propertyGrid1.AllowCreate =
                 propertyGrid1.AllowDelete =

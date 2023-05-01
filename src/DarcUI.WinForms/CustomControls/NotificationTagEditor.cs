@@ -17,7 +17,13 @@ public class NotificationTagEditor : UITypeEditor
 
     public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
     {
-        if (context.Instance is not SubscriptionProxy subscription)
+        SubscriptionProxy? subscription = context.Instance as SubscriptionProxy;
+        if (subscription is null)
+        {
+            subscription = (context.Instance as ReadOnlySubscriptionProxy)?.WrappedObject as SubscriptionProxy;
+        }
+
+        if (subscription is null)
         {
             return value;
         }

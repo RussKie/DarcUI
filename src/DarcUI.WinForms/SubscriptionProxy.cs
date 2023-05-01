@@ -17,19 +17,15 @@ public class SubscriptionProxy
     private const string CategoryStatus = "Status";
 
     [Category(CategoryDetails)]
-    [ReadOnly(true)]
     public string Source { get; set; }
 
     [Category(CategoryDetails)]
-    [ReadOnly(true)]
     public string SourceChannel { get; set; }
 
     [Category(CategoryDetails)]
-    [ReadOnly(true)]
     public string Target { get; set; }
 
     [Category(CategoryDetails)]
-    [ReadOnly(true)]
     public string TargetBranch { get; set; }
 
     [Category(CategoryDetails)]
@@ -38,7 +34,6 @@ public class SubscriptionProxy
 
     [Category(CategoryNotifications)]
     [Editor(typeof(NotificationTagEditor), typeof(UITypeEditor))]
-    //[ReadOnly(true)]
     public string TokenFailureNotificationTags { get; set; }
 
     [Category(CategoryStatus)]
@@ -70,9 +65,9 @@ public class SubscriptionProxy
             TargetBranch = subscription.TargetBranch,
             Id = subscription.Id,
             TokenFailureNotificationTags = subscription.TokenFailureNotificationTags,
-            UpdateFrequency = subscription.MergePolicy.UpdateFrequency,
+            UpdateFrequency = subscription.MergePolicy?.UpdateFrequency ?? 0,
             Enabled = subscription.Enabled,
-            Batchable = subscription.MergePolicy.Batchable,
+            Batchable = subscription.MergePolicy?.Batchable ?? false,
         };
     }
 
