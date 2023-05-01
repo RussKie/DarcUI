@@ -338,7 +338,8 @@ public partial class MainForm : Form
 
     private async void propertyGrid1_DeleteClicked(object sender, EventArgs e)
     {
-        if (propertyGrid1.SelectedObject is not SubscriptionProxy subscription)
+        if (propertyGrid1.SelectedObject is not ReadOnlySubscriptionProxy readOnlySubscription ||
+            readOnlySubscription.WrappedObject is not SubscriptionProxy subscription)
         {
             Debug.Fail("How did we get here?");
             return;
@@ -417,7 +418,8 @@ public partial class MainForm : Form
 
     private async void propertyGrid1_TriggerClicked(object sender, EventArgs e)
     {
-        if (propertyGrid1.SelectedObject is not SubscriptionProxy subscription)
+        if (propertyGrid1.SelectedObject is not ReadOnlySubscriptionProxy readOnlySubscription ||
+            readOnlySubscription.WrappedObject is not SubscriptionProxy subscription)
         {
             Debug.Fail("How did we get here?");
             return;
