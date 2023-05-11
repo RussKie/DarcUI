@@ -324,11 +324,14 @@ public partial class MainForm : Form
 
     private async void propertyGrid1_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
     {
-        Subscription? subscription = propertyGrid1.SelectedObject as SubscriptionProxy;
-        if (subscription is null)
+        var proxy = propertyGrid1.SelectedObject as ReadOnlySubscriptionProxy;
+        if (proxy is null)
         {
+            Debug.Fail("How did we get here?");
             return;
         }
+
+        SubscriptionProxy subscription = (SubscriptionProxy)proxy.WrappedObject;
 
         ExecutionResult? result = null;
         await InvokeAsync(hostControl: propertyGrid1,
