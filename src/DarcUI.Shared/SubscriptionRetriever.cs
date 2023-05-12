@@ -10,7 +10,7 @@ public class SubscriptionRetriever
         string output;
 
         var path = Path.Combine(Path.GetFullPath("."), "darc-get-subscriptions.cache.json");
-        if (!forceReload && File.Exists(path))
+        if (!forceReload && CanUse(path))
         {
             output = File.ReadAllText(path);
             if (!string.IsNullOrWhiteSpace(output))
@@ -27,5 +27,20 @@ public class SubscriptionRetriever
         }
 
         return result;
+    }
+
+    private static bool CanUse(string path)
+    {
+        if (!File.Exists(path))
+        {
+            return false;
+        }
+
+        if (new FileInfo(path).LastWriteTime.AddDays(1) < DateTime.Today)
+        {
+            return false;
+        }
+
+        return true;
     }
 }
