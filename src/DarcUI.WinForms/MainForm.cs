@@ -155,7 +155,7 @@ public partial class MainForm : Form
 
         void GroupByRepoBranchChannelSource()
         {
-            foreach (IGrouping<string?, Subscription> target in subscriptions.GroupBy(s => s.Target).OrderBy(s => s.Key))
+            foreach (IGrouping<string?, Subscription> target in subscriptions.GroupBy(s => s.Target.ToLowerInvariant()).OrderBy(s => s.Key))
             {
                 TargetTreeNode targetNode = new(target.Key!);
                 treeView.Nodes.Add(targetNode);
@@ -170,7 +170,7 @@ public partial class MainForm : Form
                         ChannelTreeNode channelNode = new(channel.Key!);
                         targetBranchNode.Nodes.Add(channelNode);
 
-                        foreach (Subscription subscription in channel.OrderBy(s => s.Source))
+                        foreach (Subscription subscription in channel.OrderBy(s => s.Source.ToLowerInvariant()))
                         {
                             channelNode.Nodes.Add(new SourceTreeNode(subscription));
                         }
@@ -186,12 +186,12 @@ public partial class MainForm : Form
                 ChannelTreeNode channelNode = new(channel.Key!);
                 treeView.Nodes.Add(channelNode);
 
-                foreach (IGrouping<string?, Subscription> source in channel.GroupBy(s => s.Source).OrderBy(s => s.Key))
+                foreach (IGrouping<string?, Subscription> source in channel.GroupBy(s => s.Source.ToLowerInvariant()).OrderBy(s => s.Key))
                 {
                     SourceTreeNode sourceNode = new(source.Key!);
                     channelNode.Nodes.Add(sourceNode);
 
-                    foreach (IGrouping<string?, Subscription> target in source.GroupBy(s => s.Target).OrderBy(s => s.Key))
+                    foreach (IGrouping<string?, Subscription> target in source.GroupBy(s => s.Target.ToLowerInvariant()).OrderBy(s => s.Key))
                     {
                         TargetTreeNode targetNode = new(target.Key!);
                         sourceNode.Nodes.Add(targetNode);
