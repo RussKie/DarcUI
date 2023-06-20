@@ -45,7 +45,7 @@ public class SubscriptionManager
 
     public Task<ExecutionResult> ViewDefaultChannelsAsync(Subscription subscription)
     {
-        string command = $"get-default-channels --channel '{subscription.SourceChannel.Name}' --source-repo '{subscription.Source}' --branch '{subscription.TargetBranch}' --verbose";
+        string command = $"get-default-channels --channel '{subscription.SourceChannel.Name}' --source-repo '{subscription.Target}' --branch '{subscription.TargetBranch}' --verbose";
 
         return s_darc.GetOutputAsync(command);
     }
