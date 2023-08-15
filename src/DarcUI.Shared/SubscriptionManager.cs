@@ -16,8 +16,8 @@ public class SubscriptionManager
         }
 
         string batchable = subscription.MergePolicy.Batchable ? "--batchable" : string.Empty;
-        string trigger = subscription.MergePolicy.UpdateFrequency != UpdateFrequency.None ? "--trigger" : string.Empty;
-        string command = $"add-subscription --channel '{subscription.SourceChannel.Name}' --source-repo '{subscription.Source}' --target-repo '{subscription.Target}' --target-branch '{subscription.TargetBranch}' --update-frequency {subscription.MergePolicy.UpdateFrequency} {notifications} {batchable} {trigger} --verbose --quiet";
+        string trigger = subscription.Enabled && subscription.MergePolicy.UpdateFrequency != UpdateFrequency.None ? "--trigger" : string.Empty;
+        string command = $"add-subscription --channel '{subscription.SourceChannel.Name}' --source-repo '{subscription.Source}' --target-repo '{subscription.Target}' --target-branch '{subscription.TargetBranch}' --update-frequency {subscription.MergePolicy.UpdateFrequency} {notifications} {batchable} {trigger} --verbose";
 
         return s_darc.GetOutputAsync(command);
     }
