@@ -7,6 +7,12 @@ public class SubscriptionManager
 {
     private static readonly Executable s_darc = new Executable("darc");
 
+    public Task<ExecutionResult> CreateDefaultChannelAsync(DefaultChannelInfo subscription)
+    {
+        //return s_darc.GetOutputAsync($"add-default-channel --channel \"{subscription.Channel}\" --branch \"{subscription.Branch}\" --repo \"{subscription.Repository}\" --verbose --debug");
+        return Task.FromResult(new ExecutionResult(0, $"add-default-channel --channel \"{subscription.Channel}\" --branch \"{subscription.Branch}\" --repo \"{subscription.Repository}\" --verbose --debug", "", ""));
+    }
+
     public Task<ExecutionResult> CreateSubscriptionAsync(Subscription subscription)
     {
         string? notifications = null;

@@ -29,73 +29,72 @@ partial class ManageFailureNotifications
     /// </summary>
     private void InitializeComponent()
     {
-        this.pnlMain = new System.Windows.Forms.Panel();
-        this.txtTags = new System.Windows.Forms.TextBox();
-        this.pnlControls = new System.Windows.Forms.FlowLayoutPanel();
-        this.btnOk = new System.Windows.Forms.Button();
-        this.pnlMain.SuspendLayout();
-        this.pnlControls.SuspendLayout();
-        this.SuspendLayout();
+        pnlMain = new Panel();
+        txtTags = new TextBox();
+        pnlControls = new FlowLayoutPanel();
+        btnOk = new Button();
+        pnlMain.SuspendLayout();
+        pnlControls.SuspendLayout();
+        SuspendLayout();
         // 
         // pnlMain
         // 
-        this.pnlMain.BackColor = System.Drawing.SystemColors.ControlLight;
-        this.pnlMain.Controls.Add(this.txtTags);
-        this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-        this.pnlMain.Location = new System.Drawing.Point(0, 0);
-        this.pnlMain.Name = "pnlMain";
-        this.pnlMain.Padding = new System.Windows.Forms.Padding(8);
-        this.pnlMain.Size = new System.Drawing.Size(430, 40);
-        this.pnlMain.TabIndex = 0;
+        pnlMain.BackColor = SystemColors.ControlLight;
+        pnlMain.Controls.Add(txtTags);
+        pnlMain.Dock = DockStyle.Fill;
+        pnlMain.Location = new Point(0, 0);
+        pnlMain.Name = "pnlMain";
+        pnlMain.Padding = new Padding(8);
+        pnlMain.Size = new Size(430, 40);
+        pnlMain.TabIndex = 0;
         // 
         // txtTags
         // 
-        this.txtTags.Dock = System.Windows.Forms.DockStyle.Fill;
-        this.txtTags.Location = new System.Drawing.Point(8, 8);
-        this.txtTags.MaxLength = 500;
-        this.txtTags.Name = "txtTags";
-        this.txtTags.Size = new System.Drawing.Size(414, 23);
-        this.txtTags.TabIndex = 0;
+        txtTags.Dock = DockStyle.Fill;
+        txtTags.Location = new Point(8, 8);
+        txtTags.MaxLength = 500;
+        txtTags.Name = "txtTags";
+        txtTags.Size = new Size(414, 23);
+        txtTags.TabIndex = 0;
         // 
         // pnlControls
         // 
-        this.pnlControls.AutoSize = true;
-        this.pnlControls.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-        this.pnlControls.Controls.Add(this.btnOk);
-        this.pnlControls.Dock = System.Windows.Forms.DockStyle.Bottom;
-        this.pnlControls.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-        this.pnlControls.Location = new System.Drawing.Point(0, 40);
-        this.pnlControls.Name = "pnlControls";
-        this.pnlControls.Padding = new System.Windows.Forms.Padding(4);
-        this.pnlControls.Size = new System.Drawing.Size(430, 37);
-        this.pnlControls.TabIndex = 1;
+        pnlControls.AutoSize = true;
+        pnlControls.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        pnlControls.Controls.Add(btnOk);
+        pnlControls.Dock = DockStyle.Bottom;
+        pnlControls.FlowDirection = FlowDirection.RightToLeft;
+        pnlControls.Location = new Point(0, 40);
+        pnlControls.Name = "pnlControls";
+        pnlControls.Padding = new Padding(4);
+        pnlControls.Size = new Size(430, 37);
+        pnlControls.TabIndex = 1;
         // 
         // btnOk
         // 
-        this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-        this.btnOk.Location = new System.Drawing.Point(344, 7);
-        this.btnOk.Name = "btnOk";
-        this.btnOk.Size = new System.Drawing.Size(75, 23);
-        this.btnOk.TabIndex = 0;
-        this.btnOk.Text = "&Update";
-        this.btnOk.UseVisualStyleBackColor = true;
+        btnOk.DialogResult = DialogResult.OK;
+        btnOk.Location = new Point(344, 7);
+        btnOk.Name = "btnOk";
+        btnOk.Size = new Size(75, 23);
+        btnOk.TabIndex = 0;
+        btnOk.Text = "&Update";
+        btnOk.UseVisualStyleBackColor = true;
         // 
         // ManageFailureNotifications
         // 
-        this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(430, 77);
-        this.Controls.Add(this.pnlMain);
-        this.Controls.Add(this.pnlControls);
-        this.Icon = global::DarcUI.Properties.Resources.dotnet;
-        this.Name = "ManageFailureNotifications";
-        this.Text = "Manage failure notification tags";
-        this.pnlMain.ResumeLayout(false);
-        this.pnlMain.PerformLayout();
-        this.pnlControls.ResumeLayout(false);
-        this.ResumeLayout(false);
-        this.PerformLayout();
-
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(430, 77);
+        Controls.Add(pnlMain);
+        Controls.Add(pnlControls);
+        Icon = Properties.Resources.dotnet;
+        Name = "ManageFailureNotifications";
+        Text = "Manage failure notification tags";
+        pnlMain.ResumeLayout(false);
+        pnlMain.PerformLayout();
+        pnlControls.ResumeLayout(false);
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion

@@ -12,6 +12,7 @@ namespace DarcUI;
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 public class SubscriptionProxy
 {
+    private const string CategoryDefaultChannel = "Default Channel";
     private const string CategoryDetails = "Details";
     private const string CategoryNotifications = "Notifications";
     private const string CategoryStatus = "Status";
@@ -44,6 +45,14 @@ public class SubscriptionProxy
 
     [Category(CategoryStatus)]
     public bool Batchable { get; set; }
+
+    [Category(CategoryDefaultChannel)]
+    public bool CreateDefaultChannel { get; set; }
+
+    [Category(CategoryDefaultChannel)]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
+    [TypeConverter(typeof(DefaultChannelInfoTypeConverter))]
+    public DefaultChannelInfo DefaultChannelInfo { get; set; }
 
     // TODO
     //[Category(CategoryStatus)]
@@ -102,3 +111,15 @@ public class SubscriptionProxy
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 #pragma warning restore CS8601 // Possible null reference assignment.
 
+public class DefaultChannelInfoTypeConverter : TypeConverter
+{
+    public override bool GetPropertiesSupported(ITypeDescriptorContext? context)
+    {
+        return true;
+    }
+
+    public override PropertyDescriptorCollection GetProperties(ITypeDescriptorContext? context, object? value, Attribute[]? attributes)
+    {
+        return TypeDescriptor.GetProperties(typeof(DefaultChannelInfo));
+    }
+}

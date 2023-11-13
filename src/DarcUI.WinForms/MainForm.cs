@@ -397,7 +397,13 @@ public partial class MainForm : Form
             {
                 Target = subscription.Target,
                 TargetBranch = subscription.TargetBranch,
-                SourceChannel = subscription.SourceChannel
+                SourceChannel = subscription.SourceChannel,
+                DefaultChannelInfo = new()
+                {
+                    Repository = subscription.Target,
+                    Branch = subscription.TargetBranch,
+                    Channel = subscription.SourceChannel
+                }
             };
 
             using CreateSubscription form = new();
@@ -408,7 +414,16 @@ public partial class MainForm : Form
             {
                 ExecutionResult? result = null;
                 await InvokeAsync(hostControl: propertyGrid1,
-                    asyncMethod: async () => result = await s_subscriptionManager.CreateSubscriptionAsync(newSubscription),
+                    asyncMethod: async () =>
+                    {
+                        result = await s_subscriptionManager.CreateSubscriptionAsync(newSubscription);
+                        if (newSubscription.CreateDefaultChannel && result is not null && result.ExitCode == 0)
+                        {
+                            // TODO: validation
+                            ExecutionResult result2 = await s_subscriptionManager.CreateDefaultChannelAsync(newSubscription.DefaultChannelInfo);
+                            result.ChainWith(result2);
+                        }
+                    },
                     onCompleteMethod: () => rtbCommandLog.AppendText($"[CreateSubscriptionAsync]\r\n{result}\r\n\r\n"));
 
                 if (result is not null && result.ExitCode == 0)

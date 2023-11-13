@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Igor Velikorossov. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
 
@@ -71,6 +72,15 @@ public record MergePolicy
 
 public record MergePolicyProperties
 {
-    public string[]? IgnoreChecks { get; set; }
+    public object[]? IgnoreChecks { get; set; }
 }
 
+public record DefaultChannelInfo
+{
+    [AllowNull]
+    public string Channel { get; set; }
+    [AllowNull]
+    public string Branch { get; set; }
+    [AllowNull]
+    public string Repository { get; set; }
+}
