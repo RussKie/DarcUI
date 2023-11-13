@@ -256,7 +256,8 @@ public partial class MainForm : Form
         {
             _operationInProgress = true;
             tsbtnRefresh.Enabled = false;
-            tabControl.Enabled = false;
+            treeView1.Enabled = false;
+            propertyGrid1.Enabled = false;
             ShowSpinner(visible: true, hostControl);
         }
 
@@ -264,7 +265,8 @@ public partial class MainForm : Form
         {
             _operationInProgress = false;
             ShowSpinner(visible: false);
-            tabControl.Enabled = true;
+            treeView1.Enabled = true;
+            propertyGrid1.Enabled = true;
             tsbtnRefresh.Enabled = true;
         }
 
