@@ -12,12 +12,12 @@ public class SubscriptionManager
         string? notifications = null;
         if (!string.IsNullOrWhiteSpace(subscription.TokenFailureNotificationTags))
         {
-            notifications = $"--failure-notification-tags '{subscription.TokenFailureNotificationTags.Trim()}'";
+            notifications = $"--failure-notification-tags \"{subscription.TokenFailureNotificationTags.Trim()}\"";
         }
 
         string batchable = subscription.MergePolicy.Batchable ? "--batchable" : string.Empty;
         string trigger = subscription.Enabled && subscription.MergePolicy.UpdateFrequency != UpdateFrequency.None ? "--trigger" : string.Empty;
-        string command = $"add-subscription --channel '{subscription.SourceChannel.Name}' --source-repo '{subscription.Source}' --target-repo '{subscription.Target}' --target-branch '{subscription.TargetBranch}' --update-frequency {subscription.MergePolicy.UpdateFrequency} {notifications} {batchable} {trigger} --verbose";
+        string command = $"add-subscription --channel \"{subscription.SourceChannel.Name}\" --source-repo \"{subscription.Source}\" --target-repo \"{subscription.Target}\" --target-branch \"{subscription.TargetBranch}\" --update-frequency {subscription.MergePolicy.UpdateFrequency} {notifications} {batchable} {trigger} --quiet --verbose";
 
         return s_darc.GetOutputAsync(command);
     }
@@ -45,7 +45,7 @@ public class SubscriptionManager
 
     public Task<ExecutionResult> ViewDefaultChannelsAsync(Subscription subscription)
     {
-        string command = $"get-default-channels --channel '{subscription.SourceChannel.Name}' --source-repo '{subscription.Target}' --branch '{subscription.TargetBranch}' --verbose";
+        string command = $"get-default-channels --channel \"{subscription.SourceChannel.Name}\" --source-repo \"{subscription.Target}\" --branch \"{subscription.TargetBranch}\" --verbose";
 
         return s_darc.GetOutputAsync(command);
     }
@@ -59,7 +59,7 @@ public class SubscriptionManager
 
     private async Task<ExecutionResult?> UpdateFailureNotificationTagsAsync(Subscription subscription)
     {
-        ExecutionResult output = await s_darc.GetOutputAsync($"update-subscription --id {subscription.Id} --failure-notification-tags '{subscription.TokenFailureNotificationTags}' --verbose --debug");
+        ExecutionResult output = await s_darc.GetOutputAsync($"update-subscription --id {subscription.Id} --failure-notification-tags \"{subscription.TokenFailureNotificationTags}\" --verbose --debug");
         return output;
     }
 
