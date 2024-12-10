@@ -5,6 +5,7 @@
 // Borrowed from https://github.com/gitextensions/gitextensions
 
 using System.Diagnostics;
+using System.Threading;
 
 namespace DarcUI;
 
@@ -32,7 +33,7 @@ public sealed class Executable
         return new ProcessWrapper(fileName, arguments, _workingDir, createWindow, redirectInput, redirectOutput);
     }
 
-    public Task<ExecutionResult> GetOutputAsync(string arguments)
+    public Task<ExecutionResult> GetOutputAsync(string arguments, CancellationToken cancellationToken)
     {
         return Task.Run(
             async () =>
@@ -49,6 +50,8 @@ public sealed class Executable
                     var errorTask = process.StandardError.BaseStream.CopyToAsync(errorBuffer);
                     var exitTask = process.WaitForExitAsync();
 
+                    cancellationToken.Register(() => process.Kill());
+
                     await Task.WhenAll(outputTask, errorTask, exitTask);
 
                     var output = outputBuffer.ToArray();
@@ -56,7 +59,8 @@ public sealed class Executable
 
                     return new ExecutionResult(await exitTask, arguments, DecodeString(output), DecodeString(error));
                 }
-            });
+            },
+            cancellationToken);
     }
 
     private static string DecodeString(byte[] raw)
@@ -185,6 +189,9 @@ public sealed class Executable
                 return _process.StandardError;
             }
         }
+
+        /// <inheritdoc />
+        public void Kill() => _process.Kill();
 
         /// <inheritdoc />
         public void WaitForInputIdle() => _process.WaitForInputIdle();

@@ -337,7 +337,12 @@ public partial class MainForm : Form
 
         ExecutionResult? result = null;
         await InvokeAsync(hostControl: propertyGrid1,
-            asyncMethod: async () => result = await s_subscriptionManager.UpdateSubscriptionAsync(subscription, e.ChangedItem?.Label),
+            asyncMethod: async () =>
+            {
+                using CancellationTokenSource tokenSource = new();
+                tokenSource.CancelAfter(TimeSpan.FromSeconds(15));
+                result = await s_subscriptionManager.UpdateSubscriptionAsync(subscription, e.ChangedItem?.Label, tokenSource.Token);
+            },
             onCompleteMethod: () => rtbCommandLog.AppendText($"[UpdateSubscriptionAsync]\r\n{result}\r\n\r\n"));
     }
 
@@ -375,7 +380,12 @@ public partial class MainForm : Form
         {
             ExecutionResult? result = null;
             await InvokeAsync(hostControl: propertyGrid1,
-                asyncMethod: async () => result = await s_subscriptionManager.DeleteSubscriptionAsync(subscription.Id),
+                asyncMethod: async () =>
+                {
+                    using CancellationTokenSource tokenSource = new();
+                    tokenSource.CancelAfter(TimeSpan.FromSeconds(15));
+                    result = await s_subscriptionManager.DeleteSubscriptionAsync(subscription.Id, tokenSource.Token);
+                },
                 onCompleteMethod: () => rtbCommandLog.AppendText($"[DeleteSubscriptionAsync]\r\n{result}\r\n\r\n"));
 
             if (result is not null && result.ExitCode == 0)
@@ -410,7 +420,12 @@ public partial class MainForm : Form
             {
                 ExecutionResult? result = null;
                 await InvokeAsync(hostControl: propertyGrid1,
-                    asyncMethod: async () => result = await s_subscriptionManager.CreateSubscriptionAsync(newSubscription),
+                    asyncMethod: async () =>
+                    {
+                        using CancellationTokenSource tokenSource = new();
+                        tokenSource.CancelAfter(TimeSpan.FromSeconds(15));
+                        result = await s_subscriptionManager.CreateSubscriptionAsync(newSubscription, tokenSource.Token);
+                    },
                     onCompleteMethod: () => rtbCommandLog.AppendText($"[CreateSubscriptionAsync]\r\n{result}\r\n\r\n"));
 
                 if (result is not null && result.ExitCode == 0)
@@ -432,7 +447,12 @@ public partial class MainForm : Form
 
         ExecutionResult? result = null;
         await InvokeAsync(hostControl: propertyGrid1,
-            asyncMethod: async () => result = await s_subscriptionManager.TriggerSubscriptionAsync(subscription.Id),
+            asyncMethod: async () =>
+            {
+                using CancellationTokenSource tokenSource = new();
+                tokenSource.CancelAfter(TimeSpan.FromSeconds(15));
+                result = await s_subscriptionManager.TriggerSubscriptionAsync(subscription.Id, tokenSource.Token);
+            },
             onCompleteMethod: () => rtbCommandLog.AppendText($"[TriggerSubscriptionAsync]\r\n{result}\r\n\r\n"));
 
         TaskDialogPage page;
@@ -472,7 +492,12 @@ public partial class MainForm : Form
 
         ExecutionResult? result = null;
         await InvokeAsync(hostControl: propertyGrid1,
-            asyncMethod: async () => result = await s_subscriptionManager.ViewDefaultChannelsAsync((Subscription)subscription),
+            asyncMethod: async () =>
+            {
+                using CancellationTokenSource tokenSource = new();
+                tokenSource.CancelAfter(TimeSpan.FromSeconds(15));
+                result = await s_subscriptionManager.ViewDefaultChannelsAsync((Subscription)subscription, tokenSource.Token);
+            },
             onCompleteMethod: () => rtbCommandLog.AppendText($"[ViewDefaultChannelsAsync]\r\n{result}\r\n\r\n"));
     }
 

@@ -20,7 +20,7 @@ public class SubscriptionRetriever
         }
 
         var executable = new Executable("darc");
-        var result = await executable.GetOutputAsync("get-subscriptions --output-format json");
+        var result = await executable.GetOutputAsync("get-subscriptions --output-format json", cancellationToken: default);
         if (!string.IsNullOrWhiteSpace(result.Output))
         {
             File.WriteAllText(path, result.Output);
